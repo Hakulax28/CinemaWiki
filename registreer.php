@@ -6,29 +6,29 @@
          <!--<img class="mb-4" src="/docs/5.2/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">-->
          <h1 class="h3 mb-3 fw-normal">Registreer je nu in</h1>
 
-         <div class="form-group">
-            <label for="firstname">Voornaam: </label>
-            <input type="text" name="firstname" id="" class="form-control">
+         <div class="form-floating">
+            <input type="text" name="firstname" id="floatingInput" class="form-control">
+            <label for="floatingInput">Voornaam: </label>
          </div><br>
-         <div class="form-group">
-            <label for="lastname">Achternaam: </label>
-            <input type="text" name="lastname" id="" class="form-control">
+         <div class="form-floating">
+            <input type="text" name="lastname" id="floatingInput" class="form-control">
+            <label for="floatingInput">Achternaam: </label>
          </div><br>
-         <div class="form-group">
-            <label for="email">Email: </label>
-            <input type="email" name="email" id="" class="form-control" placeholder="name@example.com">
+         <div class="form-floating">
+            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+            <label for="floatingInput">E-mail</label>
          </div><br>
-         <div class="form-group">
-            <label for="password">Wachtwoord: </label>
-            <input type="password" name="password" id="" class="form-control" placeholder="Password">
+         <div class="form-floating">
+            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+            <label for="floatingPassword">Wachtwoord</label>
          </div><br>
-         <div class="form-group">
-            <label for="date_of_birth">Geboortedatum: </label>
-            <input type="date" name="date_of_birth" id="" class="form-control">
+         <div class="form-floating">
+            <input type="date" name="date_of_birth" id="floatingInput" class="form-control">
+            <label for="floatingInput">Geboortedatum: </label>
          </div><br>
-         <div class="form-group">
-            <label for="phonenumber">Telefoonnummer: </label>
-            <input type="tel" name="phonenumber" id="" class="form-control">
+         <div class="form-floating">
+            <input type="tel" name="phonenumber" id="floatingInput" class="form-control">
+            <label for="floatingInput">Telefoonnummer: </label>
          </div><br>
 
          <button class="w-100 btn btn-lg btn-primary" type="submit">registreer je nu in</button>
