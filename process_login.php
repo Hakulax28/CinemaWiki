@@ -1,6 +1,6 @@
 <?php
 
-require 'database.php';
+require 'connectie.php';
 
 session_start();
 
@@ -34,18 +34,18 @@ if ($result) {
 
       $_SESSION["email"] = $user["email"];
       $_SESSION["is_logged_in"] = true;
-      $_SESSION["rol"] = $user["rol"];
+      //$_SESSION["rol"] = $user["rol"];
 
 
       var_dump($_SESSION);
       //Hier bekijkt hij of degene die heeft ingelogd een gebruiker of personeel is.
-      if ($_SESSION["rol"] == "personeel") {
+      /*if ($_SESSION["rol"] == "personeel") {
          echo "U kan nu alles doen";
          header("location: gebruiker-overzicht.php");
       } else if ($_SESSION["rol"] == "gebruiker") {
          echo "U kan alleen een melding registreren";
          header("location: melding-overzicht.php");
-      }
+      }*/
    }
 }
 
