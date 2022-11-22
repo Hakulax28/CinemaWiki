@@ -1,7 +1,6 @@
 <?php include "header.php" ?>
 
-<body class="text-center">
+   <div>
 
-</body>
-
+   </div>
 <?php include "footer.php" ?>
