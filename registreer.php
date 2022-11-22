@@ -1,23 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php include "header.php" ?>
 
-<head>
-   <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-   <title>Document</title>
-</head>
+<body class="text-center">
+   <main class="form-signin w-100 m-auto">
+      <form>
+         <!--<img class="mb-4" src="/docs/5.2/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">-->
+         <h1 class="h3 mb-3 fw-normal">Registreer je nu in</h1>
 
-<body>
-   <header></header>
+         <div class="form-floating">
+            <input type="text" name="firstname" id="floatingInput" class="form-control">
+            <label for="floatingInput">Voornaam: </label>
+         </div><br>
+         <div class="form-floating">
+            <input type="text" name="lastname" id="floatingInput" class="form-control">
+            <label for="floatingInput">Achternaam: </label>
+         </div><br>
+         <div class="form-floating">
+            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+            <label for="floatingInput">E-mail</label>
+         </div><br>
+         <div class="form-floating">
+            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+            <label for="floatingPassword">Wachtwoord</label>
+         </div><br>
+         <div class="form-floating">
+            <input type="date" name="date_of_birth" id="floatingInput" class="form-control">
+            <label for="floatingInput">Geboortedatum: </label>
+         </div><br>
+         <div class="form-floating">
+            <input type="tel" name="phonenumber" id="floatingInput" class="form-control">
+            <label for="floatingInput">Telefoonnummer: </label>
+         </div><br>
 
-   <body>
-      <form action="">
-
+         <button class="w-100 btn btn-lg btn-primary" type="submit">registreer je nu in</button>
+         <a href="index.php" class="w-100 btn btn-lg btn-danger">Annuleer</a>
+         <p class="mt-5 mb-3 text-muted">&copy; 2017–2022</p>
       </form>
-   </body>
-   <footer></footer>
+   </main>
 </body>
 
-</html>
+<?php include "footer.php" ?>
