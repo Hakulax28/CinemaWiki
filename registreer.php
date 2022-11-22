@@ -16,11 +16,11 @@
          </div><br>
          <div class="form-group">
             <label for="email">Email: </label>
-            <input type="email" name="email" id="" class="form-control">
+            <input type="email" name="email" id="" class="form-control" placeholder="name@example.com">
          </div><br>
          <div class="form-group">
             <label for="password">Wachtwoord: </label>
-            <input type="password" name="password" id="" class="form-control">
+            <input type="password" name="password" id="" class="form-control" placeholder="Password">
          </div><br>
          <div class="form-group">
             <label for="date_of_birth">Geboortedatum: </label>

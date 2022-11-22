@@ -29,8 +29,8 @@
          </form>
 
          <div class="text-end">
-            <button type="button" class="btn btn-outline-light me-2">Inloggen</button>
-            <button type="button" class="btn btn-warning">Registreren</button>
+            <button onclick="document.location='inloggen.php'" type="button" class="btn btn-outline-light me-2">Inloggen</button>
+            <button onclick="document.location='registreer.php'" type="button" class="btn btn-warning">Registreren</button>
          </div>
       </div>
    </div>
