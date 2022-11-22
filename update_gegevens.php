@@ -1,34 +1,43 @@
+<?php require "connectie.php" ?>
 <?php include "header.php" ?>
-<table class="table table-striped table-dark">
-   <thead>
-      <tr>
-         <th>ID</th>
-         <th>Voornaam</th>
-         <th>Achternaam</th>
-         <th>Email</th>
-         <th>Wachtwoord</th>
-         <th>Geboortedatum</th>
-         <th>Telefoonnummer</th>
-         <th>Rol</th>
-         <th>Verwijder</th>
-         <th>Update</th>
-      </tr>
-   </thead>
-   <tbody>
-      <?php foreach ($users as $user) : ?>
-         <tr>
-            <td><?php echo $user["id"] ?></td>
-            <td><?php echo $user["voornaam"] ?></td>
-            <td><?php echo $user["achternaam"] ?></td>
-            <td><?php echo $user["email"] ?></td>
-            <td><?php echo $user["wachtwoord"] ?></td>
-            <td><?php echo $user["geboortedatum"] ?></td>
-            <td><?php echo $user["telefoonnummer"] ?></td>
-            <td><?php echo $user["rol"] ?></td>
-            <td><a href="gebruiker-delete.php?id=<?php echo $user["id"] ?>" class="btn btn-danger">Delete</a></td>
-            <td><a href="gebruiker-update.php?id=<?php echo $user["id"] ?>" class="btn btn-warning">Update</a></td>
-         </tr>
-      <?php endforeach; ?>
-   </tbody>
-</table>
+
+<div class="container">
+   <main class="form-signin w-100 m-auto">
+      <form>
+         <!--<img class="mb-4" src="/docs/5.2/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">-->
+         <h1 class="h3 mb-3 fw-normal">Registreer je nu in</h1>
+
+         <div class="form-floating">
+            <input type="text" name="firstname" id="floatingInput" class="form-control">
+            <label for="floatingInput">Voornaam: </label>
+         </div><br>
+         <div class="form-floating">
+            <input type="text" name="lastname" id="floatingInput" class="form-control">
+            <label for="floatingInput">Achternaam: </label>
+         </div><br>
+         <div class="form-floating">
+            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+            <label for="floatingInput">E-mail</label>
+         </div><br>
+         <div class="form-floating">
+            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+            <label for="floatingPassword">Wachtwoord</label>
+         </div><br>
+         <div class="form-floating">
+            <input type="date" name="date_of_birth" id="floatingInput" class="form-control">
+            <label for="floatingInput">Geboortedatum: </label>
+         </div><br>
+         <div class="form-floating">
+            <input type="tel" name="phonenumber" id="floatingInput" class="form-control">
+            <label for="floatingInput">Telefoonnummer: </label>
+         </div><br>
+
+         <button class="w-100 btn btn-lg btn-success" type="submit">registreer je nu in</button>
+         <a href="index.php" class="w-100 btn btn-lg btn-danger">Annuleer</a>
+         <p class="mt-5 mb-3 text-muted">&copy; 2017–2022</p>
+      </form>
+   </main>
+</div>
+
+
 <?php include "footer.php" ?>
