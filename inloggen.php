@@ -6,6 +6,7 @@
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+   <link href="signin.css" rel="stylesheet">
    <title>Document</title>
 </head>
 <header class="p-3 text-bg-dark">
@@ -53,6 +54,7 @@
          </div>
          <br>
          <button class="w-100 btn btn-lg btn-primary" type="submit">Log in</button>
+         <a href="registreer.php" class="w-100 btn btn-lg btn-warning">Registreer je nu</a>
          <p class="mt-5 mb-3 text-muted">© 2017–2022</p>
       </form>
    </main>
