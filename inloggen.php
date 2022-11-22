@@ -21,7 +21,7 @@
                   <input type="checkbox" value="remember-me"> Remember me
                </label>
             </div>
-            <button class="w-100 btn btn-lg btn-primary" type="submit">Log nu in</button>
+            <button class="w-100 btn btn-lg btn-success" type="submit">Log nu in</button>
             <a href="registreer.php" class="w-100 btn btn-lg btn-warning">Registreer je nu</a>
             <p class="mt-5 mb-3 text-muted">&copy; 2017–2022</p>
          </form>

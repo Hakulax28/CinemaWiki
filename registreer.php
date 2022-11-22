@@ -33,7 +33,7 @@
                <label for="floatingInput">Telefoonnummer: </label>
             </div><br>
 
-            <button class="w-100 btn btn-lg btn-primary" type="submit">registreer je nu in</button>
+            <button class="w-100 btn btn-lg btn-success" type="submit">registreer je nu in</button>
             <a href="index.php" class="w-100 btn btn-lg btn-danger">Annuleer</a>
             <p class="mt-5 mb-3 text-muted">&copy; 2017–2022</p>
          </form>
