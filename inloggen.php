@@ -37,8 +37,9 @@
       </div>
    </div>
 </header>
+<br>
 
-<body class="text-align:center;">
+<body class="text-center">
    <main class="form-signin w-100 m-auto">
       <form>
          <img class="mb-4" src="/docs/5.2/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
