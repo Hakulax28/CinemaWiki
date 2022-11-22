@@ -12,19 +12,54 @@
     <div class="container">
       <div class="header">1</div>
       <div class="main">
-        <div>
+        <div class="mainTitle">
             <h1 class="display-3">Title</h1>
             <h2>subtitle subtitle</h2>
         </div>
-        <div>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque aliquam voluptas ducimus harum tenetur, modi fugiat iste est saepe sapiente tempora consequatur. Asperiores, temporibus voluptatum? Officia, odio eos? Officiis velit quas fuga enim atque vero, et quia illo doloremque eveniet rerum cumque quam aperiam inventore mollitia, dolor debitis est excepturi accusantium nulla nostrum vel quaerat facilis. Odio sequi rem aperiam distinctio libero illo accusantium aspernatur dignissimos odit facilis possimus, exercitationem quos perferendis tempore asperiores optio repellat veritatis consequatur. Voluptatibus numquam enim voluptate nihil fuga neque perspiciatis eius? Corrupti commodi fugit beatae ea, facere dolorum adipisci. Dolore ullam amet libero dignissimos accusantium molestias provident quis fugiat explicabo omnis quos illo assumenda consequuntur quibusdam quisquam architecto obcaecati nihil earum suscipit eius commodi, ut quam dolorem? Qui, expedita quia tenetur eum, ex vel commodi praesentium laudantium error unde quibusdam illum? Incidunt facere expedita quibusdam error voluptates explicabo, voluptate similique reiciendis assumenda sapiente enim dolores corrupti accusamus quae eius eos unde, dolor quas aliquam? Eos perferendis dolor ducimus error eum pariatur maiores itaque, optio, cupiditate veniam voluptates reiciendis culpa asperiores numquam libero corporis excepturi maxime vitae deleniti? Asperiores accusamus, eveniet quasi provident est pariatur rerum, minus optio, illo consectetur eius vero laudantium? Corrupti excepturi, ratione quasi sequi, ipsam nihil quis quae quisquam illo molestias maxime itaque. Veritatis obcaecati odio, enim quia tempore illo minus ab minima vitae facilis perferendis reprehenderit illum inventore earum natus molestias! Debitis ratione saepe veritatis mollitia repudiandae, doloribus nemo dignissimos consequatur cumque praesentium sapiente suscipit aperiam enim tempore nesciunt corrupti quae facere aspernatur veniam officiis facilis explicabo quo sed! Reprehenderit facilis a ea nisi tenetur, dignissimos recusandae accusantium debitis omnis quas vel quae temporibus in quia fuga sapiente eveniet cupiditate voluptatem explicabo. Aut, excepturi consequuntur impedit quisquam mollitia dicta at sapiente et illo illum vero, deserunt enim? Aliquid dolor culpa dolorum doloribus error. Quia nam quos, velit perferendis quam magni iste officia odio tempora, sequi corporis similique, dignissimos voluptate quaerat eos dolor in blanditiis! Placeat dicta repellat commodi quaerat, voluptatum repellendus laudantium nesciunt, pariatur aliquam expedita necessitatibus, reiciendis iusto. Officia accusamus quae cum esse doloribus eius dolore excepturi totam, harum ad asperiores eveniet minus repudiandae perferendis inventore? Corporis nam nihil autem ullam reprehenderit officia blanditiis sequi placeat velit deleniti eius totam, ut unde similique id perspiciatis quo quas dolore aliquid nemo labore maxime minima! Hic nisi molestiae qui veniam dolore voluptates voluptatibus incidunt maiores nesciunt culpa repudiandae ducimus soluta voluptate facilis rem sunt tenetur molestias expedita aspernatur, officia at. Ut, unde veniam ullam nobis sint asperiores autem optio reiciendis quas distinctio, iure laborum consequuntur assumenda vitae reprehenderit, doloribus illo! Facilis accusantium maiores voluptas quia itaque modi quasi a, deleniti saepe sequi necessitatibus veniam quae odio dolorum illo ducimus consequuntur tempora, aliquam eius sit? Odio, voluptatibus? Dolorum amet totam alias illo accusamus aliquam praesentium magni? Tempora modi fugit optio aperiam quod tenetur tempore corrupti placeat, eaque aliquam nostrum quos reiciendis asperiores sit facilis sunt magnam saepe molestiae libero, excepturi iure deleniti consequatur dolorem? Quas, placeat commodi! Ea itaque possimus autem pariatur.</p>
-            <img src="" alt="">
+            <div class="mainText">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem ullam, suscipit totam natus, eveniet molestiae quos inventore quibusdam commodi ratione pariatur! Nesciunt voluptates perferendis obcaecati dolore odio fugit est ratione ullam quaerat at dolor, repellat a nobis? Quaerat nisi veritatis beatae odio aut quos consequuntur voluptas culpa optio quae debitis nihil nam itaque minima similique officia minus error consequatur, odit nulla vero. Minima, explicabo fugiat rerum ea, quod ducimus nesciunt ratione tempora quaerat architecto officia et consequatur iure deserunt totam temporibus neque quidem veritatis perferendis optio id ipsa exercitationem rem. Labore sequi eveniet, dolores repellat accusantium voluptate ipsa tempora magni!</p>
+            </div>
+            <div class="mainImage">
+            <img src="images/test-image.png" class="img-fluid rounded" alt="...">
         </div>
-        
       </div>
-      <div class="sidebar">3</div>
+      <div class="sidebar">
+        <div class="sideImage"><img src="images/test-image.png" alt="" width="100px" height="200px">
+    </div>
+    <div><h1>title</h1></div>
+        <div class="sideList"><table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody class="table-group-divider">
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td colspan="2">Larry the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table></div>
+        <div class="sideText"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi deserunt impedit delectus libero perferendis qui quos quas beatae earum molestiae aspernatur nemo quasi amet sit, maiores similique aut eaque optio, dolorem in consequuntur. Officia molestias alias tempora perferendis corporis nulla dolorem debitis optio error voluptate? Consequuntur adipisci voluptatibus recusandae deserunt.</p></div>
+      </div>
       <div class="sideimages">b</div>
-      <div class="section1">a</div>
+      <div class="sections">a</div>
     <div class="sources">sources</div>
       <div class="footer">4</div>
     </div>
