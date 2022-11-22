@@ -1,23 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php include "header.php" ?>
 
-<head>
-   <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-   <title>Document</title>
-</head>
+<body class="text-center">
+   <main class="form-signin w-100 m-auto">
+      <form>
+         <!--<img class="mb-4" src="/docs/5.2/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">-->
+         <h1 class="h3 mb-3 fw-normal">Registreer je nu in</h1>
 
-<body>
-   <header></header>
+         <div class="form-group">
+            <label for="firstname">Voornaam: </label>
+            <input type="text" name="firstname" id="" class="form-control">
+         </div><br>
+         <div class="form-group">
+            <label for="lastname">Achternaam: </label>
+            <input type="text" name="lastname" id="" class="form-control">
+         </div><br>
+         <div class="form-group">
+            <label for="email">Email: </label>
+            <input type="email" name="email" id="" class="form-control">
+         </div><br>
+         <div class="form-group">
+            <label for="password">Wachtwoord: </label>
+            <input type="password" name="password" id="" class="form-control">
+         </div><br>
+         <div class="form-group">
+            <label for="date_of_birth">Geboortedatum: </label>
+            <input type="date" name="date_of_birth" id="" class="form-control">
+         </div><br>
+         <div class="form-group">
+            <label for="phonenumber">Telefoonnummer: </label>
+            <input type="tel" name="phonenumber" id="" class="form-control">
+         </div><br>
 
-   <body>
-      <form action="">
-
+         <button class="w-100 btn btn-lg btn-primary" type="submit">registreer je nu in</button>
+         <a href="registreer.php" class="w-100 btn btn-lg btn-danger">Annuleer</a>
+         <p class="mt-5 mb-3 text-muted">&copy; 2017–2022</p>
       </form>
-   </body>
-   <footer></footer>
+   </main>
 </body>
 
-</html>
+<?php include "footer.php" ?>
