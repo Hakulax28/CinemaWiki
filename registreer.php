@@ -1,3 +1,4 @@
+<?php require "connectie.php" ?>
 <?php include "header.php" ?>
 
 <body class="text-center">
