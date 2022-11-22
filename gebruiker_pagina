@@ -26,8 +26,8 @@
             <td><?php echo $user["geboortedatum"] ?></td>
             <td><?php echo $user["telefoonnummer"] ?></td>
             <td><?php echo $user["rol"] ?></td>
-            <td><a href="gebruiker-delete.php?id=<?php echo $user["id"] ?>" class="btn btn-danger">Delete</a></td>
-            <td><a href="gebruiker-update.php?id=<?php echo $user["id"] ?>" class="btn btn-warning">Update</a></td>
+            <td><a href="delete.php?id=<?php echo $user["id"] ?>" class="btn btn-danger">Delete</a></td>
+            <td><a href="update_gegevens.php?id=<?php echo $user["id"] ?>" class="btn btn-warning">Update</a></td>
          </tr>
       <?php endforeach; ?>
    </tbody>
