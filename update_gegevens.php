@@ -8,28 +8,28 @@
          <h1 class="h3 mb-3 fw-normal">Registreer je nu in</h1>
 
          <div class="form-floating">
-            <input type="text" name="firstname" id="floatingInput" class="form-control">
+            <input type="text" name="firstname" id="floatingInput" class="form-control" value="<?php echo $user["firstname"] ?>">
             <label for="floatingInput">Voornaam: </label>
          </div><br>
          <div class="form-floating">
-            <input type="text" name="lastname" id="floatingInput" class="form-control">
-            <label for="floatingInput">Achternaam: </label>
+            <input type="text" name="lastname" id="floatingInput" class="form-control" value="<?php echo $user["lastname"] ?>">
+            <label for=" floatingInput">Achternaam: </label>
          </div><br>
          <div class="form-floating">
-            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-            <label for="floatingInput">E-mail</label>
+            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" value="<?php echo $user["email"] ?>">
+            <label for=" floatingInput">E-mail</label>
          </div><br>
          <div class="form-floating">
-            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-            <label for="floatingPassword">Wachtwoord</label>
+            <input type="password" class="form-control" id="floatingPassword" placeholder="Password" value="<?php echo $user["password"]  ?>">
+            <label for=" floatingPassword">Wachtwoord</label>
          </div><br>
          <div class="form-floating">
-            <input type="date" name="date_of_birth" id="floatingInput" class="form-control">
-            <label for="floatingInput">Geboortedatum: </label>
+            <input type="date" name="date_of_birth" id="floatingInput" class="form-control" value="<?php echo $user["date_of_birth"] ?>">
+            <label for=" floatingInput">Geboortedatum: </label>
          </div><br>
          <div class="form-floating">
-            <input type="tel" name="phonenumber" id="floatingInput" class="form-control">
-            <label for="floatingInput">Telefoonnummer: </label>
+            <input type="tel" name="phonenumber" id="floatingInput" class="form-control" value="<?php echo $user["phonenumber"]  ?>">
+            <label for=" floatingInput">Telefoonnummer: </label>
          </div><br>
 
          <button class="w-100 btn btn-lg btn-success" type="submit">registreer je nu in</button>
