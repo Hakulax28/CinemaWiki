@@ -1,0 +1,13 @@
+p {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+h1 {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  text-decoration: underline;
+}
+.about {
+  width: 100%;
+  border-style: solid;
+  border-radius: 1px;
+  margin-top: 25px;
+}
