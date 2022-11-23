@@ -8,6 +8,7 @@
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
    <link rel="stylesheet" href="StyleC.css">
    <title>Document</title>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <header class="p-3 text-bg-dark">
    <div class="container">
@@ -20,7 +21,7 @@
          <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
             <li><a href="index.php" class="nav-link px-2 text-secondary">Hoofdpagina</a></li>
             <li><a href="#" class="nav-link px-2 text-white">Features</a></li>
-            <li><a href="#" class="nav-link px-2 text-white">Pricing</a></li>
+            <li><a href="contact.php" class="nav-link px-2 text-white">Contact</a></li>
             <li><a href="faq.php" class="nav-link px-2 text-white">FAQs</a></li>
             <li><a href="overons.php" class="nav-link px-2 text-white">Over ons</a></li>
          </ul>
