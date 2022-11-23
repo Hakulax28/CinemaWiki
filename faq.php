@@ -1,36 +1,47 @@
 <?php include "header.php" ?>
 <h1>Facts and Questions</h1>
+
 <br>
-<div class="accordion accordion-flush" id="accordionFlushExample">
+<div class="accordion" id="accordionExample">
    <div class="accordion-item">
-      <h2 class="accordion-header" id="flush-headingOne">
-         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-            Accordion Item #1
+      <h2 class="accordion-header" id="headingOne">
+         <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            Vraag #1
          </button>
       </h2>
-      <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-         <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
+      <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+         <div class="accordion-body">
+            <strong>Dit is de antwoord voor vraag 1</strong><br>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias sed vel harum natus odit saepe fuga magni recusandae est placeat culpa fugit aperiam ut, aspernatur nemo nobis cupiditate! Veritatis sint non maiores quisquam? Ea hic ducimus voluptatem illo quam inventore mollitia veniam est esse id quisquam, alias laborum exercitationem ipsa eius quod eum aliquam magni. Saepe culpa, corporis porro minus hic ratione quaerat ab! Illum, consequatur. Minus doloribus dolorem fugit magni facere voluptatem porro ab ea beatae explicabo qui sint ratione quo excepturi, quasi sit est! Placeat culpa neque doloremque natus sequi distinctio cumque, tenetur delectus repudiandae tempore vel temporibus?
+         </div>
       </div>
    </div>
    <div class="accordion-item">
-      <h2 class="accordion-header" id="flush-headingTwo">
-         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-            Accordion Item #2
+      <h2 class="accordion-header" id="headingTwo">
+         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            Vraag #2
          </button>
       </h2>
-      <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-         <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this being filled with some actual content.</div>
+      <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+         <div class="accordion-body">
+            <strong>Dit is de antwoord voor vraag 2</strong><br>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias sed vel harum natus odit saepe fuga magni recusandae est placeat culpa fugit aperiam ut, aspernatur nemo nobis cupiditate! Veritatis sint non maiores quisquam? Ea hic ducimus voluptatem illo quam inventore mollitia veniam est esse id quisquam, alias laborum exercitationem ipsa eius quod eum aliquam magni. Saepe culpa, corporis porro minus hic ratione quaerat ab! Illum, consequatur. Minus doloribus dolorem fugit magni facere voluptatem porro ab ea beatae explicabo qui sint ratione quo excepturi, quasi sit est! Placeat culpa neque doloremque natus sequi distinctio cumque, tenetur delectus repudiandae tempore vel temporibus?
+         </div>
       </div>
    </div>
    <div class="accordion-item">
-      <h2 class="accordion-header" id="flush-headingThree">
-         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-            Accordion Item #3
+      <h2 class="accordion-header" id="headingThree">
+         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            Vraag #3
          </button>
       </h2>
-      <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-         <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+      <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+         <div class="accordion-body">
+            <strong>Dit is de antwoord voor vraag 3</strong><br>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias sed vel harum natus odit saepe fuga magni recusandae est placeat culpa fugit aperiam ut, aspernatur nemo nobis cupiditate! Veritatis sint non maiores quisquam? Ea hic ducimus voluptatem illo quam inventore mollitia veniam est esse id quisquam, alias laborum exercitationem ipsa eius quod eum aliquam magni. Saepe culpa, corporis porro minus hic ratione quaerat ab! Illum, consequatur. Minus doloribus dolorem fugit magni facere voluptatem porro ab ea beatae explicabo qui sint ratione quo excepturi, quasi sit est! Placeat culpa neque doloremque natus sequi distinctio cumque, tenetur delectus repudiandae tempore vel temporibus?
+         </div>
       </div>
    </div>
 </div>
+<br>
 <?php include "footer.php" ?>
