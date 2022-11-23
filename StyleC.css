@@ -3,10 +3,10 @@ p {
 }
 h1 {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  font-size: 32px;
   text-decoration: underline;
 }
-section {
+.about {
+  width: 60%;
   border-style: solid;
   border-radius: 1%;
 }
