@@ -8,7 +8,7 @@ require 'connectie.php';
 
 $id = $_GET['id'];
 
-$sql = "DELETE FROM user WHERE id = $id";
+$sql = "DELETE FROM users WHERE id = $id";
 
 if (mysqli_query($conn, $sql)) {
    header("location: index.php");
