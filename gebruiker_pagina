@@ -24,8 +24,8 @@
             <td><?php echo $user["password"] ?></td>
             <td><?php echo $user["date_of_birth"] ?></td>
             <td><?php echo $user["phonenumber"] ?></td>
-            <td><a href="delete.php?id=<?php echo $user["id"] ?>" class="btn btn-danger">Verwijder</a></td>
-            <td><a href="update_gegevens.php?id=<?php echo $user["id"] ?>" class="btn btn-warning">Update</a></td>
+            <td><a href="delete.php?id=<?php echo $user["id"] ?>" class="shadow btn btn-danger">Verwijder</a></td>
+            <td><a href="update_gegevens.php?id=<?php echo $user["id"] ?>" class="shadow btn btn-warning">Update</a></td>
          </tr>
       <?php endforeach; ?>
    </tbody>
