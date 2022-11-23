@@ -10,7 +10,6 @@
          <th>Wachtwoord</th>
          <th>Geboortedatum</th>
          <th>Telefoonnummer</th>
-         <th>Rol</th>
          <th>Verwijder</th>
          <th>Update</th>
       </tr>
@@ -19,14 +18,13 @@
       <?php foreach ($users as $user) : ?>
          <tr>
             <td><?php echo $user["id"] ?></td>
-            <td><?php echo $user["voornaam"] ?></td>
-            <td><?php echo $user["achternaam"] ?></td>
+            <td><?php echo $user["firstname"] ?></td>
+            <td><?php echo $user["lastname"] ?></td>
             <td><?php echo $user["email"] ?></td>
-            <td><?php echo $user["wachtwoord"] ?></td>
-            <td><?php echo $user["geboortedatum"] ?></td>
-            <td><?php echo $user["telefoonnummer"] ?></td>
-            <td><?php echo $user["rol"] ?></td>
-            <td><a href="delete.php?id=<?php echo $user["id"] ?>" class="btn btn-danger">Delete</a></td>
+            <td><?php echo $user["password"] ?></td>
+            <td><?php echo $user["date_of_birth"] ?></td>
+            <td><?php echo $user["phonenumber"] ?></td>
+            <td><a href="delete.php?id=<?php echo $user["id"] ?>" class="btn btn-danger">Verwijder</a></td>
             <td><a href="update_gegevens.php?id=<?php echo $user["id"] ?>" class="btn btn-warning">Update</a></td>
          </tr>
       <?php endforeach; ?>
