@@ -6,7 +6,8 @@ h1 {
   text-decoration: underline;
 }
 .about {
-  width: 60%;
+  width: 90%;
   border-style: solid;
-  border-radius: 1%;
+  border-radius: 5%;
+  margin-top: 50px;
 }
