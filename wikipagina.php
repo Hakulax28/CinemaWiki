@@ -107,7 +107,7 @@
 </table></div>
         <div class="sideText"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi deserunt impedit delectus libero perferendis qui quos quas beatae earum molestiae aspernatur nemo quasi amet sit, maiores similique aut eaque optio, dolorem in consequuntur. Officia molestias alias tempora perferendis corporis nulla dolorem debitis optio error voluptate? Consequuntur adipisci voluptatibus recusandae deserunt.</p></div>
       </div>
-      <div class="sideimages">b</div>
+      
       <div class="sections">
         <div class="section1Title"><h2>Section 1</h2></div>
 
