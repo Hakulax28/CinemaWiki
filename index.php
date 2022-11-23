@@ -1,6 +1,6 @@
 <?php include "header.php" ?>
-
-   <div>
-
-   </div>
+<h1>Welkom bij CinemaWiki</h1>
+<div>
+   a
+</div>
 <?php include "footer.php" ?>

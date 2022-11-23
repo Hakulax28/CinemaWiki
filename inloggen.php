@@ -2,7 +2,7 @@
 
 <div class="container">
    <main class="form-signin w-100 m-auto">
-      <form action="process_login.php" method="post">
+      <form>
          <!--<img class="mb-4" src="/docs/5.2/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">-->
          <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
 
@@ -20,7 +20,7 @@
                <input type="checkbox" value="remember-me"> Remember me
             </label>
          </div>
-         <button class="w-100 btn btn-lg btn-success" type="submit">Log nu in</button>
+         <button onclick="document.location='gebruiker_pagina.php'" class="w-100 btn btn-lg btn-success" type="submit">Log nu in</button>
          <a href="registreer.php" class="w-100 btn btn-lg btn-warning">Registreer je nu</a>
          <p class="mt-5 mb-3 text-muted">&copy; 2017–2022</p>
       </form>

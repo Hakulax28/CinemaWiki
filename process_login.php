@@ -1,5 +1,5 @@
-<?php
-
+<!--<?php 
+/*
 require 'connectie.php';
 
 session_start();
@@ -46,8 +46,8 @@ if ($result) {
          echo "U kan alleen een melding registreren";
          header("location: melding-overzicht.php");
       }*/
-   }
-}
+   //}
+//}
 
 //header("location: inloggen.php");
 //if (is_object($result)) {
