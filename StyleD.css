@@ -12,19 +12,17 @@ body {
       "main main main sidebar"
       "sections sections sections sidebar"
       "sections sections sections sideimages"
-      "sources sources sources sources"
-      "footer footer footer footer";
+      "sections sections sections sideimages"
+      "sources sources sources sources";
 
     width: 100%;
     height: auto;
     
   }
+
+  
   
   .header { grid-area: header;
-    background-color: white;
-    border-style: solid;}
-  
-  .footer { grid-area: footer; 
     background-color: white;
     border-style: solid;}
   
@@ -33,7 +31,8 @@ body {
     border-style: solid;
     display: flex;
     flex-direction: column;
-align-items: center;}
+align-items: center;
+padding: 1em;}
 
     .sideImage {
         
@@ -52,6 +51,8 @@ align-items: center;}
     grid-template-areas:
       "title title"
       "text image";
+      padding: 1em;
+      grid-gap: 1em;
 }
 .mainTitle{
     grid-area: title;
@@ -73,15 +74,58 @@ align-items: center;}
         color: gray;
     }
 
-  .sections{ grid-area: sections; 
+  .sections{ 
+    display: grid;
+    grid-area: sections; 
     background-color: white;
-    border-style: solid;}
+    border-style: solid;
+    grid-template-columns: 1fr 1fr 1fr ;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "section1Title section1Title section1Title"
+    "section1MainText section1MainText section1MainText"
+    "section1Image section1ExtraText section1ExtraText"
+    "section2Title section2Title section2Title"
+    "section2MainText section2MainText section2MainText";
+    padding: 1em;
+    grid-gap: 1em;
+    }
+
+    .section1Title{
+      grid-area: section1Title;
+    }
+
+    .section1MainText {
+      grid-area: section1MainText;
+    }
+
+    .section1Image{
+      align-self: center;
+      grid-area: section1Image;
+    }
+
+    .section1ExtraText {
+      grid-area: section1ExtraText;
+    }
+
+    .section2Title {
+      grid-area: section2Title;
+    }
+
+    .section2MainText {
+      grid-area: section2MainText;
+    }
   
   .sideimages { grid-area: sideimages; 
     background-color: white;
+    padding: 1em;
     }
+  .sideimages img{
+    margin-bottom: 2em;
+  }
 
   .sources { grid-area: sources; 
     background-color: white;
-    border-style: solid;}
+    border-style: solid;
+    padding: 1em;}
   
