@@ -2,15 +2,14 @@ p {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 h1 {
-  font-family: "Times New Roman", Times, serif;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   text-decoration: underline;
 }
 .about {
-  width: 80%;
+  width: 100%;
   border-style: solid;
   border-radius: 1px;
   margin-top: 25px;
-  float: center;
 }
 body {
   background-color: lightgray;
