@@ -24,7 +24,9 @@
          <a href="registreer.php" class="w-100 btn btn-lg btn-warning shadow ">Registreer je nu</a>
          <p class="mt-5 mb-3 text-muted">&copy; 2017–2022</p>
       </form>
+      <a href="gebruiker_pagina.php" class="w-100 btn btn-lg btn-warning shadow ">test</a>
    </main>
+
 </div>
 
 <?php include "footer.php" ?>
