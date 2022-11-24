@@ -41,8 +41,8 @@
                </div><br>
             </div>
          </div>
-         <button class="w-100 btn btn-lg btn-success" type="submit">Update</button>
-         <a href="gebruiker_pagina.php" class="w-100 btn btn-lg btn-danger">Annuleer</a>
+         <button class="w-100 btn btn-lg btn-success shadow" type="submit">Update</button>
+         <a href="gebruiker_pagina.php" class="w-100 btn btn-lg btn-danger shadow">Annuleer</a>
          <p class="mt-5 mb-3 text-muted">&copy; 2017–2022</p>
       </form>
    </main>

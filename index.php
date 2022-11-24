@@ -38,6 +38,6 @@
          <button onclick="document.location='gebruiker_pagina.php'" class="w-100 btn btn-lg btn-success shadow" type="submit">Browse</button>
       </div>
    </div><br>
-   <a href="gebruiker_pagina.php" class="w-100 btn btn-lg btn-warning shadow ">test</a>
+   <a href="gebruiker_pagina.php" class="w-100 btn btn-lg btn-warning shadow">test</a>
 </div>
 <?php include "footer.php" ?>

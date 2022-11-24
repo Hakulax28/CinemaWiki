@@ -25,8 +25,8 @@
             <td>test</td>
             <td>test</td>
             <td>test</td>
-            <td><a href="delete.php" class="shadow btn btn-danger">Verwijder</a></td>
-            <td><a href="update_gegevens.php" class="shadow btn btn-warning">Update</a></td>
+            <td><a href="delete.php" class="shadow btn btn-danger shadow">Verwijder</a></td>
+            <td><a href="update_gegevens.php" class="shadow btn btn-warning shadow">Update</a></td>
          </tr>
       </tbody>
    </table>
