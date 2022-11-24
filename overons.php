@@ -1,6 +1,6 @@
 <?php include "header.php" ?>
 
-<div>
+<div class="container bg-light border border-white rounded-1">
    <h1>Wat is CinemaWiki?</h1>
    <div class="about">
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt fugiat, libero beatae sit aut animi nisi qui laboriosam numquam amet ducimus alias repellendus et nulla dicta, adipisci nemo nihil pariatur facere! Deserunt consequuntur eum iusto sint. Unde maxime exercitationem, accusantium porro obcaecati veniam maiores fugiat. Quos atque quaerat magnam, a expedita debitis sed, repellat excepturi, animi pariatur sit ea doloribus! Laborum, illum? Rerum quasi ad et officia perferendis corporis autem, voluptates aperiam. Fugiat corrupti, quis iure repellendus placeat repudiandae fuga, quibusdam omnis beatae, unde nihil! Illum fugiat tempora laborum atque aliquam similique eaque ullam, cumque impedit placeat! Architecto qui veritatis quibusdam inventore, tenetur facere sunt maxime, atque quisquam rem magnam quo labore itaque repellat error dolores earum assumenda, excepturi molestiae harum ipsam et. Dolorum maxime vel ipsa quos nostrum blanditiis fugiat reprehenderit velit, at reiciendis officia laudantium voluptas dolore culpa praesentium natus enim. Ducimus explicabo asperiores, id modi iusto aliquid?</p>

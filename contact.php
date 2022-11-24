@@ -1,6 +1,6 @@
 <?php include "header.php" ?>
 
-<div>
+<div class="container bg-light border border-white rounded-1">
    <h1>Maak contact met ons</h1>
    <div class="about">
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam quisquam eveniet eum eligendi alias. Ducimus unde quaerat ea alias dolorum magni possimus illum veritatis numquam totam nobis asperiores aperiam omnis nostrum ab quisquam reiciendis quo temporibus suscipit ullam maxime officia voluptatum, voluptates voluptatibus. Accusamus rem, vero porro dicta quaerat commodi quae nisi alias maiores dolorum molestias ab praesentium eius, debitis pariatur vitae nemo. Earum dignissimos libero maxime eligendi amet ab sint, dolor neque iure molestias assumenda aperiam optio doloribus voluptatum eos itaque quis facilis perspiciatis! Ad amet error vitae soluta, mollitia pariatur provident adipisci! Ea assumenda inventore voluptatibus at laborum voluptas repellat expedita magni. Beatae animi reiciendis rem. Exercitationem, deserunt iste alias quae iusto obcaecati facilis molestiae et delectus architecto adipisci fugiat nihil repellat sit!</p>
