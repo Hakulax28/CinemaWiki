@@ -27,6 +27,6 @@
          </div>
       </div><br>
       <button class="shadow w-100 btn btn-lg btn-success" type="submit">Stuur</button>
-   </div><br>
+   </div>
 </div>
 <?php include "footer.php" ?>
