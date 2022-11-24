@@ -11,3 +11,6 @@ h1 {
   border-radius: 1px;
   margin-top: 25px;
 }
+body {
+  background-color: lightgray;
+}
