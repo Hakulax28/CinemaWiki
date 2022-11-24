@@ -1,3 +1,9 @@
+<?php 
+require "connectie.php";
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -57,7 +63,7 @@
             <div class="mainImage">
             <img src="images/test-image.png" class="img-fluid rounded" alt="...">
             <div class="mb-3">
-        <input class="form-control" type="file" id="formFile">
+        <input class="form-control" type="file" name="image1" id="formFile">
         </div>
 
         </div>
