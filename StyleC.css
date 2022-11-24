@@ -6,10 +6,11 @@ h1 {
   text-decoration: underline;
 }
 .about {
-  width: 100%;
+  width: 80%;
   border-style: solid;
   border-radius: 1px;
   margin-top: 25px;
+  float: center;
 }
 body {
   background-color: lightgray;

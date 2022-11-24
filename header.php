@@ -65,4 +65,4 @@
    </div>
 </header>
 
-<body class="text-center"><br>
+<body class="text-center bg-secondary"><br>
