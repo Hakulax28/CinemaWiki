@@ -43,7 +43,7 @@ require "connectie.php";
    </div>
 </header>
 
-<body class="bg-secondary">
+<body class="bg-secondary bg-gradient">
   <form action="" method="POST">
     <div class="containerWikipage container">
       <div class="main">

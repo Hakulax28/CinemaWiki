@@ -37,7 +37,7 @@
    </div>
 </header>
 
-<body class="bg-secondary">
+<body class="bg-secondary bg-gradient">
     <div class="containerWikipage container">
       <div class="main">
         <div class="mainTitle">
