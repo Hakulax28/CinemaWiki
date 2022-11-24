@@ -69,6 +69,58 @@
             </div>
          </div>
       </div>
+      <div class="accordion-item">
+         <h2 class="accordion-header" id="headingSix">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+               Vraag #6
+            </button>
+         </h2>
+         <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+               <strong>Dit is de antwoord voor vraag 6</strong><br>
+               Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias sed vel harum natus odit saepe fuga magni recusandae est placeat culpa fugit aperiam ut, aspernatur nemo nobis cupiditate! Veritatis sint non maiores quisquam? Ea hic ducimus voluptatem illo quam inventore mollitia veniam est esse id quisquam, alias laborum exercitationem ipsa eius quod eum aliquam magni. Saepe culpa, corporis porro minus hic ratione quaerat ab! Illum, consequatur. Minus doloribus dolorem fugit magni facere voluptatem porro ab ea beatae explicabo qui sint ratione quo excepturi, quasi sit est! Placeat culpa neque doloremque natus sequi distinctio cumque, tenetur delectus repudiandae tempore vel temporibus?
+            </div>
+         </div>
+      </div>
+      <div class="accordion-item">
+         <h2 class="accordion-header" id="headingSeven">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+               Vraag #7
+            </button>
+         </h2>
+         <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+               <strong>Dit is de antwoord voor vraag 7</strong><br>
+               Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias sed vel harum natus odit saepe fuga magni recusandae est placeat culpa fugit aperiam ut, aspernatur nemo nobis cupiditate! Veritatis sint non maiores quisquam? Ea hic ducimus voluptatem illo quam inventore mollitia veniam est esse id quisquam, alias laborum exercitationem ipsa eius quod eum aliquam magni. Saepe culpa, corporis porro minus hic ratione quaerat ab! Illum, consequatur. Minus doloribus dolorem fugit magni facere voluptatem porro ab ea beatae explicabo qui sint ratione quo excepturi, quasi sit est! Placeat culpa neque doloremque natus sequi distinctio cumque, tenetur delectus repudiandae tempore vel temporibus?
+            </div>
+         </div>
+      </div>
+      <div class="accordion-item">
+         <h2 class="accordion-header" id="headingEight">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+               Vraag #8
+            </button>
+         </h2>
+         <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+               <strong>Dit is de antwoord voor vraag 8</strong><br>
+               Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias sed vel harum natus odit saepe fuga magni recusandae est placeat culpa fugit aperiam ut, aspernatur nemo nobis cupiditate! Veritatis sint non maiores quisquam? Ea hic ducimus voluptatem illo quam inventore mollitia veniam est esse id quisquam, alias laborum exercitationem ipsa eius quod eum aliquam magni. Saepe culpa, corporis porro minus hic ratione quaerat ab! Illum, consequatur. Minus doloribus dolorem fugit magni facere voluptatem porro ab ea beatae explicabo qui sint ratione quo excepturi, quasi sit est! Placeat culpa neque doloremque natus sequi distinctio cumque, tenetur delectus repudiandae tempore vel temporibus?
+            </div>
+         </div>
+      </div>
+      <div class="accordion-item">
+         <h2 class="accordion-header" id="headingNine">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+               Vraag #9
+            </button>
+         </h2>
+         <div id="collapseNine" class="accordion-collapse collapse" aria-labelledby="headingNine" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+               <strong>Dit is de antwoord voor vraag 9</strong><br>
+               Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias sed vel harum natus odit saepe fuga magni recusandae est placeat culpa fugit aperiam ut, aspernatur nemo nobis cupiditate! Veritatis sint non maiores quisquam? Ea hic ducimus voluptatem illo quam inventore mollitia veniam est esse id quisquam, alias laborum exercitationem ipsa eius quod eum aliquam magni. Saepe culpa, corporis porro minus hic ratione quaerat ab! Illum, consequatur. Minus doloribus dolorem fugit magni facere voluptatem porro ab ea beatae explicabo qui sint ratione quo excepturi, quasi sit est! Placeat culpa neque doloremque natus sequi distinctio cumque, tenetur delectus repudiandae tempore vel temporibus?
+            </div>
+         </div>
+      </div>
    </div><br>
 </div>
 
