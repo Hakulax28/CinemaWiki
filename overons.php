@@ -14,6 +14,6 @@
    <br>
    <div class="about">
       <img src="images/test-image.png" height="550px" width="820px" alt="">
-   </div>
+   </div><br>
 </div>
 <?php include "footer.php" ?>
