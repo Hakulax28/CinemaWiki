@@ -42,6 +42,32 @@
          </div>
       </div>
    </div>
+   <div class="accordion-item">
+      <h2 class="accordion-header" id="headingFour">
+         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+            Vraag #4
+         </button>
+      </h2>
+      <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+         <div class="accordion-body">
+            <strong>Dit is de antwoord voor vraag 4</strong><br>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias sed vel harum natus odit saepe fuga magni recusandae est placeat culpa fugit aperiam ut, aspernatur nemo nobis cupiditate! Veritatis sint non maiores quisquam? Ea hic ducimus voluptatem illo quam inventore mollitia veniam est esse id quisquam, alias laborum exercitationem ipsa eius quod eum aliquam magni. Saepe culpa, corporis porro minus hic ratione quaerat ab! Illum, consequatur. Minus doloribus dolorem fugit magni facere voluptatem porro ab ea beatae explicabo qui sint ratione quo excepturi, quasi sit est! Placeat culpa neque doloremque natus sequi distinctio cumque, tenetur delectus repudiandae tempore vel temporibus?
+         </div>
+      </div>
+   </div>
+   <div class="accordion-item">
+      <h2 class="accordion-header" id="headingFive">
+         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+            Vraag #5
+         </button>
+      </h2>
+      <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+         <div class="accordion-body">
+            <strong>Dit is de antwoord voor vraag 5</strong><br>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias sed vel harum natus odit saepe fuga magni recusandae est placeat culpa fugit aperiam ut, aspernatur nemo nobis cupiditate! Veritatis sint non maiores quisquam? Ea hic ducimus voluptatem illo quam inventore mollitia veniam est esse id quisquam, alias laborum exercitationem ipsa eius quod eum aliquam magni. Saepe culpa, corporis porro minus hic ratione quaerat ab! Illum, consequatur. Minus doloribus dolorem fugit magni facere voluptatem porro ab ea beatae explicabo qui sint ratione quo excepturi, quasi sit est! Placeat culpa neque doloremque natus sequi distinctio cumque, tenetur delectus repudiandae tempore vel temporibus?
+         </div>
+      </div>
+   </div>
 </div>
 <br>
 <?php include "footer.php" ?>
