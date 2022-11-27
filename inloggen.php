@@ -1,6 +1,6 @@
 <?php include "header.php" ?>
 
-<div class="container">
+<div class="container bg-light border border-white rounded-1">
    <main class="form-signin w-100 m-auto">
       <form>
          <!--<img class="mb-4" src="/docs/5.2/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">-->
@@ -14,17 +14,18 @@
             <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
             <label for="floatingPassword">Wachtwoord</label>
          </div>
-
+         <br>
          <div class="checkbox mb-3">
             <label>
                <input type="checkbox" value="remember-me"> Remember me
             </label>
-         </div>
-         <button onclick="document.location='gebruiker_pagina.php'" class="w-100 btn btn-lg btn-success" type="submit">Log nu in</button>
-         <a href="registreer.php" class="w-100 btn btn-lg btn-warning">Registreer je nu</a>
+         </div><br>
+         <button onclick="document.location='gebruiker_pagina.php'" class="w-100 btn btn-lg btn-success shadow" type="submit">Log nu in</button>
+         <a href="registreer.php" class="w-100 btn btn-lg btn-warning shadow">Registreer je nu</a>
          <p class="mt-5 mb-3 text-muted">&copy; 2017–2022</p>
       </form>
    </main>
+   <a href="gebruiker_pagina.php" class="w-100 btn btn-lg btn-warning shadow">test</a>
 </div>
 
 <?php include "footer.php" ?>
