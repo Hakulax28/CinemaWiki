@@ -12,7 +12,7 @@ if ($result = mysqli_query($conn, $sql)) {
 
    $user = mysqli_fetch_assoc($result);
 
-   //var_dump($user);
+   var_dump($user);
 
    if (is_null($user)) {
       header("location: gebruiker_pagina.php");

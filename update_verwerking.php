@@ -3,7 +3,7 @@
 if (isset($_POST["submit"])) {
 
    $id = $_GET["user_id"];
-   echo $id;
+   echo    var_dump($_POST);
 
    if (
       !empty($_POST["firstname"])
