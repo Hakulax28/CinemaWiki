@@ -42,7 +42,7 @@ if (isset($_POST["submit"])) {
 
 <div class="container bg-light border border-white rounded-1">
    <main class="form-signin w-100 m-auto">
-      <form>
+      <form action="registreer.php" method="post">
          <!--<img class="mb-4" src="/docs/5.2/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">-->
          <h1 class="h3 mb-3 fw-normal">Registreer je nu in</h1>
          <div class="row g-2">
