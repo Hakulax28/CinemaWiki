@@ -1,4 +1,65 @@
-<!--<?php require "connectie.php" ?>-->
+<?php
+
+session_start();
+
+require 'connectie.php';
+
+$id = $_GET["id"]; //17
+
+$sql = "SELECT * FROM users WHERE id = $id LIMIT 1";
+
+if ($result = mysqli_query($conn, $sql)) {
+
+   $user = mysqli_fetch_assoc($result);
+
+   //var_dump($user);
+
+   if (is_null($user)) {
+      header("location: gebruiker_pagina.php");
+   }
+}
+
+if (isset($_POST["submit"])) {
+
+   $id = $_GET["id"];
+   if (
+      !empty($_POST["firstname"])
+      && !empty($_POST["lastname"])
+      && !empty($_POST["email"])
+      && !empty($_POST["password"])
+      && !empty($_POST["date_of_birth"])
+      && !empty($_POST["phonenumber"])
+
+   ) {
+
+      //allemaal moeten ze true zijn
+      $firstname = $_POST['firstname'];
+      $lastname = $_POST['lastname'];
+      $email = trim($_POST["email"]);
+      $password = $_POST['password'];
+      $dateofbirth = $_POST['date_of_birth'];
+      $phonenumber = $_POST['phonenumber'];
+
+      //database connectie
+      require 'classes/database.php';
+      $sql = "UPDATE users SET 
+         firstname = '$firstname', 
+         lastname = '$lastname', 
+         email = '$email', 
+         password = '$password',
+         date_of_birth = '$dateofbirth', 
+         phonenumber =  '$phonenumber' WHERE id = '$id'  ";
+
+      if (mysqli_query($conn, $sql)) {
+         header("location: gebruiker_pagina.php");
+      }
+
+      echo "Updated successfully";
+      mysqli_close($conn); // Sluit de database verbinding
+   }
+}
+
+?>
 <?php include "header.php" ?>
 
 <div class="container bg-light border border-white rounded-1">
@@ -13,11 +74,11 @@
                   <label for="floatingInput">Voornaam: </label>
                </div><br>
                <div class="form-floating">
-                  <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                  <input type="email" class="form-control" name="email" id="floatingInput" placeholder="name@example.com">
                   <label for="floatingInput">E-mail</label>
                </div><br>
                <div class="form-floating">
-                  <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                  <input type="password" class="form-control" name="password" id="floatingPassword" placeholder="Password">
                   <label for="floatingPassword">Wachtwoord</label>
                </div><br>
                <div class="form-floating">
