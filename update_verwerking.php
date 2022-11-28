@@ -7,7 +7,7 @@ if (isset($_POST["submit"])) {
 
    if (
       !empty($_POST["firstname"])
-      || !empty($_POST["lastname"])
+      && !empty($_POST["lastname"])
       && !empty($_POST["email"])
       && !empty($_POST["password"])
       && !empty($_POST["date_of_birth"])
@@ -37,8 +37,6 @@ if (isset($_POST["submit"])) {
       role = '$role' WHERE user_id = '$id' ";
 
       if (mysqli_query($conn, $sql)) {
-         var_dump($id);
-         die;
          header("location: gebruiker_pagina.php");
       }
 
