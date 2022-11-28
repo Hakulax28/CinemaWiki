@@ -14,6 +14,7 @@
 
 <body class="bg-secondary bg-gradient">
     <div class="container bg-light rounded p-2">
+        <h2 class="display-1">Bewerkingen geschiedenis</h2>
         <div class="d-flex flex-column mb-3 mt-3 border bg-light shadow-sm bg-gradient rounded">
             <div class="p-2 col justify-content-start d-flex align-items-center">
                <img src="images/test-image.png" alt="" width="100px" height="100px" class="rounded">
