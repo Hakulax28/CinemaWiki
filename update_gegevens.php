@@ -6,7 +6,7 @@ require 'connectie.php';
 
 $id = $_GET["id"]; //17
 
-$sql = "SELECT * FROM users WHERE id = $id LIMIT 1";
+$sql = "SELECT * FROM users WHERE user_id = $id LIMIT 1";
 
 if ($result = mysqli_query($conn, $sql)) {
 
@@ -21,7 +21,7 @@ if ($result = mysqli_query($conn, $sql)) {
 
 if (isset($_POST["submit"])) {
 
-   $id = $_GET["id"];
+   $id = $_GET["user_id"];
    if (
       !empty($_POST["firstname"])
       && !empty($_POST["lastname"])
@@ -48,7 +48,7 @@ if (isset($_POST["submit"])) {
          email = '$email', 
          password = '$password',
          date_of_birth = '$dateofbirth', 
-         phonenumber =  '$phonenumber' WHERE id = '$id'  ";
+         phonenumber =  '$phonenumber' WHERE user_id = '$id'  ";
 
       if (mysqli_query($conn, $sql)) {
          header("location: gebruiker_pagina.php");

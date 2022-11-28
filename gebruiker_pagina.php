@@ -23,23 +23,26 @@ if ($result = mysqli_query($conn, $sql)) {
             <th>Wachtwoord</th>
             <th>Geboortedatum</th>
             <th>Telefoonnummer</th>
+            <th>Rol</th>
             <th>Verwijder</th>
             <th>Update</th>
          </tr>
       </thead>
       <tbody>
-         <tr>
-            <!--<td><?php echo $user["user_id"] ?></td>-->
-            <td><?php echo $user["voornaam"] ?></td>
-            <td><?php echo $user["achternaam"] ?></td>
-            <td><?php echo $user["email"] ?></td>
-            <td><?php echo $user["wachtwoord"] ?></td>
-            <td><?php echo $user["geboortedatum"] ?></td>
-            <td><?php echo $user["telefoon"] ?></td>
-            <td><?php echo $user["rol"] ?></td>
-            <td><a href="delete.php?id=<?php echo $user["user_id"] ?>" class="shadow btn btn-danger shadow">Verwijder</a></td>
-            <td><a href="update_gegevens.php?id=<?php echo $user["user_id"] ?>" class="shadow btn btn-warning shadow">Update</a></td>
-         </tr>
+         <?php foreach ($users as $user) : ?>
+            <tr>
+               <!--<td><?php echo $user["user_id"] ?></td>-->
+               <td><?php echo $user["firstname"] ?></td>
+               <td><?php echo $user["lastname"] ?></td>
+               <td><?php echo $user["email"] ?></td>
+               <td><?php echo $user["password"] ?></td>
+               <td><?php echo $user["date_of_birth"] ?></td>
+               <td><?php echo $user["phonenumber"] ?></td>
+               <td><?php echo $user["role"] ?></td>
+               <td><a href="delete.php?id=<?php echo $user["user_id"] ?>" class="shadow btn btn-danger shadow">Verwijder</a></td>
+               <td><a href="update_gegevens.php?id=<?php echo $user["user_id"] ?>" class="shadow btn btn-warning shadow">Update</a></td>
+            </tr>
+         <?php endforeach; ?>
       </tbody>
    </table>
 </div>
