@@ -1,3 +1,14 @@
+<?php require 'connectie.php';
+
+// hier moet de info van de anderen tabelen te voor schijn komen. 
+
+$sql = "SELECT * FROM users";
+
+if ($result = mysqli_query($conn, $sql)) {
+   $users = mysqli_fetch_all($result, MYSQLI_ASSOC);
+}
+
+?>
 <?php include "header.php" ?>
 
 <div class="container bg-light border border-white rounded-1">
@@ -18,15 +29,16 @@
       </thead>
       <tbody>
          <tr>
-            <!--<td><?php echo $user["id"] ?></td>-->
+            <!--<td><?php echo $user["user_id"] ?></td>-->
             <td><?php echo $user["voornaam"] ?></td>
             <td><?php echo $user["achternaam"] ?></td>
             <td><?php echo $user["email"] ?></td>
             <td><?php echo $user["wachtwoord"] ?></td>
             <td><?php echo $user["geboortedatum"] ?></td>
             <td><?php echo $user["telefoon"] ?></td>
-            <td><a href="delete.php?id=<?php echo $user["id"] ?>" class="shadow btn btn-danger shadow">Verwijder</a></td>
-            <td><a href="update_gegevens.php?id=<?php echo $user["id"] ?>" class="shadow btn btn-warning shadow">Update</a></td>
+            <td><?php echo $user["rol"] ?></td>
+            <td><a href="delete.php?id=<?php echo $user["user_id"] ?>" class="shadow btn btn-danger shadow">Verwijder</a></td>
+            <td><a href="update_gegevens.php?id=<?php echo $user["user_id"] ?>" class="shadow btn btn-warning shadow">Update</a></td>
          </tr>
       </tbody>
    </table>
