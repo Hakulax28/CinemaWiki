@@ -18,15 +18,15 @@
       </thead>
       <tbody>
          <tr>
-            <!--<td>test</td>-->
-            <td>test</td>
-            <td>test</td>
-            <td>test</td>
-            <td>test</td>
-            <td>test</td>
-            <td>test</td>
-            <td><a href="delete.php" class="shadow btn btn-danger shadow">Verwijder</a></td>
-            <td><a href="update_gegevens.php" class="shadow btn btn-warning shadow">Update</a></td>
+            <!--<td><?php echo $user["id"] ?></td>-->
+            <td><?php echo $user["voornaam"] ?></td>
+            <td><?php echo $user["achternaam"] ?></td>
+            <td><?php echo $user["email"] ?></td>
+            <td><?php echo $user["wachtwoord"] ?></td>
+            <td><?php echo $user["geboortedatum"] ?></td>
+            <td><?php echo $user["telefoon"] ?></td>
+            <td><a href="delete.php?id=<?php echo $user["id"] ?>" class="shadow btn btn-danger shadow">Verwijder</a></td>
+            <td><a href="update_gegevens.php?id=<?php echo $user["id"] ?>" class="shadow btn btn-warning shadow">Update</a></td>
          </tr>
       </tbody>
    </table>
