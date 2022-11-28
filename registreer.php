@@ -20,7 +20,7 @@
                   <label for="floatingPassword">Wachtwoord</label>
                </div><br>
                <div class="form-floating">
-                  <input type="date" name="date_of_birth" id="floatingInput" class="form-control">
+                  <input type="text" name="date_of_birth" id="floatingInput" class="form-control">
                   <label for="floatingInput">Geboortedatum: </label>
                </div><br>
             </div>

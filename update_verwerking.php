@@ -13,7 +13,7 @@ if (isset($_POST["submit"])) {
       && !empty($_POST["phonenumber"])
       && !empty($_POST["role"])
 
-  ) {
+   ) {
       //allemaal moeten ze true zijn
       $voornaam = $_POST["firstname"];
       $achternaam = $_POST["lastname"];
@@ -36,15 +36,16 @@ if (isset($_POST["submit"])) {
       phonenumber =  '$telefoonnummer',
       role = '$rol' WHERE id = '$id'  ";
 
-          // Voer de INSERT INTO STATEMENT uit
+         // Voer de INSERT INTO STATEMENT uit
       ;
 
       if (mysqli_query($conn, $sql)) {
-          header("location: gebruiker-pagina.php");
+         header("location: gebruiker-pagina.php");
+         var_dump($user);
       }
 
       echo "Updated successfully";
       mysqli_close($conn); // Sluit de database verbinding
 
-  }
+   }
 }
