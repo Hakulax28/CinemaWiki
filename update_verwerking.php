@@ -1,7 +1,7 @@
 <?php
 
 if (isset($_POST["submit"])) {
-   
+
    $id = $_GET["user_id"];
    echo $id;
 
@@ -37,7 +37,9 @@ if (isset($_POST["submit"])) {
       role = '$role' WHERE user_id = '$id' ";
 
       if (mysqli_query($conn, $sql)) {
-         header("location: user_overzicht.php");
+         var_dump($id);
+         die;
+         header("location: gebruiker_pagina.php");
       }
 
       echo "Updated successfully";
