@@ -1,4 +1,43 @@
-<?php require "connectie.php" ?>
+<?php
+if (isset($_POST["submit"])) {
+
+   if (
+      !empty($_POST["voornaam"])
+      || !empty($_POST["achternaam"])
+      && !empty($_POST["email"])
+      && !empty($_POST["wachtwoord"])
+      && !empty($_POST["geboortedatum"])
+      && !empty($_POST["telefoon"])
+
+   ) {
+      // als op registreer wordt gedrukt 
+      if (isset($_POST['submit'])) {
+
+
+         $voornaam = $_POST['voornaam'];
+         $achternaam = $_POST['achternaam'];
+         $email = trim($_POST["email"]);
+         $wachtwoord = $_POST['wachtwoord'];
+         $geboortedatum = $_POST['geboortedatum'];
+         $telefoon = $_POST['telefoon'];
+
+         //database connectie
+
+         require 'connectie.php';
+         $sql = "INSERT INTO users (voornaam, achternaam, email, wachtwoord, geboortedatum, telefoon)
+                VALUES ('$voornaam', '$achternaam', '$email', '$wachtwoord', '$geboortedatum', '$telefoon')";
+
+         // Voer de INSERT INTO STATEMENT uit
+         if (mysqli_query($conn, $sql)) {
+            header("location: inloggen.php");
+         }
+         mysqli_close($conn); // Sluit de database verbinding
+      }
+   }
+}
+
+?>
+
 <?php include "header.php" ?>
 
 <div class="container bg-light border border-white rounded-1">
