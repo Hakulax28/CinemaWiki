@@ -1,4 +1,4 @@
-<!--<?php require "connectie.php" ?>-->
+<?php require "connectie.php" ?>
 <?php include "header.php" ?>
 
 <div class="container bg-light border border-white rounded-1">
