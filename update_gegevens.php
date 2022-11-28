@@ -42,7 +42,7 @@ if (isset($_POST["submit"])) {
 
       //database connectie
       require 'classes/database.php';
-      $sql = "UPDATE user SET 
+      $sql = "UPDATE users SET 
          firstname = '$firstname', 
          lastname = '$lastname', 
          email = '$email', 
