@@ -1,50 +1,8 @@
-<?php
-if (isset($_POST["submit"])) {
-
-   if (
-      !empty($_POST["firstname"])
-      || !empty($_POST["lastname"])
-      && !empty($_POST["email"])
-      && !empty($_POST["password"])
-      && !empty($_POST["date_of_birth"])
-      && !empty($_POST["phonenumber"])
-      && !empty($_POST["role"])
-
-   ) {
-      // als op registreer wordt gedrukt 
-      if (isset($_POST['submit'])) {
-
-
-         $firstname = $_POST['firstname'];
-         $lastname = $_POST['lastname'];
-         $email = trim($_POST["email"]);
-         $password = $_POST['password'];
-         $dateofbirth = $_POST['date_of_birth'];
-         $phonenumber = $_POST['phonenumber'];
-         $role = $_POST['role'];
-
-         //database connectie
-
-         require 'connectie.php';
-         $sql = "INSERT INTO users (firstname, lastname, email, password, date_of_birth, phonenumber, role)
-                VALUES ('$firstname', '$lastname', '$email', '$password', '$dateofbirth', '$phonenumber', '$role')";
-
-         // Voer de INSERT INTO STATEMENT uit
-         if (mysqli_query($conn, $sql)) {
-            header("location: inloggen.php");
-         }
-         mysqli_close($conn); // Sluit de database verbinding
-      }
-   }
-}
-
-?>
-
 <?php include "header.php" ?>
 
 <div class="container bg-light border border-white rounded-1">
    <main class="form-signin w-100 m-auto">
-      <form action="registreer.php" method="post">
+      <form action="registreer_verwerking.php" method="post">
          <!--<img class="mb-4" src="/docs/5.2/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">-->
          <h1 class="h3 mb-3 fw-normal">Registreer je nu in</h1>
          <div class="row g-2">
