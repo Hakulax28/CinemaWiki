@@ -96,12 +96,15 @@ if (isset($_POST["submit"])) {
                </div><br>
                <div class="form-floating">
                   <input type="file" id="floatingInput" name="img" accept="image/*" class="form-control"><br>
-                  <input type="submit">
                   <label for="floatingInput">Select image: </label>
-               </div><br>
+               </div>
                <div class="form-floating">
                   <input type="tel" name="phonenumber" id="floatingInput" value="<?php echo $user["phonenumber"] ?>" class="form-control">
                   <label for="floatingInput">Telefoonnummer: </label>
+               </div><br>
+               <div class="form-floating">
+                  <input type="text" name="role" id="floatingInput" value="<?php echo $user["role"] ?>" class="form-control">
+                  <label for="floatingInput">Rol: </label>
                </div><br>
             </div>
          </div>
