@@ -16,48 +16,48 @@
 <h2 class="display-1 text-light">Genres</h2>
 <div class="container bg-light rounded p-2 gap-3 justify-content-between flex-wrap d-flex">
     
-    <div class="card" style="width: 18rem;">
+    <div class="card shadow-sm" style="width: 18rem;">
             <img src="images/test-image.png" class="card-img-top" alt="...">
         <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+            <h5 class="card-title">Genre naam</h5>
+            <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime laborum animi iusto praesentium quisquam veniam?</p>
+            <a href="#" class="btn btn-primary">Go to genre</a>
         </div>
     </div>
     
-    <div class="card" style="width: 18rem;">
+    <div class="card shadow-sm" style="width: 18rem;">
             <img src="images/test-image.png" class="card-img-top" alt="...">
         <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+            <h5 class="card-title">Genre naam</h5>
+            <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime laborum animi iusto praesentium quisquam veniam?</p>
+            <a href="#" class="btn btn-primary">Go to genre</a>
         </div>
     </div>
 
-    <div class="card" style="width: 18rem;">
+    <div class="card shadow-sm" style="width: 18rem;">
             <img src="images/test-image.png" class="card-img-top" alt="...">
         <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+            <h5 class="card-title">Genre naam</h5>
+            <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime laborum animi iusto praesentium quisquam veniam?</p>
+            <a href="#" class="btn btn-primary">Go to genre</a>
         </div>
     </div>
     
-    <div class="card" style="width: 18rem;">
+    <div class="card shadow-sm" style="width: 18rem;">
             <img src="images/test-image.png" class="card-img-top" alt="...">
         <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+            <h5 class="card-title">Genre naam</h5>
+            <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime laborum animi iusto praesentium quisquam veniam?</p>
+            <a href="#" class="btn btn-primary">Go to genre</a>
         </div>
     </div>
     
-    <div class="card" style="width: 18rem;">
+    <div class="card shadow-sm" style="width: 18rem;">
             <img src="images/test-image.png" class="card-img-top" alt="...">
         <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+            <h5 class="card-title">Genre naam</h5>
+            <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime laborum animi iusto praesentium quisquam veniam?</p>
+            <a href="#" class="btn btn-primary">Go to genre</a>
         </div>
     </div>
 </div>
