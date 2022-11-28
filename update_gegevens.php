@@ -64,31 +64,31 @@ if (isset($_POST["submit"])) {
 
 <div class="container bg-light border border-white rounded-1">
    <main class="form-signin w-100 m-auto">
-      <form>
+      <form action="update_gegevens.php?id=<?php echo $id; ?>" method="post">
          <!--<img class="mb-4" src="/docs/5.2/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">-->
          <h1 class="h3 mb-3 fw-normal">Update jouw gegevens</h1>
          <div class="row g-2">
             <div class="col-md">
                <div class="form-floating">
-                  <input type="text" name="firstname" id="floatingInput" class="form-control">
+                  <input type="text" name="firstname" id="floatingInput" value="<?php echo $user["firstname"] ?>" class="form-control">
                   <label for="floatingInput">Voornaam: </label>
                </div><br>
                <div class="form-floating">
-                  <input type="email" class="form-control" name="email" id="floatingInput" placeholder="name@example.com">
+                  <input type="email" class="form-control" name="email" id="floatingInput" value="<?php echo $user["email"] ?>" placeholder="name@example.com">
                   <label for="floatingInput">E-mail</label>
                </div><br>
                <div class="form-floating">
-                  <input type="password" class="form-control" name="password" id="floatingPassword" placeholder="Password">
+                  <input type="password" class="form-control" name="password" id="floatingPassword" value="<?php echo $user["password"] ?>" placeholder="Password">
                   <label for="floatingPassword">Wachtwoord</label>
                </div><br>
                <div class="form-floating">
-                  <input type="date" name="date_of_birth" id="floatingInput" class="form-control">
+                  <input type="date" name="date_of_birth" id="floatingInput" value="<?php echo $user["date_of_birth"] ?>" class="form-control">
                   <label for="floatingInput">Geboortedatum: </label>
                </div><br>
             </div>
             <div class="col-md">
                <div class="form-floating">
-                  <input type="text" name="lastname" id="floatingInput" class="form-control">
+                  <input type="text" name="lastname" id="floatingInput" value="<?php echo $user["lastname"] ?>" class="form-control">
                   <label for="floatingInput">Achternaam: </label>
                </div><br>
                <div class="form-floating">
@@ -97,7 +97,7 @@ if (isset($_POST["submit"])) {
                   <label for="floatingInput">Select image: </label>
                </div><br>
                <div class="form-floating">
-                  <input type="tel" name="phonenumber" id="floatingInput" class="form-control">
+                  <input type="tel" name="phonenumber" id="floatingInput" value="<?php echo $user["phonenumber"] ?>" class="form-control">
                   <label for="floatingInput">Telefoonnummer: </label>
                </div><br>
             </div>
