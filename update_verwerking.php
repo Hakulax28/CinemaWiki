@@ -36,7 +36,7 @@ if (isset($_POST["submit"])) {
       phonenumber = '$phonenumber',
       role = '$role' WHERE user_id = '$id' ";
 
-      if (mysqli_query((new Database())->getConnection(), $sql)) {
+      if (mysqli_query($conn, $sql)) {
          header("location: user_overzicht.php");
       }
 
