@@ -2,30 +2,30 @@
 if (isset($_POST["submit"])) {
 
    if (
-      !empty($_POST["voornaam"])
-      || !empty($_POST["achternaam"])
+      !empty($_POST["firstname"])
+      || !empty($_POST["lastname"])
       && !empty($_POST["email"])
-      && !empty($_POST["wachtwoord"])
-      && !empty($_POST["geboortedatum"])
-      && !empty($_POST["telefoon"])
+      && !empty($_POST["password"])
+      && !empty($_POST["date_of_birth"])
+      && !empty($_POST["phonenumber"])
 
    ) {
       // als op registreer wordt gedrukt 
       if (isset($_POST['submit'])) {
 
 
-         $voornaam = $_POST['voornaam'];
-         $achternaam = $_POST['achternaam'];
+         $firstname = $_POST['firstname'];
+         $lastname = $_POST['lastname'];
          $email = trim($_POST["email"]);
-         $wachtwoord = $_POST['wachtwoord'];
-         $geboortedatum = $_POST['geboortedatum'];
-         $telefoon = $_POST['telefoon'];
+         $password = $_POST['password'];
+         $dateofbirth = $_POST['date_of_birth'];
+         $phonenumber = $_POST['phonenumber'];
 
          //database connectie
 
          require 'connectie.php';
-         $sql = "INSERT INTO users (voornaam, achternaam, email, wachtwoord, geboortedatum, telefoon)
-                VALUES ('$voornaam', '$achternaam', '$email', '$wachtwoord', '$geboortedatum', '$telefoon')";
+         $sql = "INSERT INTO users (firstname, lastname, email, password, date_of_birth, phonenumber)
+                VALUES ('$firstname', '$lastname', '$email', '$password', '$dateofbirth', '$phonenumber')";
 
          // Voer de INSERT INTO STATEMENT uit
          if (mysqli_query($conn, $sql)) {
@@ -52,11 +52,11 @@ if (isset($_POST["submit"])) {
                   <label for="floatingInput">Voornaam: </label>
                </div><br>
                <div class="form-floating">
-                  <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                  <input type="email" class="form-control" name="email" id="floatingInput" placeholder="name@example.com">
                   <label for="floatingInput">E-mail</label>
                </div><br>
                <div class="form-floating">
-                  <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                  <input type="password" class="form-control" name="password" id="floatingPassword" placeholder="Password">
                   <label for="floatingPassword">Wachtwoord</label>
                </div><br>
                <div class="form-floating">

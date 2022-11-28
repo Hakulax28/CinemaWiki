@@ -1,4 +1,24 @@
-<!--<?php require "connectie.php" ?>-->
+<?php
+
+session_start();
+
+require 'connectie.php';
+
+$id = $_GET["id"]; //17
+
+$sql = "SELECT * FROM users WHERE id = $id LIMIT 1";
+
+if ($result = mysqli_query($conn, $sql)) {
+
+   $user = mysqli_fetch_assoc($result);
+
+   //var_dump($user);
+
+   if (is_null($user)) {
+      header("location: gebruiker_pagina.php");
+   }
+}
+?>
 <?php include "header.php" ?>
 
 <div class="container bg-light border border-white rounded-1">
@@ -13,11 +33,11 @@
                   <label for="floatingInput">Voornaam: </label>
                </div><br>
                <div class="form-floating">
-                  <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                  <input type="email" class="form-control" name="email" id="floatingInput" placeholder="name@example.com">
                   <label for="floatingInput">E-mail</label>
                </div><br>
                <div class="form-floating">
-                  <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                  <input type="password" class="form-control" name="password" id="floatingPassword" placeholder="Password">
                   <label for="floatingPassword">Wachtwoord</label>
                </div><br>
                <div class="form-floating">
