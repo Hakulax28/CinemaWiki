@@ -8,6 +8,7 @@ if (isset($_POST["submit"])) {
       && !empty($_POST["password"])
       && !empty($_POST["date_of_birth"])
       && !empty($_POST["phonenumber"])
+      && !empty($_POST["role"])
 
    ) {
       // als op registreer wordt gedrukt 
@@ -20,12 +21,13 @@ if (isset($_POST["submit"])) {
          $password = $_POST['password'];
          $dateofbirth = $_POST['date_of_birth'];
          $phonenumber = $_POST['phonenumber'];
+         $role = $_POST['role'];
 
          //database connectie
 
          require 'connectie.php';
-         $sql = "INSERT INTO users (firstname, lastname, email, password, date_of_birth, phonenumber)
-                VALUES ('$firstname', '$lastname', '$email', '$password', '$dateofbirth', '$phonenumber')";
+         $sql = "INSERT INTO users (firstname, lastname, email, password, date_of_birth, phonenumber, role)
+                VALUES ('$firstname', '$lastname', '$email', '$password', '$dateofbirth', '$phonenumber', '$role')";
 
          // Voer de INSERT INTO STATEMENT uit
          if (mysqli_query($conn, $sql)) {
@@ -71,12 +73,15 @@ if (isset($_POST["submit"])) {
                </div><br>
                <div class="form-floating">
                   <input type="file" id="floatingInput" name="img" accept="image/*" class="form-control"><br>
-                  <input type="submit">
                   <label for="floatingInput">Select image: </label>
-               </div><br>
+               </div>
                <div class="form-floating">
                   <input type="tel" name="phonenumber" id="floatingInput" class="form-control">
                   <label for="floatingInput">Telefoonnummer: </label>
+               </div><br>
+               <div class="form-floating">
+                  <input type="text" name="role" id="floatingInput" class="form-control">
+                  <label for="floatingInput">Rol: </label>
                </div><br>
             </div>
          </div>

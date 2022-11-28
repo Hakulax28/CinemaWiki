@@ -24,11 +24,12 @@ if (isset($_POST["submit"])) {
    $id = $_GET["user_id"];
    if (
       !empty($_POST["firstname"])
-      && !empty($_POST["lastname"])
+      || !empty($_POST["lastname"])
       && !empty($_POST["email"])
       && !empty($_POST["password"])
       && !empty($_POST["date_of_birth"])
       && !empty($_POST["phonenumber"])
+      && !empty($_POST["role"])
 
    ) {
 
@@ -39,6 +40,7 @@ if (isset($_POST["submit"])) {
       $password = $_POST['password'];
       $dateofbirth = $_POST['date_of_birth'];
       $phonenumber = $_POST['phonenumber'];
+      $role = $_POST['role'];
 
       //database connectie
       require 'classes/database.php';
@@ -48,7 +50,8 @@ if (isset($_POST["submit"])) {
          email = '$email', 
          password = '$password',
          date_of_birth = '$dateofbirth', 
-         phonenumber =  '$phonenumber' WHERE user_id = '$id'  ";
+         phonenumber =  '$phonenumber', 
+         role = '$role' WHERE user_id = '$id'  ";
 
       if (mysqli_query($conn, $sql)) {
          header("location: gebruiker_pagina.php");
