@@ -26,7 +26,7 @@ if (isset($_POST["submit"])) {
       $role = $_POST['role'];
 
       //database connectie
-      require 'classes/database.php';
+      require 'connectie.php';
       $sql = "UPDATE users SET
       firstname = '$firstname',
       lastname = '$lastname',
