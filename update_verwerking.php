@@ -3,7 +3,6 @@
 if (isset($_POST["submit"])) {
 
    $id = $_GET["user_id"];
-   echo    var_dump($_POST);
 
    if (
       !empty($_POST["firstname"])
@@ -14,33 +13,38 @@ if (isset($_POST["submit"])) {
       && !empty($_POST["phonenumber"])
       && !empty($_POST["role"])
 
-   ) {
-
+  ) {
       //allemaal moeten ze true zijn
-      $firstname = $_POST['firstname'];
-      $lastname = $_POST['lastname'];
+      $voornaam = $_POST["firstname"];
+      $achternaam = $_POST["lastname"];
       $email = trim($_POST["email"]);
-      $password = $_POST['password'];
-      $dateofbirth = $_POST['date_of_birth'];
-      $phonenumber = $_POST['phonenumber'];
-      $role = $_POST['role'];
+      $wachtwoord = $_POST["password"];
+      $geboortedatum = $_POST["date_of_birth"];
+      $telefoonnummer = $_POST["phonenumber"];
+      $rol = $_POST["role"];
 
       //database connectie
-      require 'connectie.php';
-      $sql = "UPDATE users SET
-      firstname = '$firstname',
-      lastname = '$lastname',
-      email = '$email',
-      password = '$password',
-      date_of_birth = '$dateofbirth',
-      phonenumber = '$phonenumber',
-      role = '$role' WHERE user_id = '$id' ";
+
+      require 'database.php';
+
+      $sql = "UPDATE users SET 
+      firstname = '$voornaam', 
+      lastname = '$achternaam', 
+      email = '$email', 
+      password = '$wachtwoord',
+      date_of_birth = '$geboortedatum', 
+      phonenumber =  '$telefoonnummer',
+      role = '$rol' WHERE id = '$id'  ";
+
+          // Voer de INSERT INTO STATEMENT uit
+      ;
 
       if (mysqli_query($conn, $sql)) {
-         header("location: gebruiker_pagina.php");
+          header("location: gebruiker-pagina.php");
       }
 
       echo "Updated successfully";
       mysqli_close($conn); // Sluit de database verbinding
-   }
+
+  }
 }
