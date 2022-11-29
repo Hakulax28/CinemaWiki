@@ -25,7 +25,7 @@ if (isset($_POST["submit"])) {
 
       //database connectie
 
-      require 'database.php';
+      require 'connectie.php';
 
       $sql = "UPDATE users SET 
       firstname = '$voornaam', 
@@ -39,8 +39,7 @@ if (isset($_POST["submit"])) {
       // Voer de INSERT INTO STATEMENT uit
 
       if (mysqli_query($conn, $sql)) {
-         header("location: gebruiker-pagina.php");
-         var_dump($user);
+         header("location: gebruiker_pagina.php");
       }
 
       echo "Updated successfully";
