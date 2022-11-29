@@ -1,3 +1,12 @@
+<?php
+require 'connectie.php';
+
+session_start();
+
+/*if (!$_SESSION["is_logged_in"]) {
+   header("location: inloggen.php");
+}*/
+?>
 <?php include "header.php" ?>
 
 <div class="container bg-light border border-white rounded-1">
