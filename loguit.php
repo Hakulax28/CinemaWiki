@@ -4,4 +4,4 @@ session_start();
 $_SESSION = null;
 session_destroy();
 
-header("location: inloggen.php");
+header("location: index.php");
