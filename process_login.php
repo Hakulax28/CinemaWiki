@@ -16,8 +16,7 @@ $password = $_POST["password"];
 $sql = "SELECT * FROM users WHERE email = '$email' ";
 
 $result = mysqli_query($conn, $sql);
-var_dump(mysqli_num_rows($result));
-die;
+//var_dump(mysqli_num_rows($result));die;
 
 if ($result) {
    $user = mysqli_fetch_assoc($result);
