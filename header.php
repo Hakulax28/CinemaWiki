@@ -1,12 +1,3 @@
-<?php
-require 'connectie.php';
-
-session_start();
-
-//if (!$_SESSION["is_logged_in"]) {
-//header("location: inloggen.php");
-//}
-?>
 <!DOCTYPE html>
 <html lang="en">
 
