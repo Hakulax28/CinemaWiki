@@ -20,7 +20,7 @@
                   <label for="floatingPassword">Wachtwoord</label>
                </div><br>
                <div class="form-floating">
-                  <input type="text" name="date_of_birth" id="floatingInput" class="form-control">
+                  <input type="date" name="date_of_birth" id="floatingInput" class="form-control">
                   <label for="floatingInput">Geboortedatum: </label>
                </div><br>
             </div>
@@ -43,7 +43,7 @@
                </div><br>
             </div>
          </div>
-         <button class="w-100 btn btn-lg btn-success shadow" type="submit">registreer je nu in</button>
+         <button class="w-100 btn btn-lg btn-success shadow" type="submit" name="submit">registreer je nu in</button>
          <a href="index.php" class="w-100 btn btn-lg btn-danger shadow">Annuleer</a>
          <p class="mt-5 mb-3 text-muted">&copy; 2017–2022</p>
       </form>
