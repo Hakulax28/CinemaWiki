@@ -6,7 +6,7 @@ print_r($_GET["user_id"]);
 
 require 'connectie.php';
 
-$id = $_GET['id'];
+$id = $_GET['user_id'];
 
 $sql = "DELETE FROM users WHERE user_id = $id";
 
