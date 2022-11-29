@@ -36,8 +36,7 @@ if (isset($_POST["submit"])) {
       phonenumber =  '$telefoonnummer',
       role = '$rol' WHERE id = '$id'  ";
 
-         // Voer de INSERT INTO STATEMENT uit
-      ;
+      // Voer de INSERT INTO STATEMENT uit
 
       if (mysqli_query($conn, $sql)) {
          header("location: gebruiker-pagina.php");
