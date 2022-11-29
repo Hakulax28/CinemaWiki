@@ -7,16 +7,16 @@
          <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
 
          <div class="form-floating">
-            <input type="email" class="form-control bg-dark text-white" id="floatingInput" placeholder="name@example.com">
-            <label for="floatingInput" class="text-white">E-mail</label>
+            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+            <label for="floatingInput">E-mail</label>
          </div><br>
          <div class="form-floating">
-            <input type="password" class="form-control bg-dark text-white" id="floatingPassword" placeholder="Password">
-            <label for="floatingPassword" class="text-white">Wachtwoord</label>
+            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+            <label for="floatingPassword">Wachtwoord</label>
          </div><br>
          <div class="form-floating">
-            <input type="text" name="role" id="floatingInput" class="form-control bg-dark text-white" placeholder="Wat is uw rol"><br>
-            <label for="floatingInput" class="text-white">Rol</label>
+            <input type="text" name="role" id="floatingInput" class="form-control" placeholder="Wat is uw rol"><br>
+            <label for="floatingInput">Rol</label>
          </div>
          <br>
          <div class="checkbox mb-3">
