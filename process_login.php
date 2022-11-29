@@ -10,7 +10,6 @@ if (empty($_POST["email"]) && empty($_POST["password"])) {
    header("location: inloggen.php");
 }
 
-$id = $_POST["user_id"];
 $email = $_POST["email"];
 $password = $_POST["password"];
 $rol = $_POST["role"];
@@ -35,7 +34,6 @@ if ($result) {
       $_SESSION["email"] = $user["email"];
       $_SESSION["is_logged_in"] = true;
       $_SESSION["role"] = $user["role"];
-      $_SESSION["user_id"] = $user["user_id"];
 
       var_dump($_SESSION);
       //Hier bekijkt hij of degene die heeft ingelogd een klant of medewerker is.
