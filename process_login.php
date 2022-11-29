@@ -10,7 +10,7 @@ if (empty($_POST["email"]) && empty($_POST["password"])) {
    header("location: inloggen.php");
 }
 
-$id = $_POST["id"];
+$id = $_POST["user_id"];
 $email = $_POST["email"];
 $password = $_POST["password"];
 $rol = $_POST["role"];
@@ -21,7 +21,7 @@ $result = mysqli_query($conn, $sql);
 //var_dump(mysqli_num_rows($result));die;
 
 if ($result) {
-   $conn = mysqli_fetch_assoc($result);
+   $user = mysqli_fetch_assoc($result);
 
    if (is_null($user)) {
       //gebruiker onbekend
@@ -32,10 +32,10 @@ if ($result) {
 
       //hier kent het de gebruiker
 
-      $_SESSION["email"] = $_POST["email"];
+      $_SESSION["email"] = $user["email"];
       $_SESSION["is_logged_in"] = true;
-      $_SESSION["role"] = $_POST["role"];
-      $_SESSION["user_id"] = $_POST["user_id"];
+      $_SESSION["role"] = $user["role"];
+      $_SESSION["user_id"] = $user["user_id"];
 
       var_dump($_SESSION);
       //Hier bekijkt hij of degene die heeft ingelogd een klant of medewerker is.

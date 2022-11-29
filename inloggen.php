@@ -8,15 +8,15 @@
 
          <div class="form-floating">
             <input type="email" class="form-control bg-dark text-white" id="floatingInput" placeholder="name@example.com">
-            <label for="floatingInput">E-mail</label>
+            <label for="floatingInput" class="text-white">E-mail</label>
          </div><br>
          <div class="form-floating">
             <input type="password" class="form-control bg-dark text-white" id="floatingPassword" placeholder="Password">
-            <label for="floatingPassword">Wachtwoord</label>
+            <label for="floatingPassword" class="text-white">Wachtwoord</label>
          </div><br>
          <div class="form-floating">
             <input type="text" name="role" id="floatingInput" class="form-control bg-dark text-white" placeholder="Wat is uw rol"><br>
-            <!--<label for="floatingInput">E-mail</label>-->
+            <label for="floatingInput" class="text-white">Rol</label>
          </div>
          <br>
          <div class="checkbox mb-3">
