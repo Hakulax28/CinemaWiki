@@ -34,7 +34,7 @@ if (isset($_POST["submit"])) {
       password = '$wachtwoord',
       date_of_birth = '$geboortedatum', 
       phonenumber =  '$telefoonnummer',
-      role = '$rol' WHERE user_id = '$id'  ";
+      role = '$rol' WHERE users.user_id = '$id'  ";
 
       // Voer de INSERT INTO STATEMENT uit
 
