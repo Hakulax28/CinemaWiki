@@ -30,8 +30,6 @@ if (isset($_POST["submit"])) {
 
          // Voer de INSERT INTO STATEMENT uit
          if (mysqli_query($conn, $sql)) {
-            var_dump($_POST);
-            die;
             header("location: inloggen.php");
          }
          mysqli_close($conn); // Sluit de database verbinding
