@@ -22,7 +22,6 @@
          <button class="w-100 btn btn-lg btn-success shadow" type="submit">Log nu in</button>
          <a href="registreer.php" class="w-100 btn btn-lg btn-warning shadow">Registreer je nu</a>
       </form>
-      <a href="gebruiker_pagina.php" class="w-100 btn btn-lg btn-warning shadow">Alle gebruikers</a>
    </main><br>
 </div>
 
