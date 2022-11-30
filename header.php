@@ -1,4 +1,5 @@
 <?php require 'connectie.php';
+session_start();
 
 // hier moet de info van de anderen tabelen te voor schijn komen. 
 
