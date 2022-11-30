@@ -1,14 +1,14 @@
 <?php
 require "connectie.php";
 
-if (isset($_POST["submit"]) && $_POST["genreName"] != "" && $_POST["genreDescription"] != "") {
+if (isset($_POST["submit"]) && $_POST["taal"] != "" && $_POST["land_van_oorsprong"] != "") {
 
-    $genreName = $_POST['genreName'];
-    $genreDesc = $_POST['genreDescription'];
+    $taal = $_POST['taal'];
+    $lvo = $_POST['land_van_oorsprong'];
 
 
-    $sql = "INSERT INTO genre (genreName, genreDescription)
-VALUES ('$genreName','$genreDesc')";
+    $sql = "INSERT INTO language (taal, land_van_oorsprong)
+VALUES ('$taal','$lvo')";
 
     if ($conn->query($sql) === TRUE) {
         echo "New record created successfully";
@@ -40,8 +40,8 @@ VALUES ('$genreName','$genreDesc')";
     <div class="container bg-light rounded p-2">
         <h2>Genre toevoegen</h2>
         <form action="" method="POST">
-            <input class="form-control" type="text" name="genreName" placeholder="Naam" aria-label="name">
-            <input class="form-control" type="text" name="genreDescription" placeholder="Descriptie" aria-label="age">
+            <input class="form-control" type="text" name="taal" placeholder="Taal" aria-label="name">
+            <input class="form-control" type="text" name="land_van_oorsprong" placeholder="Land van Oorsprong" aria-label="age">
             <button class="btn btn-primary" name="submit" type="submit">Voeg toe</button>
             <button class="btn btn-danger" onclick="history.back()">Ga terug</button>
         </form>
