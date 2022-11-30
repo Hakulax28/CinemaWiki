@@ -65,7 +65,12 @@ if ($result = mysqli_query($conn, $sql)) {
             </div>
          </div>
          <button class="w-100 btn btn-lg btn-success shadow" type="submit" name="submit">Update</button>
-         <a href="gebruiker_pagina.php" class="w-100 btn btn-lg btn-danger shadow">Annuleer</a>
+         <?php if ($_SESSION['role'] == "gebruiker") : ?>
+            <a href="index.php" class="w-100 btn btn-lg btn-danger shadow">Annuleer</a>
+         <?php endif ?>
+         <?php if ($_SESSION['role'] == "beheerder") : ?>
+            <a href="gebruiker_pagina.php" class="w-100 btn btn-lg btn-danger shadow">Annuleer</a>
+         <?php endif ?>
          <p class="mt-5 mb-3 text-muted">&copy; 2017–2022</p>
       </form>
    </main>
