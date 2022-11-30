@@ -24,8 +24,8 @@ if ($result = mysqli_query($conn, $sql)) {
 
 <?php include "header.php"; ?>
 
-<body class="bg-secondary bg-gradient">
-   <h2 class="display-1 text-light">Genres</h2>
+<div class="container bg-light border border-white rounded-1">
+   <h1>Welkom bij CinemaWiki</h1><br>
    <div class="container bg-light rounded p-2 gap-3 justify-content-between flex-wrap d-flex">
       <table class="table table-striped table-dark">
          <thead>
@@ -63,9 +63,8 @@ if ($result = mysqli_query($conn, $sql)) {
          <?php endif ?>
       <?php endif ?>
    </div>
-</body>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+</div>
 <?php include "footer.php"; ?>
 
 </html>
