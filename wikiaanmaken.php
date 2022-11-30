@@ -1,7 +1,7 @@
 <?php 
 require "connectie.php";
 
-if(isset($_POST["submit"]) && $_POST["pageMainText"] != "")
+if(isset($_POST["submit"]))
 {
     
 $pageMainText = $_POST['pageMainText']; 
@@ -144,13 +144,20 @@ if ($conn->query($sql) === TRUE) {
   </thead>
   <tbody class="table-group-divider">
     <tr>
-      <th colspan="2"><select class="form-select" aria-label="Default select example">
-  <option selected>Open this select menu</option>
-  <option value="1">One</option>
-  <option value="2">Two</option>
-  <option value="3">Three</option>
-</select></th>
-      <td colspan="1"><a href="#">+</a></td>
+      <th colspan="2">
+        <?php
+          $sql = "SELECT personName FROM people";
+          $result = mysqli_query($conn,$sql);
+          $people = mysqli_fetch_all($result, MYSQLI_ASSOC);
+        ?>
+      <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Zoek een persoon...">
+        <datalist id="datalistOptions">
+          <?php foreach($people as $person): ?>
+            <option value="<?php echo $person["personName"] ?>">
+          <?php endforeach; ?>
+        </datalist></th>
+
+      <td colspan="1"><a href="persoon_toevoegen.php">Of voeg een persoon toe +</a></td>
     </tr>
 
   </tbody>
