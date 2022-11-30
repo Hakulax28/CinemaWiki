@@ -15,7 +15,7 @@ require 'connectie.php';
          <img src="images/test-image.png" height="180px" width="320px" alt="">
       </div>
       <div class="col-md">
-         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae dolore temporibus, obcaecati quam illo nam non repellendus mollitia. Et dolor optio aut unde officia maiores incidunt facere quas? Culpa voluptatum ipsam eveniet magnam? Sunt velit incidunt laboriosam, eius cumque molestias voluptates mollitia necessitatibus expedita corrupti! At cupiditate odio consequuntur soluta deleniti ad, quibusdam quos in modi quas ipsam nemo voluptas expedita reiciendis nulla placeat pariatur ipsum repellendus! Unde animi voluptas quod, amet veniam vitae nesciunt mollitia illum, sequi, facilis voluptates!</p>
+         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus, maxime. Ipsam, earum doloribus aperiam necessitatibus voluptates error quas aliquam labore? Aspernatur quis natus quasi repudiandae doloribus modi dignissimos qui praesentium nobis laboriosam officia veniam similique numquam esse vel dolores at veritatis totam, dolore saepe quia vero illum eius assumenda. Voluptatibus reprehenderit dicta necessitatibus, expedita quae eveniet doloribus blanditiis, quis veniam amet ut minima ipsam possimus? <button onclick="document.location='wikipagina.php'" class="w-100 btn btn-lg btn-success shadow" type="submit">Browse</button></p>
       </div>
    </div><br>
    <h2>Sorteer bij genre: </h2><br>
