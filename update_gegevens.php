@@ -1,7 +1,4 @@
 <?php
-
-session_start();
-
 require 'connectie.php';
 
 $id = $_GET["user_id"]; //17
@@ -12,7 +9,7 @@ if ($result = mysqli_query($conn, $sql)) {
 
    $user = mysqli_fetch_assoc($result);
 
-   var_dump($user);
+   //var_dump($user);
 
    if (is_null($user)) {
       header("location: gebruiker_pagina.php");
@@ -66,7 +63,8 @@ if ($result = mysqli_query($conn, $sql)) {
          </div>
          <button class="w-100 btn btn-lg btn-success shadow" type="submit" name="submit">Update</button>
          <?php if ($_SESSION['role'] == "gebruiker") : ?>
-            <a href="index.php" class="w-100 btn btn-lg btn-danger shadow">Annuleer</a>
+            <a href="index.php" class="w-100 btn btn-lg btn-danger shadow">Annuleer</a><br>
+            <a href="delete.php?user_id=<?php echo $id; ?>" class="w-100 btn btn-lg btn-warning shadow">Verwijder </a>
          <?php endif ?>
          <?php if ($_SESSION['role'] == "beheerder") : ?>
             <a href="gebruiker_pagina.php" class="w-100 btn btn-lg btn-danger shadow">Annuleer</a>
