@@ -14,7 +14,7 @@ VALUES ('$personName','$personAge','$personRole')";
 
 if ($conn->query($sql) === TRUE) {
     echo "New record created successfully";
-    header("location: index.php");
+    header("location: wikiaanmaken.php");
     } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
     }$conn->close();
@@ -47,7 +47,7 @@ if ($conn->query($sql) === TRUE) {
         <option value="Schrijver">Schrijver</option>
         <option value="Regisseur">Regisseur</option>
         </select>
-        <button class="btn btn-primary" name="submit" type="submit">Voeg toe</button>
+        <button class="btn btn-primary" name="submit"  type="submit">Voeg toe</button>
         <button class="btn btn-danger" onclick="history.back()">Ga terug</button>
     </form>
 </div>

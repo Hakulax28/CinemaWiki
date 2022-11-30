@@ -53,10 +53,8 @@ if ($conn->query($sql) === TRUE) {
       <div class="main">
       <div class="mainTitle">
             <h1 class="display-3"><div class="mb-3S">
-      <input type="text" class="form-control"  id="filmTitle" name="filmTitle" placeholder="Film Title">
       </div></h1>
             <h2><div class="mb-3S">
-      <input type="text" class="form-control"  id="filmSubtitle" name="filmSubtitle" placeholder="Film subtitle">
       </div></h2>
         </div>
             <div class="mainText">
@@ -76,7 +74,6 @@ if ($conn->query($sql) === TRUE) {
         <div class="sideImage"><img src="images/test-image.png" alt="" width="125px" height="200px">
     </div>
     <div class="mb-3">
-        <input class="form-control" type="file" name="filmCoverImage" id="formFile">
         </div>
 
     <div><h1>film title</h1></div>
