@@ -39,7 +39,7 @@ if (isset($_POST["submit"])) {
       // Voer de INSERT INTO STATEMENT uit
 
       if (mysqli_query($conn, $sql)) {
-         header("location: gebruiker_pagina.php");
+         header("location: index.php");
       }
 
       echo "Updated successfully";
