@@ -1,16 +1,26 @@
 <?php 
 require "connectie.php";
 
-if(isset($_POST["submit"]) && $_POST["personName"] != "" && $_POST["personAge"] != "" && $_POST["personRole"] != "")
+if(isset($_POST["submit"]))
 {
     
-$personName = $_POST['personName']; 
-$personAge = $_POST['personAge']; 
-$personRole = $_POST['personRole']; 
+$filmTitle = $_POST['filmTitle']; 
+$filmReleaseDate = $_POST['filmReleaseDate']; 
+$filmRuntime = $_POST['filmRuntime']; 
+$filmAgeRatingEU = $_POST['filmAgeRatingEU']; 
+$filmAgeRatingUS = $_POST['filmAgeRatingUS']; 
+$filmLanguage = $_POST['filmLanguage']; 
+$filmScore = $_POST['filmScore']; 
+$filmCost = $_POST['filmCost']; 
+$filmEarnings = $_POST['filmEarnings']; 
 
 
-$sql = "INSERT INTO people (personName, personAge, personRole)
-VALUES ('$personName','$personAge','$personRole')";
+
+
+$sql = "INSERT INTO films (filmTitle,filmReleaseDate,filmAgeRatingEU,filmAgeRatingUS,filmLanguage,
+filmRuntime,filmScore,filmCost,filmEarnings,filmCoverImage)
+VALUES ('$filmTitle','$filmReleaseDate','$filmAgeRatingEU','$filmAgeRatingUS','$filmLanguage',
+'$filmRuntime','$filmScore','$filmCost','$filmEarnings','1')";
 
 if ($conn->query($sql) === TRUE) {
     echo "New record created successfully";
@@ -41,7 +51,6 @@ if ($conn->query($sql) === TRUE) {
     <h2>Film toevoegen</h2>
     <form action="" method="POST">
     <input type="text" class="form-control"  id="filmTitle" name="filmTitle" placeholder="Film Title">
-    <input type="text" class="form-control"  id="filmSubtitle" name="filmSubtitle" placeholder="Film subtitle">
     <div class="sideImage"><img src="images/test-image.png" alt="" width="125px" height="200px">
     <input class="form-control" type="file" name="filmCoverImage" id="formFile">
     <table class="table">
@@ -49,26 +58,26 @@ if ($conn->query($sql) === TRUE) {
   <tr>
       <th scope="row">Release date</th>
       <td colspan="3"><div class="mb-3S">
-      <input type="date" class="form-control" name="filmRuntime" id="filmRuntime" placeholder="Film Runtime">
+      <input type="date" class="form-control" name="filmReleaseDate" id="filmRuntime" placeholder="Film Runtime">
       </div></td>
     </tr>
     <tr>
       <th scope="row">Runtime</th>
       <td colspan="3"><div class="mb-3S">
-      <input type="text" class="form-control" name="filmRuntime" id="filmRuntime" placeholder="Film Runtime">
+      <input type="number" class="form-control" name="filmRuntime" id="filmRuntime" placeholder="Film Runtime">
       </div></td>
     </tr>
     <tr>
       <th scope="row">Age Rating</th>
-      <td>EU: <select class="form-select" aria-label="Default select example">
+      <td>EU: <select class="form-select" name="filmAgeRatingEU" aria-label="Default select example">
   <option selected>Open this select menu</option>
-  <option value="1">One</option>
+  <option value="Test">One</option>
   <option value="2">Two</option>
   <option value="3">Three</option>
 </select></td>
-      <td>US: <select class="form-select" aria-label="Default select example">
+      <td>US: <select class="form-select" name="filmAgeRatingUS" aria-label="Default select example">
   <option selected>Open this select menu</option>
-  <option value="1">One</option>
+  <option value="Test">One</option>
   <option value="2">Two</option>
   <option value="3">Three</option>
 </select></td>
@@ -80,35 +89,36 @@ if ($conn->query($sql) === TRUE) {
           $result = mysqli_query($conn,$sql);
           $talen = mysqli_fetch_all($result, MYSQLI_ASSOC);
         ?>
-      <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Zoek een persoon...">
+      <input class="form-control" name="filmLanguage" list="datalistOptions" id="exampleDataList" placeholder="Zoek een Taal...">
         <datalist id="datalistOptions">
           <?php foreach($talen as $taal): ?>
             <option value="<?php echo $taal["taal"] ?>">
           <?php endforeach; ?>
         </datalist></th>
 
-      <td colspan="1"><a href="persoon_toevoegen.php">Of voeg een taal toe +</a></td>
+      <td colspan="1"><a href="taal.php">Of voeg een taal toe +</a></td>
     </tr>
 
     <tr>
       <th scope="row">Score</th>
-      <td colspan="3"><select class="form-select" aria-label="Default select example">
+      <td colspan="3"><select class="form-select" name="filmScore" aria-label="Default select example">
   <option selected>Open this select menu</option>
-  <option value="1">One</option>
+  <option value="1"></option>
   <option value="2">Two</option>
   <option value="3">Three</option>
+  
 </select></td>
     </tr>
     <tr>
       <th scope="row">Cost</th>
       <td colspan="3"><div class="mb-3S">
-      <input type="text" class="form-control"  id="filmCost" placeholder="Film Cost">
+      <input type="text" class="form-control" name="filmCost"  id="filmCost" placeholder="Film Cost">
       </div></td>
     </tr>
     <tr>
       <th scope="row">Earnings</th>
       <td colspan="3"><div class="mb-3S">
-      <input type="text" class="form-control"  id="filmEarnings" placeholder="Film Earnings">
+      <input type="text" class="form-control" name="filmEarnings" id="filmEarnings" placeholder="Film Earnings">
       </div></td>
     </tr>
   </tbody>
