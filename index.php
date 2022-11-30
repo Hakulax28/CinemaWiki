@@ -1,6 +1,14 @@
 <?php
 require 'connectie.php';
 
+// hier moet de info van de anderen tabelen te voor schijn komen. 
+
+$sql = "SELECT * FROM genre";
+
+if ($result = mysqli_query($conn, $sql)) {
+   $genres = mysqli_fetch_all($result, MYSQLI_ASSOC);
+}
+
 /*if (!$_SESSION["is_logged_in"]) {
    header("location: inloggen.php");
 }*/
@@ -20,41 +28,16 @@ require 'connectie.php';
    </div><br>
    <h2>Sorteer bij genre: </h2><br>
    <div class="row g-4 gap-1 mx-auto">
-      <div class="card" style="width: 20rem;">
-         <img src="images/test-image.png" class="card-img-top" alt="...">
-         <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+      <?php foreach ($genres as $genre) : ?>
+         <div class="card" style="width: 20rem;">
+            <img src="images/test-image.png" class="card-img-top" alt="...">
+            <div class="card-body">
+               <h5 class="card-title"><?php echo $genre["genreName"] ?></h5>
+               <p class="card-text"><?php echo $genre["genreDescription"] ?></p>
+               <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
          </div>
-      </div>
-
-      <div class="card" style="width: 20rem;">
-         <img src="images/test-image.png" class="card-img-top" alt="...">
-         <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-         </div>
-      </div>
-
-      <div class="card" style="width: 20rem;">
-         <img src="images/test-image.png" class="card-img-top" alt="...">
-         <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-         </div>
-      </div>
-
-      <div class="card" style="width: 20rem;">
-         <img src="images/test-image.png" class="card-img-top" alt="...">
-         <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-         </div>
-      </div>
+      <?php endforeach; ?>
    </div><br>
 </div>
 <?php include "footer.php" ?>
