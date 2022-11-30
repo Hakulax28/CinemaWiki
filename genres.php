@@ -1,3 +1,14 @@
+<?php require 'connectie.php';
+
+// hier moet de info van de anderen tabelen te voor schijn komen. 
+
+$sql = "SELECT * FROM genre";
+
+if ($result = mysqli_query($conn, $sql)) {
+   $genres = mysqli_fetch_all($result, MYSQLI_ASSOC);
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,6 +33,8 @@
                <!--<th>ID</th>-->
                <th>Genre naam</th>
                <th>Descriptie</th>
+               <th>Verwijder</th>
+               <th>Update</th>
             </tr>
          </thead>
          <tbody>
@@ -30,8 +43,8 @@
                   <!--<td><?php echo $genre["genre_id"] ?></td>-->
                   <td><?php echo $genre["genreName"] ?></td>
                   <td><?php echo $genre["genreDescription"] ?></td>
-                  <!--<td><a href="delete.php?genre_id=<?php echo $genre["genre_id"] ?>" class="shadow btn btn-danger shadow">Verwijder</a></td>
-                  <td><a href="update_gegevens.php?genre_id=<?php echo $genre["genre_id"] ?>" class="shadow btn btn-warning shadow">Update</a></td>-->
+                  <td><a href="delete.php?genre_id=<?php echo $genre["genre_id"] ?>" class="shadow btn btn-danger shadow">Verwijder</a></td>
+                  <td><a href="update_gegevens.php?genre_id=<?php echo $genre["genre_id"] ?>" class="shadow btn btn-warning shadow">Update</a></td>
                </tr>
             <?php endforeach; ?>
          </tbody>
