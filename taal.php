@@ -38,7 +38,7 @@ VALUES ('$taal','$lvo')";
 
 <body class="bg-secondary bg-gradient">
     <div class="container bg-light rounded p-2">
-        <h2>Genre toevoegen</h2>
+        <h2>Taal toevoegen</h2>
         <form action="" method="POST">
             <input class="form-control" type="text" name="taal" placeholder="Taal" aria-label="name">
             <input class="form-control" type="text" name="land_van_oorsprong" placeholder="Land van Oorsprong" aria-label="age">
