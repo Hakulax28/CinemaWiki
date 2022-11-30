@@ -11,5 +11,5 @@ $id = $_GET['user_id'];
 $sql = "DELETE FROM users WHERE user_id = $id";
 
 if (mysqli_query($conn, $sql)) {
-   header("location: index.php");
+   header("location: loguit.php");
 }
