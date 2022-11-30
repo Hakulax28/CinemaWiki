@@ -10,6 +10,7 @@ if (empty($_POST["email"]) && empty($_POST["password"])) {
    header("location: inloggen.php");
 }
 
+$id = $_POST["user_id"];
 $email = $_POST["email"];
 $password = $_POST["password"];
 
@@ -30,7 +31,7 @@ if ($result) {
    } else {
 
       //hier kent het de gebruiker
-
+      $_SESSION["user_id"] = $user["user_id"];
       $_SESSION["email"] = $user["email"];
       $_SESSION["is_logged_in"] = true;
       $_SESSION["role"] = $user["role"];

@@ -7,7 +7,6 @@ $sql = "SELECT * FROM users";
 if ($result = mysqli_query($conn, $sql)) {
    $users = mysqli_fetch_all($result, MYSQLI_ASSOC);
 }
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
