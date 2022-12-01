@@ -35,8 +35,8 @@ if ($result = mysqli_query($conn, $sql)) {
                     <td><?php echo $language["land_van_oorsprong"] ?></td>
                     <?php if (!empty($_SESSION)) : ?>
                         <?php if ($_SESSION['role'] == "beheerder") : ?>
-                            <td><a href="taal_delete.php?taal_id=<?php echo $language["taal_id"] ?>" class="shadow btn btn-danger shadow">Verwijder</a></td>
-                            <td><a href="taal_update.php?taal_id=<?php echo $language["taal_id"] ?>" class="shadow btn btn-warning shadow">Update</a></td>
+                            <td><a href="taal_delete.php?language_id=<?php echo $language["language_id"] ?>" class="shadow btn btn-danger shadow">Verwijder</a></td>
+                            <td><a href="taal_update.php?language_id=<?php echo $language["language_id"] ?>" class="shadow btn btn-warning shadow">Update</a></td>
                         <?php endif ?>
                     <?php endif ?>
                 </tr>
