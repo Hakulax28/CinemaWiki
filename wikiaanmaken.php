@@ -86,49 +86,30 @@ if ($conn->query($sql) === TRUE) {
     <tr>
       <th scope="row">Runtime</th>
       <td colspan="3"><div class="mb-3S">
-      <input type="text" class="form-control" name="filmRuntime" id="filmRuntime" placeholder="Film Runtime">
       </div></td>
     </tr>
     <tr>
       <th scope="row">Age Rating</th>
-      <td>EU: <select class="form-select" aria-label="Default select example">
-  <option selected>Open this select menu</option>
-  <option value="1">One</option>
-  <option value="2">Two</option>
-  <option value="3">Three</option>
-</select></td>
-      <td>US: <select class="form-select" aria-label="Default select example">
-  <option selected>Open this select menu</option>
-  <option value="1">One</option>
-  <option value="2">Two</option>
-  <option value="3">Three</option>
-</select></td>
+      <td></td>
+      <td></td>
     </tr>
     <tr>
       <th scope="row">language</th>
       <td colspan="3"><div class="mb-3S">
-      <input type="text" class="form-control"  id="filmLanguage" placeholder="Film Language">
       </div></td>
     </tr>
     <tr>
       <th scope="row">Score</th>
-      <td colspan="3"><select class="form-select" aria-label="Default select example">
-  <option selected>Open this select menu</option>
-  <option value="1">One</option>
-  <option value="2">Two</option>
-  <option value="3">Three</option>
-</select></td>
+      <td colspan="3"></td>
     </tr>
     <tr>
       <th scope="row">Cost</th>
       <td colspan="3"><div class="mb-3S">
-      <input type="text" class="form-control"  id="filmCost" placeholder="Film Cost">
       </div></td>
     </tr>
     <tr>
       <th scope="row">Earnings</th>
       <td colspan="3"><div class="mb-3S">
-      <input type="text" class="form-control"  id="filmEarnings" placeholder="Film Earnings">
       </div></td>
     </tr>
   </tbody>
@@ -142,19 +123,6 @@ if ($conn->query($sql) === TRUE) {
   <tbody class="table-group-divider">
     <tr>
       <th colspan="2">
-        <?php
-          $sql = "SELECT personName FROM people";
-          $result = mysqli_query($conn,$sql);
-          $people = mysqli_fetch_all($result, MYSQLI_ASSOC);
-        ?>
-      <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Zoek een persoon...">
-        <datalist id="datalistOptions">
-          <?php foreach($people as $person): ?>
-            <option value="<?php echo $person["personName"] ?>">
-          <?php endforeach; ?>
-        </datalist></th>
-
-      <td colspan="1"><a href="persoon_toevoegen.php">Of voeg een persoon toe +</a></td>
     </tr>
 
   </tbody>
