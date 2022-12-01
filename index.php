@@ -29,14 +29,14 @@ if ($result = mysqli_query($conn, $sql)) {
       </div>
    </div><br>
    <h2>Sorteer bij genre: </h2><br>
-   <div class="row g-4 gap-1 mx-auto">
+   <div class="row g-4 mx-auto">
       <?php foreach ($genres as $genre) : ?>
-         <div class="card" style="width: 320px;">
+         <div class="card" style="width: 25%;">
             <!--<img src="images/test-image.png" class="card-img-top" alt="...">-->
             <div class="card-body">
                <h5 class="card-title"><?php echo $genre["genreName"] ?></h5><br>
                <p class="card-text" style="height: 100px;"><?php echo $genre["genreDescription"] ?></p>
-               <a href="zoeken.php" class="btn btn-primary shadow">Go somewhere</a>
+               <a href="zoeken.php" class="btn btn-primary shadow" style="width: 100%;">Go somewhere</a>
             </div><br>
          </div>
       <?php endforeach; ?>
