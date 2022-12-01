@@ -89,11 +89,13 @@ if ($conn->query($sql) === TRUE) {
           $result = mysqli_query($conn,$sql);
           $talen = mysqli_fetch_all($result, MYSQLI_ASSOC);
         ?>
-      <input class="form-control" name="filmLanguage" list="datalistOptions" id="exampleDataList" placeholder="Zoek een Taal...">
+      <input class="form-control" name="filmLanguage" list="datalistOptions" id="taalDataList" placeholder="Zoek een Taal...">
         <datalist id="datalistOptions">
           <?php foreach($talen as $taal): ?>
             <option value="<?php echo $taal["taal"] ?>">
-          <?php endforeach; ?>
+          <?php endforeach; 
+          mysqli_free_result($result);
+?>
         </datalist></th>
 
       <td colspan="1"><a href="taal.php">Of voeg een taal toe +</a></td>
@@ -123,32 +125,7 @@ if ($conn->query($sql) === TRUE) {
     </tr>
   </tbody>
 </table>
-<table class="table">
-  <thead>
-    <tr>
-      <th>People</th>
-    </tr>
-  </thead>
-  <tbody class="table-group-divider">
-    <tr>
-      <th colspan="2">
-        <?php
-          $sql = "SELECT personName FROM people";
-          $result = mysqli_query($conn,$sql);
-          $people = mysqli_fetch_all($result, MYSQLI_ASSOC);
-        ?>
-      <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Zoek een persoon...">
-        <datalist id="datalistOptions">
-          <?php foreach($people as $person): ?>
-            <option value="<?php echo $person["personName"] ?>">
-          <?php endforeach; ?>
-        </datalist></th>
 
-      <td colspan="1"><a href="persoon_toevoegen.php">Of voeg een persoon toe +</a></td>
-    </tr>
-
-  </tbody>
-</table>
         <button class="btn btn-primary" name="submit"  type="submit">Voeg toe</button>
         <button class="btn btn-danger" onclick="history.back()">Ga terug</button>
     </form>
