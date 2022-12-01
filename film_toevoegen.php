@@ -16,7 +16,7 @@ $filmEarnings = $_POST['filmEarnings'];
 
 if(isset($_FILES['imageToUpload'])){
   move_uploaded_file($_FILES['imageToUpload']['tmp_name'], "images/". $_FILES['imageToUpload']['name']);
-  $filmCoverImage = $_FILES['imageToUpload']['name'];
+  $filmCoverImage = "images/". $_FILES['imageToUpload']['name'];
 }
 else{
     echo "image not found!";
@@ -75,16 +75,21 @@ if ($conn->query($sql) === TRUE) {
     <tr>
       <th scope="row">Age Rating</th>
       <td>EU: <select class="form-select" name="filmAgeRatingEU" aria-label="Default select example">
-  <option selected>Open this select menu</option>
-  <option value="Test">One</option>
-  <option value="2">Two</option>
-  <option value="3">Three</option>
+  <option selected>Select EU age rating</option>
+  <option value="3">3</option>
+  <option value="7">7</option>
+  <option value="12">12</option>
+  <option value="16">16</option>
+  <option value="18">18</option>
 </select></td>
       <td>US: <select class="form-select" name="filmAgeRatingUS" aria-label="Default select example">
-  <option selected>Open this select menu</option>
-  <option value="Test">One</option>
-  <option value="2">Two</option>
-  <option value="3">Three</option>
+  <option selected>Select US age rating</option>
+  <option value="ec">Early childhood</option>
+  <option value="E">Everyone</option>
+  <option value="E10+">Everyone 10+</option>
+  <option value="T">Teen</option>
+  <option value="M">Mature</option>
+  <option value="Ao">Adult only</option>
 </select></td>
     </tr>
     <tr>
@@ -110,22 +115,29 @@ if ($conn->query($sql) === TRUE) {
       <th scope="row">Score</th>
       <td colspan="3"><select class="form-select" name="filmScore" aria-label="Default select example">
   <option selected>Open this select menu</option>
-  <option value="1"></option>
-  <option value="2">Two</option>
-  <option value="3">Three</option>
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+  <option value="6">6</option>
+  <option value="7">7</option>
+  <option value="8">8</option>
+  <option value="9">9</option>
+  <option value="10">10</option>
   
 </select></td>
     </tr>
     <tr>
       <th scope="row">Cost</th>
       <td colspan="3"><div class="mb-3S">
-      <input type="text" class="form-control" name="filmCost"  id="filmCost" placeholder="Film Cost">
+      <input type="number" class="form-control" name="filmCost"  id="filmCost" placeholder="Film Cost">
       </div></td>
     </tr>
     <tr>
       <th scope="row">Earnings</th>
       <td colspan="3"><div class="mb-3S">
-      <input type="text" class="form-control" name="filmEarnings" id="filmEarnings" placeholder="Film Earnings">
+      <input type="number" class="form-control" name="filmEarnings" id="filmEarnings" placeholder="Film Earnings">
       </div></td>
     </tr>
   </tbody>
