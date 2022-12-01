@@ -34,7 +34,7 @@ if ($result = mysqli_query($conn, $sql)) {
             <div class="card-body">
                <h5 class="card-title"><?php echo $genre["genreName"] ?></h5>
                <p class="card-text"><?php echo $genre["genreDescription"] ?></p>
-               <a href="#" class="btn btn-primary">Go somewhere</a>
+               <a href="#" class="btn btn-primary shadow">Go somewhere</a>
             </div>
          </div>
       <?php endforeach; ?>

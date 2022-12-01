@@ -26,7 +26,7 @@
                 </div>
                 <div class="d-flex flex-row justify-content-start align-items-center">
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores beatae ipsa minus ex dolorum magnam asperiores, ipsam rem inventore ullam aspernatur, corrupti magni possimus est. Aut provident officia earum enim voluptas, nesciunt tenetur repudiandae doloribus totam quaerat non nostrum. Nihil repellendus rem esse debitis quae facilis saepe, in voluptatibus error.</p>
-                    <button type="button" class="btn btn-primary">Go</button>
+                    <button type="button" class="btn btn-primary shadow">Go</button>
                 </div>
             </div>
         </div>
