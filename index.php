@@ -31,7 +31,7 @@ if ($result = mysqli_query($conn, $sql)) {
    <h2>Sorteer bij genre: </h2><br>
    <div class="row g-4 mx-auto">
       <?php foreach ($genres as $genre) : ?>
-         <div class="card" style="width: 25%;">
+         <div class="card" style="width: 100%;">
             <!--<img src="images/test-image.png" class="card-img-top" alt="...">-->
             <div class="card-body">
                <h5 class="card-title"><?php echo $genre["genreName"] ?></h5><br>
