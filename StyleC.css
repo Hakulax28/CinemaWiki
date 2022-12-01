@@ -17,3 +17,7 @@ h4 {
 h5 {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }*/
+.foto {
+  max-width: 100%;
+  width: 870px;
+}
