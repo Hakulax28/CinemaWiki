@@ -13,6 +13,10 @@ if ($result = mysqli_query($conn, $sql)) {
    header("location: inloggen.php");
 }*/
 ?>
+
+<head>
+   <link rel="stylesheet" href="StyleC.css">
+</head>
 <?php include "header.php" ?>
 
 <div class="container bg-light border border-white rounded-1">
