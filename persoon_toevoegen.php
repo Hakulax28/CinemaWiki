@@ -40,5 +40,3 @@ VALUES ('$personName','$personAge','$personRole')";
 </div>
 
 <?php include "footer.php"; ?>
-
-</html>

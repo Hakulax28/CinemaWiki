@@ -35,8 +35,8 @@ if ($result = mysqli_query($conn, $sql)) {
                <td><?php echo $genre["genreDescription"] ?></td>
                <?php if (!empty($_SESSION)) : ?>
                   <?php if ($_SESSION['role'] == "beheerder") : ?>
-                     <td><a href="delete.php?genre_id=<?php echo $genre["genre_id"] ?>" class="shadow btn btn-danger shadow">Verwijder</a></td>
-                     <td><a href="update_gegevens.php?genre_id=<?php echo $genre["genre_id"] ?>" class="shadow btn btn-warning shadow">Update</a></td>
+                     <td><a href="genre_delete.php?genre_id=<?php echo $genre["genre_id"] ?>" class="shadow btn btn-danger shadow">Verwijder</a></td>
+                     <td><a href="update_genre.php?genre_id=<?php echo $genre["genre_id"] ?>" class="shadow btn btn-warning shadow">Update</a></td>
                   <?php endif ?>
                <?php endif ?>
             </tr>

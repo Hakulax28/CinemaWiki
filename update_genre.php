@@ -1,78 +1,38 @@
 <?php
 require 'connectie.php';
 
-$id = $_GET["user_id"]; //17
+$id = $_GET["genre_id"]; //17
 
-$sql = "SELECT * FROM users WHERE user_id = $id LIMIT 1";
+if (isset($_POST["submit"]) && $_POST["genreName"] != "" && $_POST["genreDescription"] != "") {
 
-if ($result = mysqli_query($conn, $sql)) {
+   $genreName = $_POST['genreName'];
+   $genreDesc = $_POST['genreDescription'];
 
-   $user = mysqli_fetch_assoc($result);
+   $sql = "UPDATE genre SET
+   genreName = '$genreName',
+   genreDescription = '$genreDesc' WHERE genre.genre_id = '$id' ";
 
-   //var_dump($user);
-
-   if (is_null($user)) {
-      header("location: gebruiker_pagina.php");
+   if ($conn->query($sql) === TRUE) {
+      echo "New record created successfully";
+      header("location: genres.php");
+   } else {
+      echo "Error: " . $sql . "<br>" . $conn->error;
    }
+   $conn->close();
+} else if (isset($_POST["submit"])) {
+   echo "<script>alert('Vul alle velden in!!!')</script>";
 }
 ?>
-<?php include "header.php" ?>
 
+<?php include "header.php"; ?>
 <div class="container bg-light border border-white rounded-1">
-   <main class="form-signin w-100 m-auto">
-      <form action="update_verwerking.php?user_id=<?php echo $id; ?>" method="post">
-         <!--<img class="mb-4" src="/docs/5.2/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">-->
-         <h1 class="h3 mb-3 fw-normal">Update jouw gegevens</h1>
-         <div class="row g-2">
-            <div class="col-md">
-               <div class="form-floating">
-                  <input type="text" name="firstname" id="floatingInput" value="<?php echo $user["firstname"] ?>" class="form-control">
-                  <label for="floatingInput">Voornaam: </label>
-               </div><br>
-               <div class="form-floating">
-                  <input type="email" class="form-control" name="email" id="floatingInput" value="<?php echo $user["email"] ?>" placeholder="name@example.com">
-                  <label for="floatingInput">E-mail</label>
-               </div><br>
-               <div class="form-floating">
-                  <input type="password" class="form-control" name="password" id="floatingPassword" value="<?php echo $user["password"] ?>" placeholder="Password">
-                  <label for="floatingPassword">Wachtwoord</label>
-               </div><br>
-               <div class="form-floating">
-                  <input type="date" name="date_of_birth" id="floatingInput" value="<?php echo $user["date_of_birth"] ?>" class="form-control">
-                  <label for="floatingInput">Geboortedatum: </label>
-               </div><br>
-            </div>
-            <div class="col-md">
-               <div class="form-floating">
-                  <input type="text" name="lastname" id="floatingInput" value="<?php echo $user["lastname"] ?>" class="form-control">
-                  <label for="floatingInput">Achternaam: </label>
-               </div><br>
-               <div class="form-floating">
-                  <input type="file" id="floatingInput" name="img" accept="image/*" class="form-control"><br>
-                  <label for="floatingInput">Select image: </label>
-               </div>
-               <div class="form-floating">
-                  <input type="tel" name="phonenumber" id="floatingInput" value="<?php echo $user["phonenumber"] ?>" class="form-control">
-                  <label for="floatingInput">Telefoonnummer: </label>
-               </div><br>
-               <div class="form-floating">
-                  <input type="text" name="role" id="floatingInput" value="<?php echo $user["role"] ?>" class="form-control">
-                  <label for="floatingInput">Rol: </label>
-               </div><br>
-            </div>
-         </div>
-         <button class="w-100 btn btn-lg btn-success shadow" type="submit" name="submit">Update</button>
-         <?php if ($_SESSION['role'] == "gebruiker") : ?>
-            <a href="index.php" class="w-100 btn btn-lg btn-danger shadow">Annuleer</a><br>
-            <a href="delete.php?user_id=<?php echo $id; ?>" class="w-100 btn btn-lg btn-warning shadow">Verwijder </a>
-         <?php endif ?>
-         <?php if ($_SESSION['role'] == "beheerder") : ?>
-            <a href="gebruiker_pagina.php" class="w-100 btn btn-lg btn-danger shadow">Annuleer</a>
-         <?php endif ?>
-         <p class="mt-5 mb-3 text-muted">&copy; 2017–2022</p>
-      </form>
-   </main>
+   <h1>Genre toevoegen</h1><br>
+   <form action="" method="POST">
+      <input class="form-control" type="text" name="genreName" value="<?php echo $user["genreName"] ?>" placeholder="Naam" aria-label="name"><br>
+      <input class="form-control" type="text" name="genreDescription" value="<?php echo $user["genreDescription"] ?>" placeholder="Descriptie" aria-label="age"><br>
+      <button class="w-100 btn btn-lg btn-primary shadow" name="submit" type="submit">Voeg toe</button>
+      <button class="w-100 btn btn-lg btn-danger shadow" onclick="history.back()">Ga terug</button>
+   </form><br>
 </div>
-
 
 <?php include "footer.php" ?>

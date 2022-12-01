@@ -34,5 +34,3 @@ VALUES ('$genreName','$genreDesc')";
 </div>
 
 <?php include "footer.php"; ?>
-
-</html>
