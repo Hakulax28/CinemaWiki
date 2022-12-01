@@ -1,7 +1,7 @@
 <?php 
 require "connectie.php";
 
-if(isset($_POST["submit"]))
+if(isset($_POST["submit"]) && $_POST["filmTitle"] != "")
 {
     
 $filmTitle = $_POST['filmTitle']; 

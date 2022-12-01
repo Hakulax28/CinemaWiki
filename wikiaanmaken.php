@@ -27,7 +27,7 @@ mysqli_free_result($result);
 
 mysqli_close($conn);
 
-if(isset($_POST["submit"]))
+if(isset($_POST["submit"]) && $_POST["pageMainText"] != "")
 {
     
 $pageMainText = $_POST['pageMainText']; 
@@ -45,24 +45,33 @@ $pageSources = $_POST['pageSources'];
 if(isset($_FILES['pageMainImage'])){
   move_uploaded_file($_FILES['pageMainImage']['tmp_name'], "images/". $_FILES['pageMainImage']['name']);
   $pageMainImage = "images/". $_FILES['pageMainImage']['name'];
+}else{
+  $pageMainImage = "";
 }
+
 if(isset($_FILES['pageSection1Image'])){
   move_uploaded_file($_FILES['pageSection1Image']['tmp_name'], "images/". $_FILES['pageSection1Image']['name']);
   $pageSection1Image = "images/". $_FILES['pageSection1Image']['name'];
+}else{
+  $pageSection1Image = "";
 }
 if(isset($_FILES['pageExtraImage1'])){
   move_uploaded_file($_FILES['pageExtraImage1']['tmp_name'], "images/". $_FILES['pageExtraImage1']['name']);
   $pageExtraImage1 = "images/". $_FILES['pageExtraImage1']['name'];
+}else{
+  $pageExtraImage1 = "";
 }
 if(isset($_FILES['pageExtraImage2'])){
   move_uploaded_file($_FILES['pageExtraImage2']['tmp_name'], "images/". $_FILES['pageExtraImage2']['name']);
   $pageExtraImage2 = "images/". $_FILES['pageExtraImage2']['name'];
+}else{
+  $pageExtraImage2 = "";
 }
 
 
 
 $sql = "INSERT INTO wikipages (film_id,pageMainText,pageMainImage,pageSidebarText,pageSection1Title,pageSection1Text1,
-pageSection1Text2,pageSection2Title,pageSectionText,pageSources)
+pageSection1Text2,pageSection2Title,pageSection1Image,pageExtraImage1,pageExtraImage2,pageSectionText,pageSources)
 VALUES ('$film_id','$pageMainImage','$pageMainText','$pageSidebarText','$pageSection1Title','$pageSection1Text1',
 '$pageSection1Text2','$pageSection2Title','$pageSection2Text','$pageSources')";
 
@@ -199,7 +208,7 @@ if ($conn->query($sql) === TRUE) {
             <textarea class="form-control" name="pageSources" id="Textarea5" rows="5" maxlength="500">Sources Text</textarea>
             </div></div>
     </div>
-    <button type="submit" class="btn btn-primary mb-3">Confirm</button>
+    <button type="submit" name="submit" class="btn btn-primary mb-3">Confirm</button>
 
   </form>
 </body>
