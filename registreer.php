@@ -45,7 +45,6 @@
          </div>
          <button class="w-100 btn btn-lg btn-success shadow" type="submit" name="submit">registreer je nu in</button>
          <a href="index.php" class="w-100 btn btn-lg btn-danger shadow">Annuleer</a>
-         <p class="mt-5 mb-3 text-muted">&copy; 2017–2022</p>
       </form>
    </main>
 </div>
