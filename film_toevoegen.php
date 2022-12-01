@@ -14,13 +14,18 @@ $filmScore = $_POST['filmScore'];
 $filmCost = $_POST['filmCost']; 
 $filmEarnings = $_POST['filmEarnings']; 
 
-
-
+if(isset($_FILES['imageToUpload'])){
+  move_uploaded_file($_FILES['imageToUpload']['tmp_name'], "images/". $_FILES['imageToUpload']['name']);
+  $filmCoverImage = $_FILES['imageToUpload']['name'];
+}
+else{
+    echo "image not found!";
+}
 
 $sql = "INSERT INTO films (filmTitle,filmReleaseDate,filmAgeRatingEU,filmAgeRatingUS,filmLanguage,
 filmRuntime,filmScore,filmCost,filmEarnings,filmCoverImage)
 VALUES ('$filmTitle','$filmReleaseDate','$filmAgeRatingEU','$filmAgeRatingUS','$filmLanguage',
-'$filmRuntime','$filmScore','$filmCost','$filmEarnings','1')";
+'$filmRuntime','$filmScore','$filmCost','$filmEarnings','$filmCoverImage')";
 
 if ($conn->query($sql) === TRUE) {
     echo "New record created successfully";
@@ -49,10 +54,10 @@ if ($conn->query($sql) === TRUE) {
 <body class="bg-secondary bg-gradient">
 <div class="container bg-light rounded p-2">
     <h2>Film toevoegen</h2>
-    <form action="" method="POST">
+    <form action="" method="POST" enctype="multipart/form-data">
     <input type="text" class="form-control"  id="filmTitle" name="filmTitle" placeholder="Film Title">
     <div class="sideImage"><img src="images/test-image.png" alt="" width="125px" height="200px">
-    <input class="form-control" type="file" name="filmCoverImage" id="formFile">
+    <input class="form-control" type="file" name="imageToUpload" id="formFile">
     <table class="table">
   <tbody class="table-group-divider">
   <tr>
