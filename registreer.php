@@ -43,7 +43,7 @@
                </div><br>
             </div>
          </div>
-         <button class="w-100 btn btn-lg btn-success shadow" type="submit" name="submit">registreer je nu in</button>
+         <button class="w-100 btn btn-lg btn-success shadow" type="submit" name="submit">Registreer je nu in</button>
          <a href="index.php" class="w-100 btn btn-lg btn-danger shadow">Annuleer</a>
       </form>
    </main>
