@@ -2,6 +2,18 @@
 require 'connectie.php';
 
 $id = $_GET["genre_id"]; //17
+$sql = "SELECT * FROM genre WHERE genre_id = $id LIMIT 1";
+
+if ($result = mysqli_query($conn, $sql)) {
+
+   $genre = mysqli_fetch_assoc($result);
+
+   //var_dump($user);
+
+   if (is_null($genre)) {
+      header("location: genres.php");
+   }
+}
 
 if (isset($_POST["submit"]) && $_POST["genreName"] != "" && $_POST["genreDescription"] != "") {
 
@@ -27,10 +39,10 @@ if (isset($_POST["submit"]) && $_POST["genreName"] != "" && $_POST["genreDescrip
 <?php include "header.php"; ?>
 <div class="container bg-light border border-white rounded-1">
    <h1>Genre toevoegen</h1><br>
-   <form action="" method="POST">
-      <input class="form-control" type="text" name="genreName" value="<?php echo $user["genreName"] ?>" placeholder="Naam" aria-label="name"><br>
-      <input class="form-control" type="text" name="genreDescription" value="<?php echo $user["genreDescription"] ?>" placeholder="Descriptie" aria-label="age"><br>
-      <button class="w-100 btn btn-lg btn-primary shadow" name="submit" type="submit">Voeg toe</button>
+   <form action="update_genre.php?genre_id=<?php echo $id; ?>" method="POST">
+      <input class="form-control" type="text" name="genreName" value="<?php echo $genre["genreName"] ?>" placeholder="Naam" aria-label="name"><br>
+      <input class="form-control" type="text" name="genreDescription" value="<?php echo $genre["genreDescription"] ?>" placeholder="Descriptie" aria-label="age"><br>
+      <button class="w-100 btn btn-lg btn-primary shadow" name="submit" type="submit">Update de genre</button>
       <button class="w-100 btn btn-lg btn-danger shadow" onclick="history.back()">Ga terug</button>
    </form><br>
 </div>
