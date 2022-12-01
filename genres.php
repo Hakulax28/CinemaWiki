@@ -49,7 +49,4 @@ if ($result = mysqli_query($conn, $sql)) {
       <?php endif ?>
    <?php endif ?>
 </div>
-</div>
 <?php include "footer.php"; ?>
-
-</html>
