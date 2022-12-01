@@ -3,7 +3,7 @@ require 'connectie.php';
 
 // hier moet de info van de anderen tabelen te voor schijn komen. 
 
-$sql = "SELECT * FROM genre";
+$sql = "SELECT * FROM genre LIMIT 4";
 
 if ($result = mysqli_query($conn, $sql)) {
    $genres = mysqli_fetch_all($result, MYSQLI_ASSOC);
@@ -27,13 +27,12 @@ if ($result = mysqli_query($conn, $sql)) {
       </div>
    </div><br>
    <h2>Sorteer bij genre: </h2><br>
-   <div class="row g-4 gap-1 mx-auto">
+   <div class="row mx-auto gap-1">
       <?php foreach ($genres as $genre) : ?>
-         <div class="card" style="width: 20rem;">
-            <!--<img src="images/test-image.png" class="card-img-top" alt="...">-->
+         <div class="card" style="width: 150rem;">
             <div class="card-body">
                <h5 class="card-title"><?php echo $genre["genreName"] ?></h5><br>
-               <p class="card-text" style="height: 100px;"><?php echo $genre["genreDescription"] ?></p>
+               <p class="card-text"><?php echo $genre["genreDescription"] ?></p>
                <a href="zoeken.php" class="btn btn-primary shadow">Go somewhere</a>
             </div><br>
          </div>
