@@ -37,15 +37,13 @@ if (isset($_POST["submit"]) && $_POST["taal"] != "" && $_POST["land_van_oorspron
 ?>
 <?php include "header.php"; ?>
 
-<body class="bg-secondary bg-gradient">
-    <div class="container bg-light rounded p-2">
-        <h1>Taal toevoegen</h1>
-        <form action="" method="POST">
-            <input class="form-control" type="text" name="taal" placeholder="Taal" aria-label="name">
-            <input class="form-control" type="text" name="land_van_oorsprong" placeholder="Land van Oorsprong" aria-label="age">
-            <button class="btn btn-primary" name="submit" type="submit">Voeg toe</button>
-            <button class="btn btn-danger" onclick="history.back()">Ga terug</button>
-        </form>
-    </div>
-</body>
+<div class="container bg-light border border-white rounded-1"><br>
+    <h1>Taal toevoegen</h1>
+    <form action="" method="POST">
+        <input class="form-control" type="text" name="taal" placeholder="Taal" aria-label="name">
+        <input class="form-control" type="text" name="land_van_oorsprong" placeholder="Land van Oorsprong" aria-label="age">
+        <button class="btn btn-primary" name="submit" type="submit">Voeg toe</button>
+        <button class="btn btn-danger" onclick="history.back()">Ga terug</button>
+    </form>
+</div>
 <?php include "footer.php"; ?>

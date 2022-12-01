@@ -1,6 +1,6 @@
 <?php include "header.php" ?>
 
-<div class="container bg-light border border-white rounded-1">
+<div class="container bg-light border border-white rounded-1"><br>
    <h1>Wat is CinemaWiki?</h1><br>
    <div class="row g-5">
       <div class="col-md">

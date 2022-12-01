@@ -14,7 +14,7 @@
 
 <?php include "header.php"; ?>
 
-<div class="container bg-light border border-white rounded-1">
+<div class="container bg-light border border-white rounded-1"><br>
     <h1>Pages featuring "(Input)"</h1><br>
     <div class="d-flex flex-column mb-3 mt-3 bg-light rounded">
         <div class="p-2 col justify-content-start d-flex align-items-center">

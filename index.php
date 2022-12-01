@@ -15,7 +15,7 @@ if ($result = mysqli_query($conn, $sql)) {
 ?>
 <?php include "header.php" ?>
 
-<div class="container bg-light border border-white rounded-1">
+<div class="container bg-light border border-white rounded-1"><br>
    <h1>Welkom bij CinemaWiki</h1><br>
    <h2>Featured Film: </h2><br>
    <div class="row g-5">
