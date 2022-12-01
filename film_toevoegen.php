@@ -28,8 +28,12 @@ VALUES ('$filmTitle','$filmReleaseDate','$filmAgeRatingEU','$filmAgeRatingUS','$
 '$filmRuntime','$filmScore','$filmCost','$filmEarnings','$filmCoverImage')";
 
 if ($conn->query($sql) === TRUE) {
+    $sql = "SELECT * FROM films where filmTitle= '$filmTitle'";
+    $result = mysqli_query($conn,$sql);
+    $film = mysqli_fetch_assoc($result);
+    $film_id = $film['film_id'];
     echo "New record created successfully";
-    header("location: wikiaanmaken.php");
+    header("location: wikiaanmaken.php?film_id=$film_id");
     } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
     }$conn->close();

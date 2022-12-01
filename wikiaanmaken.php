@@ -1,37 +1,4 @@
-<?php 
-require "connectie.php";
 
-if(isset($_POST["submit"]))
-{
-    
-$pageMainText = $_POST['pageMainText']; 
-$pageMainImage = $_POST['pageMainImage']; 
-$pageSidebarText = $_POST['pageSidebarText']; 
-$pageSection1Title= $_POST['pageSection1Title']; 
-$pageSection1Text1 = $_POST['pageSection1Text1']; 
-$pageSection1Text2 = $_POST['pageSection1Text2']; 
-$pageSection1Image = $_POST['pageSection1Image']; 
-$pageSection2Title = $_POST['pageSection2Title']; 
-$pageSection2Text = $_POST['pageSection2Text']; 
-$pageExtraImage1 = $_POST['pageExtraImage1']; 
-$pageExtraImage2 = $_POST['pageExtraImage2']; 
-$pageSources = $_POST['pageSources']; 
-
-
-
-$sql = "INSERT INTO wikipages (pageMainText,pageSidebarText,pageSection1Title,pageSection1Text1,
-pageSection1Text2,pageSection2Title,pageSectionText,pageSources)
-VALUES ('$pageMainText','$pageSidebarText','$pageSection1Title','$pageSection1Text1',
-'$pageSection1Text2','$pageSection2Title','$pageSection2Text','$pageSources')";
-
-if ($conn->query($sql) === TRUE) {
-    echo "New record created successfully";
-    header("location: index.php");
-    } else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
-    }$conn->close();
-}
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -47,15 +14,76 @@ if ($conn->query($sql) === TRUE) {
 
 <?php include "header.php"; ?>
 
+<?php 
+require "connectie.php";
+if (isset($_GET['film_id'])){
+$film_id =  $_GET['film_id'];
+$sql = "SELECT * FROM films where film_id= '$film_id'";
+
+$result = mysqli_query($conn,$sql);
+$film = mysqli_fetch_assoc($result);
+
+mysqli_free_result($result);
+
+mysqli_close($conn);
+
+if(isset($_POST["submit"]))
+{
+    
+$pageMainText = $_POST['pageMainText']; 
+ 
+$pageSidebarText = $_POST['pageSidebarText']; 
+$pageSection1Title= $_POST['pageSection1Title']; 
+$pageSection1Text1 = $_POST['pageSection1Text1']; 
+$pageSection1Text2 = $_POST['pageSection1Text2']; 
+
+$pageSection2Title = $_POST['pageSection2Title']; 
+$pageSection2Text = $_POST['pageSection2Text']; 
+ 
+$pageSources = $_POST['pageSources']; 
+
+if(isset($_FILES['pageMainImage'])){
+  move_uploaded_file($_FILES['pageMainImage']['tmp_name'], "images/". $_FILES['pageMainImage']['name']);
+  $pageMainImage = "images/". $_FILES['pageMainImage']['name'];
+}
+if(isset($_FILES['pageSection1Image'])){
+  move_uploaded_file($_FILES['pageSection1Image']['tmp_name'], "images/". $_FILES['pageSection1Image']['name']);
+  $pageSection1Image = "images/". $_FILES['pageSection1Image']['name'];
+}
+if(isset($_FILES['pageExtraImage1'])){
+  move_uploaded_file($_FILES['pageExtraImage1']['tmp_name'], "images/". $_FILES['pageExtraImage1']['name']);
+  $pageExtraImage1 = "images/". $_FILES['pageExtraImage1']['name'];
+}
+if(isset($_FILES['pageExtraImage2'])){
+  move_uploaded_file($_FILES['pageExtraImage2']['tmp_name'], "images/". $_FILES['pageExtraImage2']['name']);
+  $pageExtraImage2 = "images/". $_FILES['pageExtraImage2']['name'];
+}
+
+
+
+$sql = "INSERT INTO wikipages (film_id,pageMainText,pageMainImage,pageSidebarText,pageSection1Title,pageSection1Text1,
+pageSection1Text2,pageSection2Title,pageSectionText,pageSources)
+VALUES ('$film_id','$pageMainImage','$pageMainText','$pageSidebarText','$pageSection1Title','$pageSection1Text1',
+'$pageSection1Text2','$pageSection2Title','$pageSection2Text','$pageSources')";
+
+if ($conn->query($sql) === TRUE) {
+    echo "New record created successfully";
+    header("location: index.php");
+    } else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
+    }$conn->close();
+}
+
+?>
+
 <body class="bg-secondary bg-gradient">
   <form action="" method="POST">
     <div class="containerWikipage container">
       <div class="main">
       <div class="mainTitle">
             <h1 class="display-3"><div class="mb-3S">
+            <?php echo $film['filmTitle']; ?>
       </div></h1>
-            <h2><div class="mb-3S">
-      </div></h2>
         </div>
             <div class="mainText">
             <div class="">
@@ -71,45 +99,41 @@ if ($conn->query($sql) === TRUE) {
         </div>
       </div>
       <div class="sidebar">
-        <div class="sideImage"><img src="images/test-image.png" alt="" width="125px" height="200px">
+        <div class="sideImage"><img src="<?php echo $film['filmCoverImage']; ?>" alt="" width="125px" height="200px">
     </div>
     <div class="mb-3">
         </div>
 
-    <div><h1>film title</h1></div>
+    <div><h1><?php echo $film['filmTitle']; ?></h1></div>
         <div class="sideList"><table class="table">
   <tbody class="table-group-divider">
     <tr>
-      <th scope="row">Title</th>
-      <td colspan="3">Film title</td>
-    </tr>
-    <tr>
       <th scope="row">Runtime</th>
-      <td colspan="3"><div class="mb-3S">
+      <td colspan="3"><?php echo $film['filmRuntime']; ?><div class="mb-3S">
       </div></td>
     </tr>
     <tr>
       <th scope="row">Age Rating</th>
-      <td></td>
-      <td></td>
+      <td>EU: <?php echo $film['filmAgeRatingEU']; ?></td>
+      <td>US: <?php echo $film['filmAgeRatingUS']; ?></td>
     </tr>
     <tr>
       <th scope="row">language</th>
-      <td colspan="3"><div class="mb-3S">
+      <td colspan="3"><?php echo $film['filmLanguage']; ?><div class="mb-3S">
       </div></td>
     </tr>
     <tr>
       <th scope="row">Score</th>
-      <td colspan="3"></td>
+      <td colspan="3"><?php echo $film['filmScore']; ?></td>
     </tr>
     <tr>
       <th scope="row">Cost</th>
-      <td colspan="3"><div class="mb-3S">
+      <td colspan="3">US$ <?php echo $film['filmCost']; ?><div class="mb-3S">
       </div></td>
     </tr>
     <tr>
       <th scope="row">Earnings</th>
-      <td colspan="3"><div class="mb-3S">
+      <td colspan="3">US$ <?php echo $film['filmEarnings']; ?><div class="mb-3S">
       </div></td>
     </tr>
   </tbody>
@@ -180,7 +204,7 @@ if ($conn->query($sql) === TRUE) {
   </form>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-
+<?php } ?>
 <?php include "footer.php"; ?>
 
 </html>
