@@ -28,8 +28,8 @@ VALUES ('$genreName','$genreDesc')";
     <form action="" method="POST">
         <input class="form-control" type="text" name="genreName" placeholder="Naam" aria-label="name"><br>
         <input class="form-control" type="text" name="genreDescription" placeholder="Descriptie" aria-label="age"><br>
-        <button class="btn btn-primary" name="submit" type="submit">Voeg toe</button>
-        <button class="btn btn-danger" onclick="history.back()">Ga terug</button>
+        <button class="w-100 btn btn-lg btn-primary shadow" name="submit" type="submit">Voeg toe</button>
+        <button class="w-100 btn btn-lg btn-danger shadow" onclick="history.back()">Ga terug</button>
     </form><br>
 </div>
 
