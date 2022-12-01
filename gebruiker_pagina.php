@@ -11,7 +11,7 @@ if ($result = mysqli_query($conn, $sql)) {
 ?>
 <?php include "header.php" ?>
 
-<div class="container bg-light border border-white rounded-1">
+<div class="container bg-light border border-white rounded-1"><br>
    <h1>Uw gegevens</h1><br>
    <table class="table table-striped table-dark">
       <thead>

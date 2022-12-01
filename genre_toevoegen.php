@@ -23,7 +23,7 @@ VALUES ('$genreName','$genreDesc')";
 ?>
 
 <?php include "header.php"; ?>
-<div class="container bg-light border border-white rounded-1">
+<div class="container bg-light border border-white rounded-1"><br>
     <h1>Genre toevoegen</h1><br>
     <form action="" method="POST">
         <input class="form-control" type="text" name="genreName" placeholder="Naam" aria-label="name"><br>

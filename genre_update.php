@@ -37,7 +37,7 @@ if (isset($_POST["submit"]) && $_POST["genreName"] != "" && $_POST["genreDescrip
 ?>
 
 <?php include "header.php"; ?>
-<div class="container bg-light border border-white rounded-1">
+<div class="container bg-light border border-white rounded-1"><br>
    <h1>Genre toevoegen</h1><br>
    <form action="update_genre.php?genre_id=<?php echo $id; ?>" method="POST">
       <input class="form-control" type="text" name="genreName" value="<?php echo $genre["genreName"] ?>" placeholder="Naam" aria-label="name"><br>

@@ -1,6 +1,6 @@
 <?php include "header.php" ?>
 
-<div class="container bg-light border border-white rounded-1">
+<div class="container bg-light border border-white rounded-1"><br>
    <h1>Facts and Questions</h1>
    <br>
    <div class="accordion" id="accordionExample">
