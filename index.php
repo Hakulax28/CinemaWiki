@@ -30,7 +30,7 @@ if ($result = mysqli_query($conn, $sql)) {
    <div class="row g-4 gap-1 mx-auto">
       <?php foreach ($genres as $genre) : ?>
          <div class="card" style="width: 20rem;">
-            <br><img src="images/test-image.png" class="card-img-top" alt="...">
+            <!--<img src="images/test-image.png" class="card-img-top" alt="...">-->
             <div class="card-body">
                <h5 class="card-title"><?php echo $genre["genreName"] ?></h5><br>
                <p class="card-text" style="height: 100px;"><?php echo $genre["genreDescription"] ?></p>
