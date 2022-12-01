@@ -32,10 +32,10 @@ if ($result = mysqli_query($conn, $sql)) {
          <div class="card" style="width: 20rem;">
             <br><img src="images/test-image.png" class="card-img-top" alt="...">
             <div class="card-body">
-               <h5 class="card-title"><?php echo $genre["genreName"] ?></h5>
-               <p class="card-text"><?php echo $genre["genreDescription"] ?></p>
+               <h5 class="card-title"><?php echo $genre["genreName"] ?></h5><br>
+               <p class="card-text" style="height: 100px;"><?php echo $genre["genreDescription"] ?></p>
                <a href="zoeken.php" class="btn btn-primary shadow">Go somewhere</a>
-            </div>
+            </div><br>
          </div>
       <?php endforeach; ?>
    </div><br>
