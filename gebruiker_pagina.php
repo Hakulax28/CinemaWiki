@@ -39,8 +39,8 @@ if ($result = mysqli_query($conn, $sql)) {
                <td><?php echo $user["date_of_birth"] ?></td>
                <td><?php echo $user["phonenumber"] ?></td>
                <td><?php echo $user["role"] ?></td>
-               <td><a href="delete.php?user_id=<?php echo $user["user_id"] ?>" class="shadow btn btn-danger shadow">Verwijder</a></td>
-               <td><a href="update_gegevens.php?user_id=<?php echo $user["user_id"] ?>" class="shadow btn btn-warning shadow">Update</a></td>
+               <td><a href="gebruiker_delete.php?user_id=<?php echo $user["user_id"] ?>" class="shadow btn btn-danger shadow">Verwijder</a></td>
+               <td><a href="gebruiker_update.php?user_id=<?php echo $user["user_id"] ?>" class="shadow btn btn-warning shadow">Update</a></td>
             </tr>
          <?php endforeach; ?>
       </tbody>
