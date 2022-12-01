@@ -13,7 +13,7 @@ if ($result = mysqli_query($conn, $sql)) {
 
 <div class="container bg-light border border-white rounded-1">
    <h1>Genres</h1><br>
-   <table class="table table-striped table-dark">
+   <table class="table table-striped table-dark rounded-1">
       <thead>
          <tr>
             <!--<th>ID</th>-->
