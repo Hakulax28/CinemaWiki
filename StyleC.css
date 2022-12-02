@@ -1,11 +1,11 @@
 /*p {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-}
+}*/
 h1 {
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  /*text-decoration: underline;
+  /*font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;*/
+  text-decoration: underline;
 }
-h2 {
+/*h2 {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 h3 {
@@ -20,4 +20,8 @@ h5 {
 .foto {
   max-width: 70%;
   width: 300px;
+}
+.foto2 {
+  max-width: 70%;
+  width: 600px;
 }

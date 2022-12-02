@@ -20,7 +20,7 @@ if ($result = mysqli_query($conn, $sql)) {
    <h2>Featured Film: </h2><br>
    <div class="row g-5">
       <div class="col-md">
-         <img src="images/test-image.png" style="max-width: 100%; max-height: 250px" alt="">
+         <img src="images/test-image.png" style="max-width: 100%; max-height: 225px" alt="">
       </div>
       <div class="col-md">
          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus, maxime. Ipsam, earum doloribus aperiam necessitatibus voluptates error quas aliquam labore? Aspernatur quis natus quasi repudiandae doloribus modi dignissimos qui praesentium nobis laboriosam officia veniam similique numquam esse vel dolores at veritatis totam, dolore saepe quia vero illum eius assumenda. Voluptatibus reprehenderit dicta necessitatibus, expedita quae eveniet doloribus blanditiis, quis veniam amet ut minima ipsam possimus?
