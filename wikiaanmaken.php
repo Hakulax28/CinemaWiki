@@ -25,7 +25,7 @@ $film = mysqli_fetch_assoc($result);
 
 mysqli_free_result($result);
 
-mysqli_close($conn);
+
 
 if(isset($_POST["submit"]) && $_POST["pageMainText"] != "")
 {
@@ -46,6 +46,7 @@ if(isset($_FILES['pageMainImage'])){
   move_uploaded_file($_FILES['pageMainImage']['tmp_name'], "images/". $_FILES['pageMainImage']['name']);
   $pageMainImage = "images/". $_FILES['pageMainImage']['name'];
 }else{
+  echo "page main image not found!";
   $pageMainImage = "";
 }
 
@@ -53,31 +54,35 @@ if(isset($_FILES['pageSection1Image'])){
   move_uploaded_file($_FILES['pageSection1Image']['tmp_name'], "images/". $_FILES['pageSection1Image']['name']);
   $pageSection1Image = "images/". $_FILES['pageSection1Image']['name'];
 }else{
+  echo "page section 1 image not found!";
   $pageSection1Image = "";
 }
 if(isset($_FILES['pageExtraImage1'])){
   move_uploaded_file($_FILES['pageExtraImage1']['tmp_name'], "images/". $_FILES['pageExtraImage1']['name']);
   $pageExtraImage1 = "images/". $_FILES['pageExtraImage1']['name'];
 }else{
+  echo "page extra image 1 not found!";
   $pageExtraImage1 = "";
 }
 if(isset($_FILES['pageExtraImage2'])){
   move_uploaded_file($_FILES['pageExtraImage2']['tmp_name'], "images/". $_FILES['pageExtraImage2']['name']);
   $pageExtraImage2 = "images/". $_FILES['pageExtraImage2']['name'];
 }else{
+  echo "page extra image 2 not found!";
   $pageExtraImage2 = "";
 }
 
 
 
 $sql = "INSERT INTO wikipages (film_id,pageMainText,pageMainImage,pageSidebarText,pageSection1Title,pageSection1Text1,
-pageSection1Text2,pageSection2Title,pageSection1Image,pageExtraImage1,pageExtraImage2,pageSectionText,pageSources)
-VALUES ('$film_id','$pageMainImage','$pageMainText','$pageSidebarText','$pageSection1Title','$pageSection1Text1',
-'$pageSection1Text2','$pageSection2Title','$pageSection2Text','$pageSources')";
+pageSection1Text2,pageSection2Title,pageSection1Image,pageExtraImage1,pageExtraImage2,pageSection2Text,pageSources)
+VALUES ('$film_id','$pageMainText','$pageMainImage','$pageSidebarText','$pageSection1Title','$pageSection1Text1',
+'$pageSection1Text2','$pageSection2Title','$pageSection1Image','$pageExtraImage1','$pageExtraImage2','$pageSection2Text','$pageSources')";
 
 if ($conn->query($sql) === TRUE) {
     echo "New record created successfully";
-    header("location: index.php");
+    
+    header("location: wikiaanmaken.php?page_id=$page_id");
     } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
     }$conn->close();
@@ -86,7 +91,7 @@ if ($conn->query($sql) === TRUE) {
 ?>
 
 <body class="bg-secondary bg-gradient">
-  <form action="" method="POST">
+  <form action="" method="POST" enctype="multipart/form-data">
     <div class="containerWikipage container">
       <div class="main">
       <div class="mainTitle">
