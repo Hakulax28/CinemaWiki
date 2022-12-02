@@ -20,7 +20,7 @@
    </div>
    <br>
    <div>
-      <img src="images/test-image.png" class="foto" alt="">
+      <img src="images/test-image.png" class="foto2" alt="">
    </div><br>
 </div>
 <?php include "footer.php" ?>
