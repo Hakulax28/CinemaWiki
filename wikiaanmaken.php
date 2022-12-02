@@ -81,7 +81,7 @@ VALUES ('$film_id','$pageMainText','$pageMainImage','$pageSidebarText','$pageSec
 
 if ($conn->query($sql) === TRUE) {
     echo "New record created successfully";
-    
+    $page_id = $film_id;
     header("location: wikiaanmaken.php?page_id=$page_id");
     } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
@@ -101,7 +101,7 @@ if ($conn->query($sql) === TRUE) {
         </div>
             <div class="mainText">
             <div class="">
-            <textarea class="form-control" id="Textarea1" name="pageMainText" rows="5" maxlength="500">Main Text</textarea>
+            <textarea class="form-control" id="Textarea1" name="pageMainText" rows="5" maxlength="5000">Main Text</textarea>
             </div>
             </div>
             <div class="mainImage">
@@ -166,7 +166,7 @@ if ($conn->query($sql) === TRUE) {
   </tbody>
 </table></div>
         <div class="sideText"><div class="">
-            <textarea class="form-control" name="pageSidebarText" id="Textarea2" rows="5" maxlength="500">Sidebar Text</textarea>
+            <textarea class="form-control" name="pageSidebarText" id="Textarea2" rows="5" maxlength="5000">Sidebar Text</textarea>
             </div></div>
       </div>
       
@@ -176,7 +176,7 @@ if ($conn->query($sql) === TRUE) {
       </div></div>
 
         <div class="section1MainText"><div class="">
-            <textarea class="form-control" id="Textarea3" rows="5" name="pageSection1Text1" maxlength="500">Section 1 Text</textarea>
+            <textarea class="form-control" id="Textarea3" rows="5" name="pageSection1Text1" maxlength="5000">Section 1 Text</textarea>
             </div></div>
 
         <div class="section1Image"><img src="images/test-image.png" alt="" class="img-fluid rounded">
@@ -187,7 +187,7 @@ if ($conn->query($sql) === TRUE) {
 
 
         <div class="section1ExtraText"><div class="">
-            <textarea class="form-control" id="Textarea4" name="pageSection1Text2" rows="5" maxlength="500">Section 1 Extra Text</textarea>
+            <textarea class="form-control" id="Textarea4" name="pageSection1Text2" rows="5" maxlength="5000">Section 1 Extra Text</textarea>
             </div></div>
 
         <div class="section2Title"><div class="mb-3S">
@@ -195,7 +195,7 @@ if ($conn->query($sql) === TRUE) {
       </div></div>
         
         <div class="section2MainText"><div class="">
-            <textarea class="form-control" name="pageSection2Text" id="Textarea4" rows="5" maxlength="500">Section 2 Text</textarea>
+            <textarea class="form-control" name="pageSection2Text" id="Textarea4" rows="5" maxlength="5000">Section 2 Text</textarea>
             </div></div>
       </div>
     <div class="sideimages">
@@ -210,7 +210,7 @@ if ($conn->query($sql) === TRUE) {
 
     <img src="images/test-image.png" alt="" class="img-fluid rounded"></div>
     <div class="sources"><div class="">
-            <textarea class="form-control" name="pageSources" id="Textarea5" rows="5" maxlength="500">Sources Text</textarea>
+            <textarea class="form-control" name="pageSources" id="Textarea5" rows="5" maxlength="5000">Sources Text</textarea>
             </div></div>
     </div>
     <button type="submit" name="submit" class="btn btn-primary mb-3">Confirm</button>

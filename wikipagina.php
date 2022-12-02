@@ -36,7 +36,7 @@ mysqli_free_result($result2);
 
 
 <body class="bg-secondary bg-gradient">
-  <div class="containerWikipage container">
+  <div class="containerWikipage container text-start">
     <div class="main">
       <div class="mainTitle">
         <h1 class="display-3"><?php echo $film['filmTitle']; ?></h1>
