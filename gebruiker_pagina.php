@@ -31,6 +31,7 @@ if ($result = mysqli_query($conn, $sql)) {
       <tbody>
          <?php foreach ($users as $user) : ?>
             <tr>
+               <td><img src="<?php echo $user["profilePicture"] ?>" alt="" class="profielFoto"></td>
                <!--<td><?php echo $user["user_id"] ?></td>-->
                <td><?php echo $user["firstname"] ?></td>
                <td><?php echo $user["lastname"] ?></td>

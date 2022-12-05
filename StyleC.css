@@ -28,3 +28,15 @@ h5 {
 table {
   width: 100%;
 }
+
+.profielFoto{
+  width: 50px;
+  height: 50px;
+  
+  border-radius: 25px;
+  background-color: white;
+  transition-duration: 0.3s;
+}
+.profielFoto:hover {
+  
+}
