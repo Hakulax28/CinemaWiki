@@ -50,9 +50,10 @@ if ($result = mysqli_query($conn, $sql)) {
                </div><br>
                <div class="form-floating">
                   <input type="hidden" name="oudeProfielfoto" value="<?php echo $user["profilePicture"]; ?>">
-                  <img src="<?php echo $user["profilePicture"] ?>" alt="none" width="100px" height="100px">
+                  <img src="<?php echo $user["profilePicture"]; ?>" alt="" width="100px" height="100px">
                   <input type="file" id="floatingInput" name="profielFoto" class="form-control"><br>
-                  <label for="floatingInput">Current image: <?php echo $user["profilePicture"] ?></label>
+                  <label for="floatingInput">Current image:</label>
+                  <a href="profielfoto_delete.php?path=<?php echo $user["profilePicture"]; ?>&id=<?php echo $id ?>" class="btn btn-danger">verwijder profiel foto</a>
                </div>
                <div class="form-floating">
                   <input type="tel" name="phonenumber" id="floatingInput" value="<?php echo $user["phonenumber"] ?>" class="form-control">
