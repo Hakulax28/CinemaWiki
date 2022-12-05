@@ -106,15 +106,15 @@ if (isset($_POST["submit"]) && $_POST["pageMainText"] != "") {
           </div>
           <div class="form-floating">
             <input type="text" class="form-control" name="pageSidebarText" id="floatingInput" value="<?php echo $page["pageSidebarText"] ?>" placeholder="name@example.com">
-            <label for="floatingInput">Voornaam: </label>
+            <label for="floatingInput">Titel bij de zij: </label>
           </div><br>
           <div class="form-floating">
             <input type="text" class="form-control" name="pageSection1Title" id="floatingPassword" value="<?php echo $page["pageSection1Title"] ?>" placeholder="Password">
-            <label for="floatingInput">Voornaam: </label>
+            <label for="floatingInput">Sectie1 Titel: </label>
           </div><br>
           <div class="form-floating">
             <input type="text" name="pageSection1Text1" id="floatingInput" value="<?php echo $page["pageSection1Text1"] ?>" class="form-control">
-            <label for="floatingInput">Voornaam: </label>
+            <label for="floatingInput">Sectie1 : </label>
           </div><br>
           <div class="form-floating">
             <input type="text" name="pageSection1Text2" id="floatingInput" value="<?php echo $page["pageSection1Text2"] ?>" class="form-control">
