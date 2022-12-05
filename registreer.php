@@ -30,7 +30,7 @@
                   <label for="floatingInput">Achternaam: </label>
                </div><br>
                <div class="form-floating">
-                  <input type="file" id="floatingInput" name="img" accept="image/*" class="form-control"><br>
+                  <input type="file" id="floatingInput" name="profielFoto" class="form-control"><br>
                   <label for="floatingInput">Select image: </label>
                </div>
                <div class="form-floating">
