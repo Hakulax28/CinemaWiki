@@ -12,6 +12,7 @@ if ($result = mysqli_query($conn, $sql)) {
    //var_dump($user);
 
    if (is_null($user)) {
+
       header("location: gebruiker_pagina.php");
    }
 }
@@ -20,7 +21,7 @@ if ($result = mysqli_query($conn, $sql)) {
 
 <div class="container bg-light border border-white rounded-1"><br>
    <main class="form-signin w-100 m-auto">
-      <form action="update_verwerking.php?user_id=<?php echo $id; ?>" method="post">
+      <form action="update_verwerking.php?user_id=<?php echo $id; ?>" method="post" enctype="multipart/form-data">
          <!--<img class="mb-4" src="/docs/5.2/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">-->
          <h1 class="h3 mb-3 fw-normal">Update jouw gegevens</h1>
          <div class="row g-2">
@@ -48,8 +49,10 @@ if ($result = mysqli_query($conn, $sql)) {
                   <label for="floatingInput">Achternaam: </label>
                </div><br>
                <div class="form-floating">
-                  <input type="file" id="floatingInput" name="img" accept="image/*" class="form-control"><br>
-                  <label for="floatingInput">Select image: </label>
+                  <input type="hidden" name="oudeProfielfoto" value="<?php echo $user["profilePicture"]; ?>">
+                  <img src="<?php echo $user["profilePicture"] ?>" alt="none" width="100px" height="100px">
+                  <input type="file" id="floatingInput" name="profielFoto" class="form-control"><br>
+                  <label for="floatingInput">Current image: <?php echo $user["profilePicture"] ?></label>
                </div>
                <div class="form-floating">
                   <input type="tel" name="phonenumber" id="floatingInput" value="<?php echo $user["phonenumber"] ?>" class="form-control">
