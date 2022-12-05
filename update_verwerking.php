@@ -12,6 +12,7 @@ if (isset($_POST["submit"])) {
       && !empty($_POST["date_of_birth"])
       && !empty($_POST["phonenumber"])
       && !empty($_POST["role"])
+      
 
    ) {
       //allemaal moeten ze true zijn
@@ -22,6 +23,20 @@ if (isset($_POST["submit"])) {
       $geboortedatum = $_POST["date_of_birth"];
       $telefoonnummer = $_POST["phonenumber"];
       $rol = $_POST["role"];
+
+      
+      if(isset($_FILES["profielFoto"]) && !empty($_FILES["profielFoto"]["name"])){
+            unlink($_POST["oudeProfielfoto"]);
+            move_uploaded_file($_FILES['profielFoto']['tmp_name'], "images/profielfotos/". $_FILES['profielFoto']['name']);
+            $profilePicture = "images/profielfotos/". $_FILES['profielFoto']['name'];
+
+       }
+       else{
+           echo "image not found!";
+           $profilePicture = $_POST["oudeProfielfoto"];
+       }
+       
+       
 
       //database connectie
 
@@ -34,7 +49,9 @@ if (isset($_POST["submit"])) {
       password = '$wachtwoord',
       date_of_birth = '$geboortedatum', 
       phonenumber =  '$telefoonnummer',
-      role = '$rol' WHERE users.user_id = '$id'  ";
+      role = '$rol',
+      profilePicture = '$profilePicture'
+       WHERE users.user_id = '$id'  ";
 
       // Voer de INSERT INTO STATEMENT uit
 

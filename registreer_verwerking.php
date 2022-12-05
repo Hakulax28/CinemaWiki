@@ -23,7 +23,7 @@ if (isset($_POST["submit"])) {
          $role = $_POST['role'];
 
          if(isset($_FILES['profielFoto'])){
-            move_uploaded_file($_FILES['profielFoto']['tmp_name'], "images/". $_FILES['profielFoto']['name']);
+            move_uploaded_file($_FILES['profielFoto']['tmp_name'], "images/profielfotos/". $_FILES['profielFoto']['name']);
             $profilePicture = "images/profielfotos/". $_FILES['profielFoto']['name'];
           }
           else{
