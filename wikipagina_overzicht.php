@@ -4,6 +4,10 @@
 
 $sql = "SELECT * FROM wikipages";
 
+$sql = "SELECT *, films.filmTitle as film_id
+FROM wikipages 
+JOIN films ON films.film_id = wikipages.page_id";
+
 if ($result = mysqli_query($conn, $sql)) {
    $pages = mysqli_fetch_all($result, MYSQLI_ASSOC);
 }
