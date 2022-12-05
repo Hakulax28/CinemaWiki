@@ -22,11 +22,19 @@ if (isset($_POST["submit"])) {
          $phonenumber = $_POST['phonenumber'];
          $role = $_POST['role'];
 
+         if(isset($_FILES['profielFoto'])){
+            move_uploaded_file($_FILES['profielFoto']['tmp_name'], "images/". $_FILES['profielFoto']['name']);
+            $profilePicture = "images/profielfotos/". $_FILES['profielFoto']['name'];
+          }
+          else{
+              echo "image not found!";
+          }
+
          //database connectie
 
          require 'connectie.php';
-         $sql = "INSERT INTO users (firstname, lastname, email, password, date_of_birth, phonenumber, role)
-                VALUES ('$firstname', '$lastname', '$email', '$password', '$dateofbirth', '$phonenumber', '$role')";
+         $sql = "INSERT INTO users (firstname, lastname, email, password, date_of_birth, phonenumber, role , profilePicture)
+                VALUES ('$firstname', '$lastname', '$email', '$password', '$dateofbirth', '$phonenumber', '$role','$profilePicture')";
 
          // Voer de INSERT INTO STATEMENT uit
          if (mysqli_query($conn, $sql)) {
