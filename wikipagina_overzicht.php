@@ -2,10 +2,10 @@
 
 // hier moet de info van de anderen tabelen te voor schijn komen. 
 
-$sql = "SELECT * FROM users";
+$sql = "SELECT * FROM wikipages";
 
 if ($result = mysqli_query($conn, $sql)) {
-   $users = mysqli_fetch_all($result, MYSQLI_ASSOC);
+   $pages = mysqli_fetch_all($result, MYSQLI_ASSOC);
 }
 
 ?>
@@ -13,37 +13,51 @@ if ($result = mysqli_query($conn, $sql)) {
 
 <div class="container bg-light border border-white rounded-1"><br>
    <h1>Uw gegevens</h1><br>
-   <table class="table table-striped table-dark">
-      <thead>
-         <tr>
-            <!--<th>ID</th>-->
-            <th>Voornaam</th>
-            <th>Achternaam</th>
-            <th>Email</th>
-            <th>Wachtwoord</th>
-            <th>Geboortedatum</th>
-            <th>Telefoonnummer</th>
-            <th>Rol</th>
-            <th>Verwijder</th>
-            <th>Update</th>
-         </tr>
-      </thead>
-      <tbody>
-         <?php foreach ($users as $user) : ?>
+   <div style="overflow-x:auto;">
+      <table class=" table table-striped table-dark">
+         <thead>
             <tr>
-               <!--<td><?php echo $user["user_id"] ?></td>-->
-               <td><?php echo $user["firstname"] ?></td>
-               <td><?php echo $user["lastname"] ?></td>
-               <td><?php echo $user["email"] ?></td>
-               <td><?php echo $user["password"] ?></td>
-               <td><?php echo $user["date_of_birth"] ?></td>
-               <td><?php echo $user["phonenumber"] ?></td>
-               <td><?php echo $user["role"] ?></td>
-               <td><a href="gebruiker_delete.php?user_id=<?php echo $user["user_id"] ?>" class="shadow btn btn-danger shadow">Verwijder</a></td>
-               <td><a href="gebruiker_update.php?user_id=<?php echo $user["user_id"] ?>" class="shadow btn btn-warning shadow">Update</a></td>
+               <!--<th>ID</th>-->
+               <th>Film</th>
+               <th>Main Text</th>
+               <th>Main Photo</th>
+               <th>Zij Text</th>
+               <th>Sectie1 Titel</th>
+               <th>Sectie1 Text1</th>
+               <th>Sectie1 Text2</th>
+               <th>Sectie1 Foto</th>
+               <th>Sectie2 Titel</th>
+               <th>Sectie2 Text</th>
+               <th>Extra foto1</th>
+               <th>Extra foto2</th>
+               <th>Bronnen</th>
+               <th>Verwijder</th>
+               <th>Update</th>
             </tr>
-         <?php endforeach; ?>
-      </tbody>
-   </table>
+         </thead>
+         <tbody>
+            <?php foreach ($pages as $page) : ?>
+               <tr>
+                  <!--<td><?php echo $page["page_id"] ?></td>-->
+                  <td><?php echo $page["film_id"] ?></td>
+                  <td><?php echo $page["pageMainText"] ?></td>
+                  <td><?php echo $page["pageMainImage"] ?></td>
+                  <td><?php echo $page["pageSidebarText"] ?></td>
+                  <td><?php echo $page["pageSection1Title"] ?></td>
+                  <td><?php echo $page["pageSection1Text1"] ?></td>
+                  <td><?php echo $page["pageSection1Text2"] ?></td>
+                  <td><?php echo $page["pageSection1Image"] ?></td>
+                  <td><?php echo $page["pageSection2Title"] ?></td>
+                  <td><?php echo $page["pageSection2Text"] ?></td>
+                  <td><?php echo $page["pageExtraImage1"] ?></td>
+                  <td><?php echo $page["pageExtraImage2"] ?></td>
+                  <td><?php echo $page["pageSources"] ?></td>
+                  <td><a href="wikipagina_delete.php?page_id=<?php echo $page["page_id"] ?>" class="shadow btn btn-danger shadow">Verwijder</a></td>
+                  <td><a href="wikipagina_update.php?page_id=<?php echo $page["page_id"] ?>" class="shadow btn btn-warning shadow">Update</a></td>
+               </tr>
+            <?php endforeach; ?>
+         </tbody>
+      </table>
+   </div>
 </div>
 <?php include "footer.php" ?>
