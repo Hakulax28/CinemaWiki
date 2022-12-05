@@ -81,8 +81,9 @@ VALUES ('$film_id','$pageMainText','$pageMainImage','$pageSidebarText','$pageSec
 
 if ($conn->query($sql) === TRUE) {
     echo "New record created successfully";
-    $page_id = $film_id;
-    header("location: wikiaanmaken.php?page_id=$page_id");
+    $last_id = mysqli_insert_id($conn);
+    echo $last_id;
+    echo "<script> window.location.href='wikipagina.php?page_id=$last_id'; </script>";
     } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
     }$conn->close();
@@ -99,7 +100,7 @@ if ($conn->query($sql) === TRUE) {
             <?php echo $film['filmTitle']; ?>
       </div></h1>
         </div>
-            <div class="mainText">
+            <div class="mainText"> 
             <div class="">
             <textarea class="form-control" id="Textarea1" name="pageMainText" rows="5" maxlength="5000">Main Text</textarea>
             </div>
@@ -123,7 +124,7 @@ if ($conn->query($sql) === TRUE) {
   <tbody class="table-group-divider">
     <tr>
       <th scope="row">Runtime</th>
-      <td colspan="3"><?php echo $film['filmRuntime']; ?><div class="mb-3S">
+      <td colspan="3"><?php echo $film['filmRuntime']; ?> <p> Minutes</p><div class="mb-3S">
       </div></td>
     </tr>
     <tr>
