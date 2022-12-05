@@ -11,7 +11,7 @@ if ($result = mysqli_query($conn, $sql)) {
    //var_dump($user);
 
    if (is_null($film)) {
-      header("location: wiki");
+      header("location: index.php");
    }
 }
 if (isset($_POST["submit"]) && $_POST["filmTitle"] != "") {
