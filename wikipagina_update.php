@@ -114,15 +114,15 @@ if (isset($_POST["submit"]) && $_POST["pageMainText"] != "") {
           </div><br>
           <div class="form-floating">
             <input type="text" name="pageSection1Text1" id="floatingInput" value="<?php echo $page["pageSection1Text1"] ?>" class="form-control">
-            <label for="floatingInput">Sectie1 : </label>
+            <label for="floatingInput">Sectie1 Text1: </label>
           </div><br>
           <div class="form-floating">
             <input type="text" name="pageSection1Text2" id="floatingInput" value="<?php echo $page["pageSection1Text2"] ?>" class="form-control">
-            <label for="floatingInput">Voornaam: </label>
+            <label for="floatingInput">Sectie1 Text2: </label>
           </div><br>
           <div class="form-floating">
             <input type="text" name="pageSection2Title" id="floatingInput" value="<?php echo $page["pageSection2Title"] ?>" class="form-control">
-            <label for="floatingInput">Voornaam: </label>
+            <label for="floatingInput">Sectie2 Titel: </label>
           </div><br>
           <div class="form-floating">
             <input type="hidden" name="oudeProfielfoto" value="<?php echo $page["pageSection1Image"]; ?>">
@@ -144,11 +144,11 @@ if (isset($_POST["submit"]) && $_POST["pageMainText"] != "") {
           </div>
           <div class="form-floating">
             <input type="text" name="pageSection2Text" id="floatingInput" value="<?php echo $page["pageSection2Text"] ?>" class="form-control">
-            <label for="floatingInput">Voornaam: </label>
+            <label for="floatingInput">Sectie2 Text: </label>
           </div><br>
           <div class="form-floating">
             <input type="text" name="pageSources" id="floatingInput" value="<?php echo $page["pageSources"] ?>" class="form-control">
-            <label for="floatingInput">Voornaam: </label>
+            <label for="floatingInput">Bronnen: </label>
           </div><br>
         </div>
       </div>
