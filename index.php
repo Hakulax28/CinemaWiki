@@ -24,7 +24,7 @@ if ($result = mysqli_query($conn, $sql)) {
       </div>
       <div class="col-md">
          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus, maxime. Ipsam, earum doloribus aperiam necessitatibus voluptates error quas aliquam labore? Aspernatur quis natus quasi repudiandae doloribus modi dignissimos qui praesentium nobis laboriosam officia veniam similique numquam esse vel dolores at veritatis totam, dolore saepe quia vero illum eius assumenda. Voluptatibus reprehenderit dicta necessitatibus, expedita quae eveniet doloribus blanditiis, quis veniam amet ut minima ipsam possimus?
-            <a href="wikipagina.php" class="w-100 btn btn-lg btn-success shadow" type="submit">Browse</a>
+            <a href="wikipagina.php?page_id=1" class="w-100 btn btn-lg btn-success shadow" type="submit">Browse</a>
          </p>
       </div>
    </div><br>
