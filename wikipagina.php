@@ -46,7 +46,7 @@ if (isset($_GET['page_id'])) {
             <?php endif ?>
             <?php if ($_SESSION['role'] == "beheerder") : ?>
               <a href="wikipagina_overzicht.php" class="shadow btn btn-warning shadow">Overzicht</a>
-              <a href="wikipagina_update.php?page_id=<?php echo $page["page_id"] ?>" class="shadow btn btn-warning shadow">Update</a>
+              <a href="wikipagina_update.php?page_id=<?php echo $page["page_id"] ?>" class="shadow btn btn-warning shadow">Bewerken</a>
               <a href="wikipagina_delete.php?page_id=<?php echo $page["page_id"] ?>" class="shadow btn btn-danger shadow">Verwijder</a>
             <?php endif ?>
           <?php endif ?>
@@ -65,6 +65,14 @@ if (isset($_GET['page_id'])) {
         </div>
         <div>
           <h1><?php echo $film['filmTitle']; ?></h1>
+          <?php if (!empty($_SESSION)) : ?>
+            <?php if ($_SESSION['role'] == "gebruiker") : ?>
+              <a href="film_update.php?film_id=<?php echo $page["film_id"] ?>" class="shadow btn btn-warning shadow">Bewerken</a>
+            <?php endif ?>
+            <?php if ($_SESSION['role'] == "beheerder") : ?>
+              <a href="film_update.php?film_id=<?php echo $page["film_id"] ?>" class="shadow btn btn-warning shadow">Update</a>
+            <?php endif ?>
+          <?php endif ?>
         </div>
         <div class="sideList">
           <table class="table">

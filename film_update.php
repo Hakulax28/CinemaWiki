@@ -1,6 +1,9 @@
 <?php
 require "connectie.php";
 
+$film_id =  $_GET['film_id'];
+$sql = "SELECT * FROM films where film_id= $film_id LIMIT 1";
+
 if (isset($_POST["submit"]) && $_POST["filmTitle"] != "") {
 
    $filmTitle = $_POST['filmTitle'];
@@ -64,8 +67,8 @@ if (isset($_POST["submit"]) && $_POST["filmTitle"] != "") {
 
 <body class="bg-secondary bg-gradient">
    <div class="container bg-light rounded p-2">
-      <h2>Film toevoegen</h2>
-      <form action="" method="POST" enctype="multipart/form-data">
+      <h2>Film Updaten</h2>
+      <form action="film_update.php?film_id=<?php echo $film_id; ?>" method="POST" enctype="multipart/form-data">
          <input type="text" class="form-control" id="filmTitle" name="filmTitle" placeholder="Film Title" value="<?php echo $film["filmTitle"] ?>">
          <div class="sideImage"><img src="images/test-image.png" alt="" width="125px" height="200px">
             <input class="form-control" type="file" name="imageToUpload" id="formFile">
@@ -166,7 +169,7 @@ if (isset($_POST["submit"]) && $_POST["filmTitle"] != "") {
                </tbody>
             </table>
 
-            <button class="btn btn-primary" name="submit" type="submit">Voeg toe</button>
+            <button class="btn btn-primary" name="submit" type="submit">Update</button>
             <button class="btn btn-danger" onclick="history.back()">Ga terug</button>
       </form>
    </div>
