@@ -59,7 +59,7 @@ mysqli_free_result($result2);
           <tbody class="table-group-divider">
             <tr>
               <th scope="row">Runtime</th>
-              <td colspan="3"><?php echo $film['filmRuntime']; ?></td>
+              <td colspan="3"><?php echo $film['filmRuntime']; ?><p> Minutes</p></td>
             </tr>
             <tr>
               <th scope="row">Age Rating</th>
@@ -76,11 +76,11 @@ mysqli_free_result($result2);
             </tr>
             <tr>
               <th scope="row">Cost</th>
-              <td colspan="3"><?php echo $film['filmCost']; ?></td>
+              <td colspan="3">US$ <?php echo $film['filmCost']; ?></td>
             </tr>
             <tr>
               <th scope="row">Earnings</th>
-              <td colspan="3"><?php echo $film['filmEarnings']; ?></td>
+              <td colspan="3">US$ <?php echo $film['filmEarnings']; ?></td>
             </tr>
           </tbody>
         </table>
