@@ -11,7 +11,7 @@ if ($result = mysqli_query($conn, $sql)) {
   //var_dump($user);
 
   if (is_null($page)) {
-    header("location: wikipagina_overzicht");
+    header("location: index.php");
   }
 }
 
@@ -91,12 +91,12 @@ if (isset($_POST["submit"]) && $_POST["pageMainText"] != "") {
   <main class="form-signin w-100 m-auto">
     <form action="update_verwerking.php?user_id=<?php echo $id; ?>" method="post" enctype="multipart/form-data">
       <!--<img class="mb-4" src="/docs/5.2/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">-->
-      <h1 class="h3 mb-3 fw-normal">Update jouw gegevens</h1>
+      <h1 class="h3 mb-3 fw-normal">Update uw pagina</h1>
       <div class="row g-2">
         <div class="col-md">
           <div class="form-floating">
             <input type="text" name="pageMainText" id="pageMainText" value="<?php echo $page["pageMainText"] ?>" class="form-control">
-            <label for="floatingInput">Voornaam: </label>
+            <label for="floatingInput">Titel: </label>
           </div><br>
           <div class="form-floating">
             <input type="hidden" name="oudeProfielfoto" value="<?php echo $page["pageMainImage"]; ?>">
