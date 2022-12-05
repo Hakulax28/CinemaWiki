@@ -45,16 +45,16 @@ if ($result = mysqli_query($conn, $sql)) {
                   <!--<td><?php echo $page["page_id"] ?></td>-->
                   <td><?php echo $page["film_id"] ?></td>
                   <td><?php echo $page["pageMainText"] ?></td>
-                  <td><?php echo $page["pageMainImage"] ?></td>
+                  <td><?php echo $page["pageMainImage"] ?><img src="images/<?php echo $product["pageMainImage"] ?>" alt="" width="100px" height="100px"></td>
                   <td><?php echo $page["pageSidebarText"] ?></td>
                   <td><?php echo $page["pageSection1Title"] ?></td>
                   <td><?php echo $page["pageSection1Text1"] ?></td>
                   <td><?php echo $page["pageSection1Text2"] ?></td>
-                  <td><?php echo $page["pageSection1Image"] ?></td>
+                  <td><?php echo $page["pageSection1Image"] ?><img src="images/<?php echo $product["pageSection1Image"] ?>" alt="" width="100px" height="100px"></td>
                   <td><?php echo $page["pageSection2Title"] ?></td>
                   <td><?php echo $page["pageSection2Text"] ?></td>
-                  <td><?php echo $page["pageExtraImage1"] ?></td>
-                  <td><?php echo $page["pageExtraImage2"] ?></td>
+                  <td><?php echo $page["pageExtraImage1"] ?><img src="images/<?php echo $product["pageExtraImage1"] ?>" alt="" width="100px" height="100px"></td>
+                  <td><?php echo $page["pageExtraImage2"] ?><img src="images/<?php echo $product["pageExtraImage2"] ?>" alt="" width="100px" height="100px"></td>
                   <td><?php echo $page["pageSources"] ?></td>
                   <td><a href="wikipagina_delete.php?page_id=<?php echo $page["page_id"] ?>" class="shadow btn btn-danger shadow">Verwijder</a></td>
                   <td><a href="wikipagina_update.php?page_id=<?php echo $page["page_id"] ?>" class="shadow btn btn-warning shadow">Update</a></td>
