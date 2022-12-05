@@ -25,17 +25,18 @@ if (isset($_POST["submit"])) {
       $rol = $_POST["role"];
 
       
-      if(isset($_FILES['profielFoto'])){
-         if (!empty($_POST["profilePicture"])){
+      if(isset($_FILES["profielFoto"]) && !empty($_FILES["profielFoto"]["name"])){
+            unlink($_POST["oudeProfielfoto"]);
             move_uploaded_file($_FILES['profielFoto']['tmp_name'], "images/profielfotos/". $_FILES['profielFoto']['name']);
             $profilePicture = "images/profielfotos/". $_FILES['profielFoto']['name'];
-         }
+
        }
        else{
            echo "image not found!";
            $profilePicture = $_POST["oudeProfielfoto"];
        }
-
+       
+       
 
       //database connectie
 
@@ -55,7 +56,7 @@ if (isset($_POST["submit"])) {
       // Voer de INSERT INTO STATEMENT uit
 
       if (mysqli_query($conn, $sql)) {
-         //header("location: index.php");
+         header("location: index.php");
       }
 
       echo "Updated successfully";
