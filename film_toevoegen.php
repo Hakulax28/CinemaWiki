@@ -72,9 +72,11 @@ if ($conn->query($sql) === TRUE) {
     </tr>
     <tr>
       <th scope="row">Runtime</th>
-      <td colspan="3"><div class="mb-3S">
+      <td colspan="2"><div class="mb-3S">
       <input type="number" class="form-control" name="filmRuntime" id="filmRuntime" placeholder="Film Runtime">
+      
       </div></td>
+      <td><p>Minutes</p></td>
     </tr>
     <tr>
       <th scope="row">Age Rating</th>
