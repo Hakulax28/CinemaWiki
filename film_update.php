@@ -1,6 +1,19 @@
 <?php
 require "connectie.php";
 
+$id = $_GET["film_id"]; //17
+$sql = "SELECT * FROM films WHERE film_id = $id LIMIT 1";
+
+if ($result = mysqli_query($conn, $sql)) {
+
+   $film = mysqli_fetch_assoc($result);
+
+   //var_dump($user);
+
+   if (is_null($film)) {
+      header("location: wiki");
+   }
+}
 if (isset($_POST["submit"]) && $_POST["filmTitle"] != "") {
 
    $filmTitle = $_POST['filmTitle'];
@@ -30,7 +43,7 @@ if (isset($_POST["submit"]) && $_POST["filmTitle"] != "") {
    filmScore = '$filmScore',
    filmCost = '$filmCost',
    filmEarnings = '$filmEarnings',
-   filmCoverImage = '$filmCoverImage' WHERE films.film_id = '$film_id' ";
+   filmCoverImage = '$filmCoverImage' WHERE films.film_id = '$id' ";
 
    if ($conn->query($sql) === TRUE) {
       $sql = "SELECT * FROM films where filmTitle= '$filmTitle'";
@@ -38,7 +51,7 @@ if (isset($_POST["submit"]) && $_POST["filmTitle"] != "") {
       $film = mysqli_fetch_assoc($result);
       $film_id = $film['film_id'];
       echo "New record created successfully";
-      header("location: wikiaanmaken.php?film_id=$film_id");
+      header("location: wikiaanmaken.php?film_id=$id");
    } else {
       echo "Error: " . $sql . "<br>" . $conn->error;
    }
@@ -64,10 +77,10 @@ if (isset($_POST["submit"]) && $_POST["filmTitle"] != "") {
 
 <body class="bg-secondary bg-gradient">
    <div class="container bg-light rounded p-2">
-      <h2>Film toevoegen</h2>
-      <form action="" method="POST" enctype="multipart/form-data">
+      <h2>Film Updaten</h2>
+      <form action="film_update.php?film_id=<?php echo $id; ?>" method="POST" enctype="multipart/form-data">
          <input type="text" class="form-control" id="filmTitle" name="filmTitle" placeholder="Film Title" value="<?php echo $film["filmTitle"] ?>">
-         <div class="sideImage"><img src="images/test-image.png" alt="" width="125px" height="200px">
+         <div class="sideImage"><img src="images/<?php echo $film["filmCoverImage"]; ?>" alt="" width="125px" height="200px">
             <input class="form-control" type="file" name="imageToUpload" id="formFile">
             <table class="table">
                <tbody class="table-group-divider">
@@ -166,7 +179,7 @@ if (isset($_POST["submit"]) && $_POST["filmTitle"] != "") {
                </tbody>
             </table>
 
-            <button class="btn btn-primary" name="submit" type="submit">Voeg toe</button>
+            <button class="btn btn-primary" name="submit" type="submit">Update</button>
             <button class="btn btn-danger" onclick="history.back()">Ga terug</button>
       </form>
    </div>
