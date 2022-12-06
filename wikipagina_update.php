@@ -11,7 +11,7 @@ if ($result = mysqli_query($conn, $sql)) {
   //var_dump($user);
 
   if (is_null($page)) {
-    header("location: wikipagina.php?page_id<?php echo $id; ?> ");
+    header("location: wikipagina.php?page_id=$id");
   }
 }
 
@@ -74,16 +74,19 @@ if (isset($_POST["submit"]) && $_POST["pageMainText"] != "") {
     pageSources = '$pageSources' WHERE wikipages.page_id = '$id' ";
 
   if ($conn->query($sql) === TRUE) {
+    $sql = "SELECT * FROM films where filmTitle= '$filmTitle'";
+    $result = mysqli_query($conn, $sql);
+    $film = mysqli_fetch_assoc($result);
+    $film_id = $film['film_id'];
     echo "New record created successfully";
-    $last_id = mysqli_insert_id($conn);
-    echo $last_id;
-    echo "<script> window.location.href='wikipagina.php?page_id=$last_id'; </script>";
+    header("location: wikipagina.php?page_id=$id");
   } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
   }
   $conn->close();
+} else if (isset($_POST["submit"])) {
+  echo "<script>alert('Vul alle velden in!!!')</script>";
 }
-
 ?>
 <?php include "header.php" ?>
 
