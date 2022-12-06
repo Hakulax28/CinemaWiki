@@ -50,7 +50,7 @@ if (isset($_GET['page_id'])) {
               <a href="wikipagina_delete.php?page_id=<?php echo $page["page_id"] ?>" class="shadow btn btn-danger shadow">Verwijder</a>
             <?php endif ?>
           <?php endif ?>
-          <a href="geschiedenis.php" class="shadow btn btn-warning shadow">Geschiedenis</a>
+          <a href="geschiedenis.php" class="shadow btn btn-primary shadow">Geschiedenis</a>
           <h1 class="display-3"><?php echo $film['filmTitle']; ?></h1>
         </div>
         <div class="mainText">

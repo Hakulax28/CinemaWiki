@@ -11,7 +11,7 @@ if ($result = mysqli_query($conn, $sql)) {
   //var_dump($user);
 
   if (is_null($page)) {
-    header("location: index.php");
+    header("location: wikipagina.php?page_id<?php echo $id; ?> ");
   }
 }
 
@@ -87,80 +87,51 @@ if (isset($_POST["submit"]) && $_POST["pageMainText"] != "") {
 ?>
 <?php include "header.php" ?>
 
-<div class="container bg-light border border-white rounded-1"><br>
-  <main class="form-signin w-100 m-auto">
-    <form action="update_verwerking.php?user_id=<?php echo $id; ?>" method="post" enctype="multipart/form-data">
-      <!--<img class="mb-4" src="/docs/5.2/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">-->
-      <h1 class="h3 mb-3 fw-normal">Update uw pagina</h1>
-      <div class="row g-2">
-        <div class="col-md">
-          <div class="form-floating">
-            <input type="text" name="pageMainText" id="pageMainText" value="<?php echo $page["pageMainText"] ?>" class="form-control">
-            <label for="floatingInput">Titel: </label>
-          </div><br>
-          <div class="form-floating">
-            <input type="hidden" name="oudeProfielfoto" value="<?php echo $page["pageMainImage"]; ?>">
-            <img src="<?php echo $page["pageMainImage"] ?>" alt="none" width="100px" height="100px">
-            <input type="file" id="floatingInput" name="profielFoto" class="form-control"><br>
-            <label for="floatingInput">Current image: <?php echo $page["pageMainImage"] ?></label>
-          </div>
-          <div class="form-floating">
-            <input type="text" class="form-control" name="pageSidebarText" id="floatingInput" value="<?php echo $page["pageSidebarText"] ?>" placeholder="name@example.com">
-            <label for="floatingInput">Titel bij de zij: </label>
-          </div><br>
-          <div class="form-floating">
-            <input type="text" class="form-control" name="pageSection1Title" id="floatingPassword" value="<?php echo $page["pageSection1Title"] ?>" placeholder="Password">
-            <label for="floatingInput">Sectie1 Titel: </label>
-          </div><br>
-          <div class="form-floating">
-            <input type="text" name="pageSection1Text1" id="floatingInput" value="<?php echo $page["pageSection1Text1"] ?>" class="form-control">
-            <label for="floatingInput">Sectie1 Text1: </label>
-          </div><br>
-          <div class="form-floating">
-            <input type="text" name="pageSection1Text2" id="floatingInput" value="<?php echo $page["pageSection1Text2"] ?>" class="form-control">
-            <label for="floatingInput">Sectie1 Text2: </label>
-          </div><br>
-          <div class="form-floating">
-            <input type="text" name="pageSection2Title" id="floatingInput" value="<?php echo $page["pageSection2Title"] ?>" class="form-control">
-            <label for="floatingInput">Sectie2 Titel: </label>
-          </div><br>
-          <div class="form-floating">
-            <input type="hidden" name="oudeProfielfoto" value="<?php echo $page["pageSection1Image"]; ?>">
-            <img src="<?php echo $page["pageSection1Image"] ?>" alt="none" width="100px" height="100px">
-            <input type="file" id="floatingInput" name="profielFoto" class="form-control"><br>
-            <label for="floatingInput">Current image: <?php echo $page["pageSection1Image"] ?></label>
-          </div>
-          <div class="form-floating">
-            <input type="hidden" name="oudeProfielfoto" value="<?php echo $page["pageExtraImage1"]; ?>">
-            <img src="<?php echo $page["pageExtraImage1"] ?>" alt="none" width="100px" height="100px">
-            <input type="file" id="floatingInput" name="profielFoto" class="form-control"><br>
-            <label for="floatingInput">Current image: <?php echo $page["pageExtraImage1"] ?></label>
-          </div>
-          <div class="form-floating">
-            <input type="hidden" name="oudeProfielfoto" value="<?php echo $page["pageExtraImage2"]; ?>">
-            <img src="<?php echo $page["pageExtraImage2"] ?>" alt="none" width="100px" height="100px">
-            <input type="file" id="floatingInput" name="profielFoto" class="form-control"><br>
-            <label for="floatingInput">Current image: <?php echo $page["pageExtraImage2"] ?></label>
-          </div>
-          <div class="form-floating">
-            <input type="text" name="pageSection2Text" id="floatingInput" value="<?php echo $page["pageSection2Text"] ?>" class="form-control">
-            <label for="floatingInput">Sectie2 Text: </label>
-          </div><br>
-          <div class="form-floating">
-            <input type="text" name="pageSources" id="floatingInput" value="<?php echo $page["pageSources"] ?>" class="form-control">
-            <label for="floatingInput">Bronnen: </label>
-          </div><br>
-        </div>
-      </div>
-      <?php if ($_SESSION['role'] == "gebruiker") : ?>
-        <button class="w-100 btn btn-lg btn-success shadow" type="submit" name="submit">Update</button>
-        <a href="index.php" class="w-100 btn btn-lg btn-danger shadow">Annuleer</a><br>
-        <a href="delete.php?user_id=<?php echo $id; ?>" class="w-100 btn btn-lg btn-warning shadow">Verwijder </a>
-      <?php endif ?>
-      <?php if ($_SESSION['role'] == "beheerder") : ?>
-        <button class="w-100 btn btn-lg btn-success shadow" type="submit" name="submit">Update</button>
-        <a href="wikipagina.php?page_id=<?php echo $page["page_id"] ?>" class="w-100 btn btn-lg btn-danger shadow">Annuleer</a>
-      <?php endif ?>
+<body class="bg-secondary bg-gradient">
+  <div class="container bg-light rounded p-2">
+    <h2>Film Updaten</h2>
+    <form action="wikipagina_update.php?page_id=<?php echo $id; ?>" method="POST" enctype="multipart/form-data">
+      <input type="text" class="form-control" id="pageMainText" name="pageMainText" placeholder="Film Title" value="<?php echo $page["pageMainText"] ?>"><br>
+      <div class="form-floating">
+        <input type="hidden" name="oudeProfielfoto" value="<?php echo $page["pageMainImage"]; ?>">
+        <img src="<?php echo $page["pageMainImage"]; ?>" alt="" width="100px" height="100px">
+        <input type="file" id="floatingInput" name="pageMainImage" class="form-control"><br>
+        <label for="floatingInput">Current image:</label>
+        <a href="profielfoto_delete.php?path=<?php echo $page["pageMainImage"]; ?>&id=<?php echo $id ?>" class="btn btn-danger">Verwijder Foto</a>
+      </div><br>
+      <input type="text" class="form-control" id="pageSidebarText" name="pageSidebarText" placeholder="Film Title" value="<?php echo $page["pageSidebarText"] ?>"><br>
+      <input type="text" class="form-control" id="pageSection1Title" name="pageSection1Title" placeholder="Film Title" value="<?php echo $page["pageSection1Title"] ?>"><br>
+      <input type="text" class="form-control" id="pageSection1Text1" name="pageSection1Text1" placeholder="Film Title" value="<?php echo $page["pageSection1Text1"] ?>"><br>
+      <input type="text" class="form-control" id="pageSection1Text2" name="pageSection1Text2" placeholder="Film Title" value="<?php echo $page["pageSection1Text2"] ?>"><br>
+      <input type="text" class="form-control" id="pageSection2Title" name="pageSection2Title" placeholder="Film Title" value="<?php echo $page["pageSection2Title"] ?>"><br>
+      <input type="text" class="form-control" id="pageSection2Text" name="pageSection2Text" placeholder="Film Title" value="<?php echo $page["pageSection2Text"] ?>"><br>
+      <div class="form-floating">
+        <input type="hidden" name="oudeProfielfoto" value="<?php echo $page["pageSection1Image"]; ?>">
+        <img src="<?php echo $page["pageSection1Image"]; ?>" alt="" width="100px" height="100px">
+        <input type="file" id="floatingInput" name="pageSection1Image" class="form-control"><br>
+        <label for="floatingInput">Current image:</label>
+        <a href="profielfoto_delete.php?path=<?php echo $page["pageSection1Image"]; ?>&id=<?php echo $id ?>" class="btn btn-danger">Verwijder Foto</a>
+      </div><br>
+      <div class="form-floating">
+        <input type="hidden" name="oudeProfielfoto" value="<?php echo $page["pageExtraImage1"]; ?>">
+        <img src="<?php echo $page["pageExtraImage1"]; ?>" alt="" width="100px" height="100px">
+        <input type="file" id="floatingInput" name="pageExtraImage1" class="form-control"><br>
+        <label for="floatingInput">Current image:</label>
+        <a href="profielfoto_delete.php?path=<?php echo $page["pageExtraImage1"]; ?>&id=<?php echo $id ?>" class="btn btn-danger">Verwijder Foto</a>
+      </div><br>
+      <div class="form-floating">
+        <input type="hidden" name="oudeProfielfoto" value="<?php echo $page["pageExtraImage2"]; ?>">
+        <img src="<?php echo $page["pageExtraImage2"]; ?>" alt="" width="100px" height="100px">
+        <input type="file" id="floatingInput" name="pageExtraImage2" class="form-control"><br>
+        <label for="floatingInput">Current image:</label>
+        <a href="profielfoto_delete.php?path=<?php echo $page["pageExtraImage2"]; ?>&id=<?php echo $id ?>" class="btn btn-danger">Verwijder Foto</a>
+      </div><br>
+      <input type="text" class="form-control" id="pageSources" name="pageSources" placeholder="Film Title" value="<?php echo $page["pageSources"] ?>"><br>
+      <button class="btn btn-primary" name="submit" type="submit">Update</button>
+      <button class="btn btn-danger" onclick="history.back()">Ga terug</button>
     </form>
-  </main>
-</div>
+  </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+
+<?php include "footer.php"; ?>
