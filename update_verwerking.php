@@ -29,7 +29,6 @@ if (isset($_POST["submit"])) {
             unlink($_POST["oudeProfielfoto"]);
             move_uploaded_file($_FILES['profielFoto']['tmp_name'], "images/profielfotos/". $_FILES['profielFoto']['name']);
             $profilePicture = "images/profielfotos/". $_FILES['profielFoto']['name'];
-
        }
        else{
            echo "image not found!";
