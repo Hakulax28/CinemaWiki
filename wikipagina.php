@@ -1,3 +1,6 @@
+<?php
+require "connectie.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -108,17 +111,52 @@ if (isset($_GET['page_id'])) {
           <table class="table">
             <thead>
               <tr>
+                <th>image</th>
                 <th>Role</th>
-                <th>Name</th>
+                <th colspan="2">Name</th>
                 <th>Age</th>
               </tr>
             </thead>
             <tbody class="table-group-divider">
+              <?php 
+              $sql = "SELECT people_in_film.person_id, people_in_film.film_id, people.personName, people.personAge, people.personRole, people.personImage FROM people_in_film INNER JOIN people ON people_in_film.person_id = people.person_id and people_in_film.film_id = $film_id";
+              $result = mysqli_query($conn,$sql);
+
+              $people = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+              ?>
+              <?php foreach($people as $person): ?>
+                <tr>
+                  <th><img src="<?php echo $person["personImage"] ?>" alt="" class="personImage" srcset=""></th>
+                  <th><?php echo $person["personRole"] ?></th>
+                  <td colspan="2"><?php echo $person["personName"] ?></td>
+                  <td><?php echo $person["personAge"] ?></td>
+                </tr>
+              <?php endforeach; ?>
+              <?php if (!empty($_SESSION)) : ?>
+            <?php if ($_SESSION['role'] == "gebruiker" || $_SESSION['role'] == "beheerder") : ?>
               <tr>
-                <th scope="row">Actor</th>
-                <td colspan="2">Bob bob</td>
-                <td>87</td>
+                <form action="process_persoonToevoegenAanPagina.php?id=<?php echo $film_id ?>&page_id=<?php echo $page_id ?>" method="POST">
+                  <th scope="row" colspan="2">
+                  <?php
+                  $sql = "SELECT * FROM people";
+          $result = mysqli_query($conn,$sql);
+          $people = mysqli_fetch_all($result, MYSQLI_ASSOC);
+        ?>
+      <input class="form-control" name="addPerson" list="datalistOptions" id="taalDataList" placeholder="Zoek een persoon...">
+        <datalist id="datalistOptions">
+          <?php foreach($people as $person): ?>
+            <option value="<?php echo $person["person_id"] ?>"><?php echo $person["personName"] ?></option>
+          <?php endforeach; 
+          mysqli_free_result($result);
+?>
+        </datalist></th></th>
+                  <td colspan="1"><button type="submit" name="submit" class="btn btn-primary mb-3">Add to page</button></td>
+                  <td><a href="persoon_toevoegen.php">or add new person</a></td>
+                </form>
               </tr>
+              <?php endif ?>
+              <?php endif ?>
 
             </tbody>
           </table>
