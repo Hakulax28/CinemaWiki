@@ -51,7 +51,7 @@ if (isset($_POST["submit"]) && $_POST["filmTitle"] != "") {
       $film = mysqli_fetch_assoc($result);
       $film_id = $film['film_id'];
       echo "New record created successfully";
-      header("location: wikiaanmaken.php?film_id=$id");
+      header("location: wikipagina.php?page_id=$id");
    } else {
       echo "Error: " . $sql . "<br>" . $conn->error;
    }

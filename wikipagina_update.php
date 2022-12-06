@@ -11,7 +11,7 @@ if ($result = mysqli_query($conn, $sql)) {
   //var_dump($user);
 
   if (is_null($page)) {
-    header("location: wikipagina.php?page_id<?php echo $id; ?> ");
+    header("location: wikipagina.php?page_id=$id");
   }
 }
 
