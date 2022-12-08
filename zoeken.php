@@ -14,22 +14,34 @@
 
 <?php include "header.php"; ?>
 
+
+<?php require 'connectie.php';
+$sql = "SELECT films.filmTitle as fTitle, films.filmCoverImage as fImage, wikipages.pageMainText as pMain FROM wikipages INNER JOIN films ON wikipages.film_id = films.film_id";
+$result = mysqli_query($conn,$sql);
+
+$pages = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+?>
+
 <div class="container bg-light border border-white rounded-1"><br>
     <h1>Pages featuring "(Input)"</h1><br>
     <div class="d-flex flex-column mb-3 mt-3 bg-light rounded">
+    <?php foreach($pages as $page): ?>
         <div class="p-2 col justify-content-start d-flex align-items-center">
-            <img src="images/test-image.png" alt="" width="150px" height="150px" class="rounded">
+            <img src="<?php echo $page["fImage"] ?>" alt="" width="100px" height="150px" class="rounded">
             <div class="text-start p-2">
                 <div class="d-flex flex-row justify-content-start align-items-end">
-                    <h2 class="p-2">Title</h2>
+                    <h2 class="p-2"><?php echo $page["fTitle"] ?></h2>
                     <p class="p-2">Categorie: </p>
                 </div>
                 <div class="d-flex flex-row justify-content-start align-items-center">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores beatae ipsa minus ex dolorum magnam asperiores, ipsam rem inventore ullam aspernatur, corrupti magni possimus est. Aut provident officia earum enim voluptas, nesciunt tenetur repudiandae doloribus totam quaerat non nostrum. Nihil repellendus rem esse debitis quae facilis saepe, in voluptatibus error.</p>
+                    <p><?php echo $page["pMain"] ?></p>
                     <button type="button" class="btn btn-primary shadow">Go</button>
                 </div>
             </div>
         </div>
+<?php endforeach; ?>
+
     </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
