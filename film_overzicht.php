@@ -53,6 +53,5 @@ if ($result = mysqli_query($conn, $sql)) {
          </tbody>
       </table>
    </div>
-   <a href="wikipagina.php?page_id=1" class="w-100 btn btn-lg btn-success shadow" type="submit">Ga hier terug</a>
 </div>
 <?php include "footer.php" ?>
