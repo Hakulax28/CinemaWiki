@@ -16,7 +16,9 @@
 
 
 <?php require 'connectie.php';
-$sql = "SELECT films.filmTitle as fTitle, films.filmCoverImage as fImage, wikipages.pageMainText as pMain FROM wikipages INNER JOIN films ON wikipages.film_id = films.film_id";
+$query = $_GET['query'];
+
+$sql = "SELECT films.filmTitle as fTitle, films.filmCoverImage as fImage, wikipages.pageMainText as pMain FROM wikipages INNER JOIN films ON wikipages.film_id = films.film_id AND films.filmTitle LIKE '%$query%'";
 $result = mysqli_query($conn,$sql);
 
 $pages = mysqli_fetch_all($result, MYSQLI_ASSOC);
@@ -24,7 +26,7 @@ $pages = mysqli_fetch_all($result, MYSQLI_ASSOC);
 ?>
 
 <div class="container bg-light border border-white rounded-1"><br>
-    <h1>Pages featuring "(Input)"</h1><br>
+    <h1>Pages featuring "<?php echo $query ?>"</h1><br>
     <div class="d-flex flex-column mb-3 mt-3 bg-light rounded">
     <?php foreach($pages as $page): ?>
         <div class="p-2 col justify-content-start d-flex align-items-center">

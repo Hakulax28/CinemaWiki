@@ -57,15 +57,15 @@ if ($result = mysqli_query($conn, $sql)) {
    </div>
    <div class="px-3 py-2 border-bottom mb-3 text-bg-dark">
       <div class="container d-flex flex-wrap justify-content-center">
-         <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+         <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search" action="zoeken.php" method="GET">
             <div class="input-group w-100">
                <span class="input-group-text" id="basic-addon1">
-                  <a href="zoeken.php">
+                  <button type="submit" class="btn btn-primairy">
                      <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
                         <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"></path>
-                     </svg></a>
+                     </svg></button>
                </span>
-               <input type="search" class="form-control form-control-dark text-bg-dark" placeholder=" Search..." aria-label="Search">
+                  <input type="search" class="form-control form-control-dark text-bg-dark" name="query" placeholder=" Search..." aria-label="Search">
             </div>
          </form>
 
