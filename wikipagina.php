@@ -78,6 +78,59 @@ if (isset($_GET['page_id'])) {
           <?php endif ?>
         </div>
         <div class="sideList">
+        <table class="table">
+            <thead>
+              <tr>
+                <th>Genres</th>
+              </tr>
+            </thead>
+            <tbody class="table-group-divider">
+              <?php 
+              $sql = "SELECT film_genres.genre_id, film_genres.film_id, genre.genreName, genre.genreDescription FROM film_genres INNER JOIN genre ON film_genres.genre_id = genre.genre_id and film_genres.film_id = $film_id";
+              $result = mysqli_query($conn,$sql);
+
+              $genres = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+              ?>
+              <?php foreach($genres as $genre): ?>
+                <tr>
+                  <th><?php echo $genre["genreName"] ?></th>
+                  
+                  <?php if (!empty($_SESSION)) : ?>
+            <?php if ($_SESSION['role'] == "gebruiker" || $_SESSION['role'] == "beheerder") : ?>
+              <?php $genre_id = $genre['genre_id'];  ?>
+              <td><a href="delete_genre_van_film.php?film_id=<?php echo $film_id.'&genre_id='.$genre_id.'&page_id='.$page_id ?>" class="btn btn-danger">delete</a></td>
+              <?php endif ?>
+              <?php endif ?>
+                </tr>
+              <?php endforeach; ?>
+              <?php if (!empty($_SESSION)) : ?>
+            <?php if ($_SESSION['role'] == "gebruiker" || $_SESSION['role'] == "beheerder") : ?>
+              <tr>
+                <form action="process_GenreToevoegenAanFilm.php?id=<?php echo $film_id ?>&page_id=<?php echo $page_id ?>" method="POST">
+                  <th scope="row" colspan="2">
+                  <?php
+                  $sql = "SELECT * FROM genre";
+          $result = mysqli_query($conn,$sql);
+          $genres = mysqli_fetch_all($result, MYSQLI_ASSOC);
+        ?>
+      <input class="form-control" name="addGenre" list="datalistOptions" id="taalDataList" placeholder="Zoek een genre...">
+        <datalist id="datalistOptions">
+          <?php foreach($genres as $genre): ?>
+            <option value="<?php echo $genre["genre_id"] ?>"><?php echo $genre["genreName"] ?></option>
+          <?php endforeach; 
+          mysqli_free_result($result);
+?>
+        </datalist></th></th>
+                  <td colspan="1"><button type="submit" name="submit" class="btn btn-primary mb-3">Add to page</button></td>
+                  <td><a href="genre_toevoegen.php">or add new genre</a></td>
+                </form>
+              </tr>
+              <?php endif ?>
+              <?php endif ?>
+
+            </tbody>
+          </table>
           <table class="table">
             <tbody class="table-group-divider">
               <tr>
