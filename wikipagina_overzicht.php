@@ -35,6 +35,7 @@ if ($result = mysqli_query($conn, $sql)) {
                <th>Extra foto1</th>
                <th>Extra foto2</th>
                <th>Bronnen</th>
+               <th>De pagina zelf</th>
                <th>Verwijder</th>
                <th>Update</th>
             </tr>
@@ -56,6 +57,7 @@ if ($result = mysqli_query($conn, $sql)) {
                   <td><img src="<?php echo $page["pageExtraImage1"] ?>" alt="" width="200px" height="100px"></td>
                   <td><img src="<?php echo $page["pageExtraImage2"] ?>" alt="" width="200px" height="100px"></td>
                   <td><?php echo $page["pageSources"] ?></td>
+                  <td><a href="wikipagina.php?page_id=<?php echo $page["page_id"] ?>" class="shadow btn btn-success shadow">Bezoek</a></td>
                   <td><a href="wikipagina_delete.php?page_id=<?php echo $page["page_id"] ?>" class="shadow btn btn-danger shadow">Verwijder</a></td>
                   <td><a href="wikipagina_update.php?page_id=<?php echo $page["page_id"] ?>" class="shadow btn btn-warning shadow">Update</a></td>
                </tr>
@@ -63,6 +65,6 @@ if ($result = mysqli_query($conn, $sql)) {
          </tbody>
       </table>
    </div>
-   <a href="wikipagina.php?page_id=1" class="w-100 btn btn-lg btn-success shadow" type="submit">Ga hier terug</a>
+   <button class="w-100 btn btn-lg btn-danger shadow" onclick="history.back()">Ga terug</button>
 </div>
 <?php include "footer.php" ?>
