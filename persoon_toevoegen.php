@@ -19,7 +19,7 @@ VALUES ('$personName','$personAge','$personRole','$personenPlaatje')";
 
     if ($conn->query($sql) === TRUE) {
         echo "New record created successfully";
-        header("location: wikiaanmaken.php");
+        echo "<script>window.history.go(-2);</script>";
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }

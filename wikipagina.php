@@ -127,10 +127,16 @@ if (isset($_GET['page_id'])) {
               ?>
               <?php foreach($people as $person): ?>
                 <tr>
-                  <th><img src="<?php echo $person["personImage"] ?>" alt="" class="personImage" srcset=""></th>
+                  <th><img src="<?php echo $person["personImage"] ?>" alt="" class="personImage rounded" srcset=""></th>
                   <th><?php echo $person["personRole"] ?></th>
                   <td colspan="2"><?php echo $person["personName"] ?></td>
                   <td><?php echo $person["personAge"] ?></td>
+                  <?php if (!empty($_SESSION)) : ?>
+            <?php if ($_SESSION['role'] == "gebruiker" || $_SESSION['role'] == "beheerder") : ?>
+              <?php $person_id = $person['person_id'];  ?>
+              <td><a href="delete_persoon_van_film.php?film_id=<?php echo $film_id.'&person_id='.$person_id.'&page_id='.$page_id ?>" class="btn btn-danger">delete</a></td>
+              <?php endif ?>
+              <?php endif ?>
                 </tr>
               <?php endforeach; ?>
               <?php if (!empty($_SESSION)) : ?>
