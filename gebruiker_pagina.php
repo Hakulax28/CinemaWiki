@@ -17,6 +17,7 @@ if ($result = mysqli_query($conn, $sql)) {
       <thead>
          <tr>
             <!--<th>ID</th>-->
+            <th>Foto</th>
             <th>Voornaam</th>
             <th>Achternaam</th>
             <th>Email</th>
