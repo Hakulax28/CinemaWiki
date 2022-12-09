@@ -43,30 +43,30 @@ $pageSection2Text = $_POST['pageSection2Text'];
 $pageSources = $_POST['pageSources']; 
 
 if(isset($_FILES['pageMainImage'])){
-  move_uploaded_file($_FILES['pageMainImage']['tmp_name'], "images/". $_FILES['pageMainImage']['name']);
-  $pageMainImage = "images/". $_FILES['pageMainImage']['name'];
+  move_uploaded_file($_FILES['pageMainImage']['tmp_name'], "images/filmscenes/". $_FILES['pageMainImage']['name']);
+  $pageMainImage = "images/filmscenes/". $_FILES['pageMainImage']['name'];
 }else{
   echo "page main image not found!";
   $pageMainImage = "";
 }
 
 if(isset($_FILES['pageSection1Image'])){
-  move_uploaded_file($_FILES['pageSection1Image']['tmp_name'], "images/". $_FILES['pageSection1Image']['name']);
-  $pageSection1Image = "images/". $_FILES['pageSection1Image']['name'];
+  move_uploaded_file($_FILES['pageSection1Image']['tmp_name'], "images/filmscenes/". $_FILES['pageSection1Image']['name']);
+  $pageSection1Image = "images/filmscenes/". $_FILES['pageSection1Image']['name'];
 }else{
   echo "page section 1 image not found!";
   $pageSection1Image = "";
 }
 if(isset($_FILES['pageExtraImage1'])){
-  move_uploaded_file($_FILES['pageExtraImage1']['tmp_name'], "images/". $_FILES['pageExtraImage1']['name']);
-  $pageExtraImage1 = "images/". $_FILES['pageExtraImage1']['name'];
+  move_uploaded_file($_FILES['pageExtraImage1']['tmp_name'], "images/filmscenes/". $_FILES['pageExtraImage1']['name']);
+  $pageExtraImage1 = "images/filmscenes/". $_FILES['pageExtraImage1']['name'];
 }else{
   echo "page extra image 1 not found!";
   $pageExtraImage1 = "";
 }
 if(isset($_FILES['pageExtraImage2'])){
-  move_uploaded_file($_FILES['pageExtraImage2']['tmp_name'], "images/". $_FILES['pageExtraImage2']['name']);
-  $pageExtraImage2 = "images/". $_FILES['pageExtraImage2']['name'];
+  move_uploaded_file($_FILES['pageExtraImage2']['tmp_name'], "images/filmscenes/". $_FILES['pageExtraImage2']['name']);
+  $pageExtraImage2 = "images/filmscenes/". $_FILES['pageExtraImage2']['name'];
 }else{
   echo "page extra image 2 not found!";
   $pageExtraImage2 = "";

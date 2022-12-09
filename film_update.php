@@ -27,8 +27,8 @@ if (isset($_POST["submit"]) && $_POST["filmTitle"] != "") {
    $filmEarnings = $_POST['filmEarnings'];
 
    if (isset($_FILES['imageToUpload'])) {
-      move_uploaded_file($_FILES['imageToUpload']['tmp_name'], "images/" . $_FILES['imageToUpload']['name']);
-      $filmCoverImage = "images/" . $_FILES['imageToUpload']['name'];
+      move_uploaded_file($_FILES['imageToUpload']['tmp_name'], "images/filmcovers/" . $_FILES['imageToUpload']['name']);
+      $filmCoverImage = "images/filmcovers/" . $_FILES['imageToUpload']['name'];
    } else {
       echo "image not found!";
    }
