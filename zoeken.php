@@ -18,7 +18,7 @@
 <?php require 'connectie.php';
 $query = $_GET['query'];
 
-$sql = "SELECT films.filmTitle as fTitle, films.filmCoverImage as fImage, wikipages.pageMainText as pMain FROM wikipages INNER JOIN films ON wikipages.film_id = films.film_id AND films.filmTitle LIKE '%$query%'";
+$sql = "SELECT *, genre.genreName, films.filmTitle FROM wikipages INNER JOIN films ON wikipages.film_id = films.film_id INNER JOIN film_genres ON films.film_id = film_genres.film_id INNER JOIN genre ON film_genres.genre_id = genre.genre_id AND (films.filmTitle LIKE '%$query%' OR genre.genreName LIKE '%$query%')";
 $result = mysqli_query($conn,$sql);
 
 $pages = mysqli_fetch_all($result, MYSQLI_ASSOC);
@@ -30,15 +30,25 @@ $pages = mysqli_fetch_all($result, MYSQLI_ASSOC);
     <div class="d-flex flex-column mb-3 mt-3 bg-light rounded">
     <?php foreach($pages as $page): ?>
         <div class="p-2 col justify-content-start d-flex align-items-center">
-            <img src="<?php echo $page["fImage"] ?>" alt="" width="100px" height="150px" class="rounded">
+            <img src="<?php echo $page["filmCoverImage"] ?>" alt="" width="100px" height="150px" class="rounded">
             <div class="text-start p-2">
                 <div class="d-flex flex-row justify-content-start align-items-end">
-                    <h2 class="p-2"><?php echo $page["fTitle"] ?></h2>
-                    <p class="p-2">Categorie: </p>
+                    <h2 class="p-2"><?php echo $page["filmTitle"] ?></h2>
+                    <p class="p-2">Genre: 
+                    <?php 
+                    $film_id = $page["film_id"];
+                    $sql = "SELECT genre.genreName FROM film_genres INNER JOIN genre ON film_genres.genre_id = genre.genre_id WHERE film_id=$film_id LIMIT 1";
+                    $result = mysqli_query($conn,$sql);
+                    $genre = mysqli_fetch_assoc($result);
+                    mysqli_free_result($result);
+                    echo "<span class=\"badge bg-secondary\">".$genre['genreName']."</span>";
+
+                    ?>
+                    </p>
                 </div>
                 <div class="d-flex flex-row justify-content-start align-items-center">
-                    <p><?php echo $page["pMain"] ?></p>
-                    <button type="button" class="btn btn-primary shadow">Go</button>
+                    <p><?php echo $page["pageMainText"] ?></p>
+                    <a class="btn btn-primary shadow" href="wikipagina.php?page_id=<?php echo $page["page_id"] ?>">Go</a>
                 </div>
             </div>
         </div>
