@@ -33,7 +33,6 @@ if ($result) {
       //hier kent het de gebruiker
       $_SESSION["user_id"] = $user["user_id"];
       $_SESSION["email"] = $user["email"];
-      $_SESSION["password"] = $user["password"];
       $_SESSION["is_logged_in"] = true;
       $_SESSION["role"] = $user["role"];
 
