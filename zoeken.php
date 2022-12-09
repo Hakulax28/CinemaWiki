@@ -41,13 +41,17 @@ $pages = mysqli_fetch_all($result, MYSQLI_ASSOC);
                     $result = mysqli_query($conn,$sql);
                     $genre = mysqli_fetch_assoc($result);
                     mysqli_free_result($result);
-                    echo "<span class=\"badge bg-secondary\">".$genre['genreName']."</span>";
+                    echo "<a class=\"badge bg-secondary\" href=\"zoeken.php?query=".$genre['genreName']."\">".$genre['genreName']."</a>";
 
                     ?>
                     </p>
                 </div>
                 <div class="d-flex flex-row justify-content-start align-items-center">
-                    <p><?php echo $page["pageMainText"] ?></p>
+                    <div class="p-2">
+                        <div style="overflow: scroll; height: 100px;" >
+                        <?php echo $page["pageMainText"] ?>
+                        </div>
+                    </div>
                     <a class="btn btn-primary shadow" href="wikipagina.php?page_id=<?php echo $page["page_id"] ?>">Go</a>
                 </div>
             </div>
