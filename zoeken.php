@@ -18,7 +18,7 @@
 <?php require 'connectie.php';
 $query = $_GET['query'];
 
-$sql = "SELECT *, genre.genreName, films.filmTitle FROM wikipages INNER JOIN films ON wikipages.film_id = films.film_id INNER JOIN film_genres ON films.film_id = film_genres.film_id INNER JOIN genre ON film_genres.genre_id = genre.genre_id AND (films.filmTitle LIKE '%$query%' OR genre.genreName LIKE '%$query%')";
+$sql = "SELECT *, genre.genreName, films.filmTitle FROM wikipages INNER JOIN films ON wikipages.film_id = films.film_id INNER JOIN film_genres ON films.film_id = film_genres.film_id INNER JOIN genre ON film_genres.genre_id = genre.genre_id AND (genre.genreName LIKE '%$query%' or films.filmTitle LIKE '%$query%')";
 $result = mysqli_query($conn,$sql);
 
 $pages = mysqli_fetch_all($result, MYSQLI_ASSOC);
