@@ -60,7 +60,9 @@ if (isset($_GET['page_id'])) {
           <p><?php echo $page['pageMainText']; ?></p>
         </div>
         <div class="mainImage">
-          <img src="<?php echo $page['pageMainImage']; ?>" class="img-fluid rounded" alt="...">
+          
+          <iframe width="100%" height="500" class="rounded" src="https://www.youtube.com/embed/8g18jFHCLXk" title="Dune | Official Main Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
         </div>
       </div>
       <div class="sidebar">
@@ -114,8 +116,8 @@ if (isset($_GET['page_id'])) {
           $result = mysqli_query($conn,$sql);
           $genres = mysqli_fetch_all($result, MYSQLI_ASSOC);
         ?>
-      <input class="form-control" name="addGenre" list="datalistOptions" id="taalDataList" placeholder="Zoek een genre...">
-        <datalist id="datalistOptions">
+      <input class="form-control" name="addGenre" list="datalistGenres" id="genreDataList" placeholder="Zoek een genre...">
+        <datalist id="datalistGenres">
           <?php foreach($genres as $genre): ?>
             <option value="<?php echo $genre["genre_id"] ?>"><?php echo $genre["genreName"] ?></option>
           <?php endforeach; 
@@ -191,19 +193,21 @@ if (isset($_GET['page_id'])) {
               <?php endif ?>
               <?php endif ?>
                 </tr>
-              <?php endforeach; ?>
+              <?php endforeach; 
+              mysqli_free_result($result); ?>
+              
               <?php if (!empty($_SESSION)) : ?>
             <?php if ($_SESSION['role'] == "gebruiker" || $_SESSION['role'] == "beheerder") : ?>
               <tr>
                 <form action="process_persoonToevoegenAanPagina.php?id=<?php echo $film_id ?>&page_id=<?php echo $page_id ?>" method="POST">
                   <th scope="row" colspan="2">
                   <?php
-                  $sql = "SELECT * FROM people";
-          $result = mysqli_query($conn,$sql);
+                  $sql1 = "SELECT * FROM people";
+          $result = mysqli_query($conn,$sql1);
           $people = mysqli_fetch_all($result, MYSQLI_ASSOC);
         ?>
-      <input class="form-control" name="addPerson" list="datalistOptions" id="taalDataList" placeholder="Zoek een persoon...">
-        <datalist id="datalistOptions">
+      <input class="form-control" name="addPerson" list="datalistPersonen" id="persoonDataList" placeholder="Zoek een persoon...">
+        <datalist id="datalistPersonen">
           <?php foreach($people as $person): ?>
             <option value="<?php echo $person["person_id"] ?>"><?php echo $person["personName"] ?></option>
           <?php endforeach; 

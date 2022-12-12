@@ -50,7 +50,8 @@ padding: 1em;}
     grid-template-rows: auto;
     grid-template-areas:
       "title title"
-      "text image";
+      "image image"
+      "text text";
       padding: 1em;
       grid-gap: 1em;
       height: 12;
