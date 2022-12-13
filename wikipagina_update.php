@@ -29,13 +29,7 @@ if (isset($_POST["submit"]) && $_POST["pageMainText"] != "") {
 
   $pageSources = $_POST['pageSources'];
 
-  if (isset($_FILES['pageMainImage'])) {
-    move_uploaded_file($_FILES['pageMainImage']['tmp_name'], "images/filmscenes/" . $_FILES['pageMainImage']['name']);
-    $pageMainImage = "images/filmscenes/" . $_FILES['pageMainImage']['name'];
-  } else {
-    echo "page main image not found!";
-    $pageMainImage = "";
-  }
+  $pageTrailer = "https://www.youtube.com/embed/" . substr($_POST['pageTrailer'], -11);
 
   if (isset($_FILES['pageSection1Image'])) {
     move_uploaded_file($_FILES['pageSection1Image']['tmp_name'], "images/filmscenes/" . $_FILES['pageSection1Image']['name']);
@@ -61,7 +55,7 @@ if (isset($_POST["submit"]) && $_POST["pageMainText"] != "") {
 
   $sql = "UPDATE wikipages SET 
     pageMainText = '$pageMainText',
-    pageMainImage = '$pageMainImage',
+    pageTrailer = '$pageTrailer',
     pageSidebarText = '$pageSidebarText',
     pageSection1Title = '$pageSection1Title',
     pageSection1Text1 = '$pageSection1Text1',
@@ -97,8 +91,7 @@ if (isset($_POST["submit"]) && $_POST["pageMainText"] != "") {
       <input type="text" class="form-control" id="pageMainText" name="pageMainText" placeholder="Film Title" value="<?php echo $page["pageMainText"] ?>"><br>
       <div class="form-floating">
         <input type="hidden" name="oudeProfielfoto" value="<?php echo $page["pageMainImage"]; ?>">
-        <img src="<?php echo $page["pageMainImage"]; ?>" alt="" width="100px" height="100px">
-        <input type="file" id="floatingInput" name="pageMainImage" class="form-control"><br>
+        <input type="text" class="form-control"  id="pageTrailer" name="pageTrailer" placeholder="Youtube link van Trailer"><br>
         <label for="floatingInput">Current image:</label>
         <a href="profielfoto_delete.php?path=<?php echo $page["pageMainImage"]; ?>&id=<?php echo $id ?>" class="btn btn-danger">Verwijder Foto</a>
       </div><br>
