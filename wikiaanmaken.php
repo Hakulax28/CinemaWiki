@@ -41,14 +41,9 @@ $pageSection2Title = $_POST['pageSection2Title'];
 $pageSection2Text = $_POST['pageSection2Text']; 
  
 $pageSources = $_POST['pageSources']; 
+$pageTrailer = "https://www.youtube.com/embed/" . substr($_POST['pageTrailer'], -11);
 
-if(isset($_FILES['pageMainImage'])){
-  move_uploaded_file($_FILES['pageMainImage']['tmp_name'], "images/filmscenes/". $_FILES['pageMainImage']['name']);
-  $pageMainImage = "images/filmscenes/". $_FILES['pageMainImage']['name'];
-}else{
-  echo "page main image not found!";
-  $pageMainImage = "";
-}
+
 
 if(isset($_FILES['pageSection1Image'])){
   move_uploaded_file($_FILES['pageSection1Image']['tmp_name'], "images/filmscenes/". $_FILES['pageSection1Image']['name']);
@@ -74,9 +69,9 @@ if(isset($_FILES['pageExtraImage2'])){
 
 
 
-$sql = "INSERT INTO wikipages (film_id,pageMainText,pageMainImage,pageSidebarText,pageSection1Title,pageSection1Text1,
+$sql = "INSERT INTO wikipages (film_id,pageMainText,pageTrailer,pageSidebarText,pageSection1Title,pageSection1Text1,
 pageSection1Text2,pageSection2Title,pageSection1Image,pageExtraImage1,pageExtraImage2,pageSection2Text,pageSources)
-VALUES ('$film_id','$pageMainText','$pageMainImage','$pageSidebarText','$pageSection1Title','$pageSection1Text1',
+VALUES ('$film_id','$pageMainText','$pageTrailer','$pageSidebarText','$pageSection1Title','$pageSection1Text1',
 '$pageSection1Text2','$pageSection2Title','$pageSection1Image','$pageExtraImage1','$pageExtraImage2','$pageSection2Text','$pageSources')";
 
 if ($conn->query($sql) === TRUE) {
@@ -106,9 +101,9 @@ if ($conn->query($sql) === TRUE) {
             </div>
             </div>
             <div class="mainImage">
-            <img src="images/test-image.png" class="img-fluid rounded" alt="...">
+            <input type="text" class="form-control"  id="pageTrailer" name="pageTrailer" placeholder="Youtube link van Trailer">
             <div class="mb-3">
-        <input class="form-control" type="file" name="pageMainImage" id="formFile">
+
         </div>
 
         </div>
