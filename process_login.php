@@ -14,8 +14,6 @@ $id = $_POST["user_id"];
 $email = $_POST["email"];
 $password = $_POST["password"];
 
-$hashed_password = password_hash($password, PASSWORD_DEFAULT);
-
 $sql = "SELECT * FROM users WHERE email = '$email' ";
 
 $result = mysqli_query($conn, $sql);
@@ -24,14 +22,7 @@ $result = mysqli_query($conn, $sql);
 if ($result) {
    $user = mysqli_fetch_assoc($result);
 
-   if (is_null($user && password_verify($password, $user['password']))) {
-      //gebruiker onbekend
-      header("location: inloggen.php");
-      echo "Gebruiker_Onbekend";
-      var_dump($user);
-      die;
-   } else {
-
+   if ($_POST["password"] === $password && $_POST["email"] === $email) {
       //hier kent het de gebruiker
       $_SESSION["user_id"] = $user["user_id"];
       $_SESSION["email"] = $user["email"];
@@ -47,5 +38,11 @@ if ($result) {
          echo "U kan alleen de website zelf bekijken";
          header("location: index.php");
       }
+   } else if (is_null($user)) {
+      //gebruiker onbekend
+      header("location: inloggen.php");
+      echo "Gebruiker_Onbekend";
+      var_dump($user);
+      die;
    }
 }

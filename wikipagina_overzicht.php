@@ -46,7 +46,7 @@ if ($result = mysqli_query($conn, $sql)) {
                   <!--<td><?php echo $page["page_id"] ?></td>-->
                   <td><?php echo $page["film_id"] ?></td>
                   <td><?php echo $page["pageMainText"] ?></td>
-                  <td><img src="<?php echo $page["pageMainImage"] ?>" alt="" width="200px" height="100px"></td>
+                  <td><iframe width="200px" height="100px" class="rounded" src="<?php echo $page['pageTrailer']; ?>" title="Dune | Official Main Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></td>
                   <td><?php echo $page["pageSidebarText"] ?></td>
                   <td><?php echo $page["pageSection1Title"] ?></td>
                   <td><?php echo $page["pageSection1Text1"] ?></td>
