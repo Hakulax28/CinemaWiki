@@ -174,7 +174,7 @@ if (isset($_GET['page_id'])) {
             </thead>
             <tbody class="table-group-divider">
               <?php 
-              $sql = "SELECT people_in_film.person_id, people_in_film.film_id, people.personName, people.personAge, people.personRole, people.personImage FROM people_in_film INNER JOIN people ON people_in_film.person_id = people.person_id and people_in_film.film_id = $film_id";
+              $sql = "SELECT people_in_film.person_id, people_in_film.film_id, people.personName, people.personAge, people.personRole, people.personImage, people.personDescription FROM people_in_film INNER JOIN people ON people_in_film.person_id = people.person_id and people_in_film.film_id = $film_id";
               $result = mysqli_query($conn,$sql);
 
               $people = mysqli_fetch_all($result, MYSQLI_ASSOC);
@@ -182,9 +182,30 @@ if (isset($_GET['page_id'])) {
               ?>
               <?php foreach($people as $person): ?>
                 <tr>
-                  <th><img src="<?php echo $person["personImage"] ?>" alt="" class="personImage rounded" srcset=""></th>
+                  <th><img src="<?php echo $person["personImage"] ?>" alt="" class="personImage rounded" style="object-fit: cover;" srcset=""></th>
                   <th><?php echo $person["personRole"] ?></th>
-                  <td colspan="2"><?php echo $person["personName"] ?></td>
+                  <td colspan="2"><a href="#" role="button" data-bs-toggle="modal" data-bs-target="#Modal<?php echo $person["person_id"] ?>"><?php echo $person["personName"] ?></a></td>
+
+                  <div class="modal fade" id="Modal<?php echo $person["person_id"] ?>" tabindex="-1" aria-labelledby="Modal<?php echo $person["person_id"] ?>Label" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h1 class="modal-title fs-5" id="Modal<?php echo $person["person_id"] ?>Label"><?php echo $person["personName"] ?></h1>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          <img src="<?php echo $person["personImage"] ?>"class="rounded img-fluid float-start h-25 w-25 p-2" alt="<?php echo $person["personName"] ?>" >
+                          <p><?php echo $person["personDescription"] ?></p>
+                        </div>
+                        <div class="modal-footer">
+                          <a class="btn btn-warning" href="persoon_bewerken.php?person_id=<?php echo $person["person_id"] ?>">bewerk informatie</a>
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  
                   <td><?php echo $person["personAge"] ?></td>
                   <?php if (!empty($_SESSION)) : ?>
             <?php if ($_SESSION['role'] == "gebruiker" || $_SESSION['role'] == "beheerder") : ?>

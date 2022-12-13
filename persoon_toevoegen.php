@@ -6,6 +6,7 @@ if (isset($_POST["submit"]) && $_POST["personName"] != "" && $_POST["personAge"]
     $personName = $_POST['personName'];
     $personAge = $_POST['personAge'];
     $personRole = $_POST['personRole'];
+    $personDescription = $_POST['personDescription'];
 
     if(isset($_FILES["personImage"]) && !empty($_FILES["personImage"]["name"])){
         move_uploaded_file($_FILES['personImage']['tmp_name'], "images/personenplaatjes/". $_FILES['personImage']['name']);
@@ -14,11 +15,10 @@ if (isset($_POST["submit"]) && $_POST["personName"] != "" && $_POST["personAge"]
    }
 
 
-    $sql = "INSERT INTO people (personName, personAge, personRole , personImage)
-VALUES ('$personName','$personAge','$personRole','$personenPlaatje')";
+    $sql = "INSERT INTO people (personName, personAge, personRole , personImage, personDescription)
+VALUES ('$personName','$personAge','$personRole','$personenPlaatje','$personDescription')";
 
     if ($conn->query($sql) === TRUE) {
-        echo "New record created successfully";
         echo "<script>window.history.go(-2);</script>";
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
@@ -40,6 +40,10 @@ VALUES ('$personName','$personAge','$personRole','$personenPlaatje')";
             <option value="Schrijver">Schrijver</option>
             <option value="Regisseur">Regisseur</option>
         </select><br>
+        <div class="form-floating">
+            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" name="personDescription" style="height: 100px"></textarea>
+            <label for="floatingTextarea2">Persoon omschrijving</label>
+         </div>
         <div class="mb-3">
             <label for="formFile" class="form-label">Persoon plaatje</label>
             <input class="form-control" name="personImage" type="file" id="formFile">
