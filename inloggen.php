@@ -19,6 +19,10 @@
                <input type="checkbox" value="remember-me"> Remember me
             </label>
          </div><br>
+         <?php if(isset($_SESSION['error_message'])){
+            echo $_SESSION['error_message'];
+            unset($_SESSION['error_message']);
+         }?>
          <button class="w-100 btn btn-lg btn-success shadow" type="submit">Log nu in</button>
          <a href="registreer.php" class="w-100 btn btn-lg btn-warning shadow">Registreer je nu</a>
       </form>
