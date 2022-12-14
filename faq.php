@@ -1,126 +1,59 @@
 <?php include "header.php" ?>
 
 <div class="container bg-light border border-white rounded-1"><br>
-   <h1>Facts and Questions</h1>
+   <h1>Frequently asked Questions</h1>
    <br>
    <div class="accordion" id="accordionExample">
       <div class="accordion-item">
          <h2 class="accordion-header" id="headingOne">
             <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-               Vraag #1
+               Vraag #1: Wat is een film?
             </button>
          </h2>
          <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
             <div class="accordion-body">
-               <strong>Dit is de antwoord voor vraag 1</strong><br>
-               Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias sed vel harum natus odit saepe fuga magni recusandae est placeat culpa fugit aperiam ut, aspernatur nemo nobis cupiditate! Veritatis sint non maiores quisquam? Ea hic ducimus voluptatem illo quam inventore mollitia veniam est esse id quisquam, alias laborum exercitationem ipsa eius quod eum aliquam magni. Saepe culpa, corporis porro minus hic ratione quaerat ab! Illum, consequatur. Minus doloribus dolorem fugit magni facere voluptatem porro ab ea beatae explicabo qui sint ratione quo excepturi, quasi sit est! Placeat culpa neque doloremque natus sequi distinctio cumque, tenetur delectus repudiandae tempore vel temporibus?
+               <strong>Dit is het antwoord voor vraag 1</strong><br>
+               Een film is een opname van bewegende beelden die worden afgespeeld op een scherm. Dit kan een kleine televisie zijn of een groot bioscoopscherm. 
+               Films worden gemaakt door een regisseur en een team van acteurs, cameramannen en geluidsmensen die samenwerken om een verhaal tot leven te brengen. 
+               Films kunnen in verschillende genres zijn, zoals comedy, drama, horror of science fiction. Bekende voorbeelden van films zijn Star Wars, The Godfather en Titanic. 
+               De filmindustrie is een belangrijke bron van entertainment en inkomsten voor veel landen.
+
             </div>
          </div>
       </div>
       <div class="accordion-item">
          <h2 class="accordion-header" id="headingTwo">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-               Vraag #2
+               Vraag #2: Wat is een bioscoop?
             </button>
          </h2>
          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
             <div class="accordion-body">
-               <strong>Dit is de antwoord voor vraag 2</strong><br>
-               Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias sed vel harum natus odit saepe fuga magni recusandae est placeat culpa fugit aperiam ut, aspernatur nemo nobis cupiditate! Veritatis sint non maiores quisquam? Ea hic ducimus voluptatem illo quam inventore mollitia veniam est esse id quisquam, alias laborum exercitationem ipsa eius quod eum aliquam magni. Saepe culpa, corporis porro minus hic ratione quaerat ab! Illum, consequatur. Minus doloribus dolorem fugit magni facere voluptatem porro ab ea beatae explicabo qui sint ratione quo excepturi, quasi sit est! Placeat culpa neque doloremque natus sequi distinctio cumque, tenetur delectus repudiandae tempore vel temporibus?
+               <strong>Dit is het antwoord voor vraag 2</strong><br>
+               Een bioscoop is een speciaal gebouw waar films op een groot scherm worden vertoond aan het publiek.
+               Meestal zijn er verschillende zalen binnen hetzelfde gebouw, waardoor verschillende films tegelijk vertoond kunnen worden.
+               De films worden meestal vergezeld door geluid en soms zelfs speciale effecten zoals bewegende stoelen of luchtverfrissers.
+               Bioscopen zijn populair onder het publiek omdat ze een unieke en interactieve manier bieden om films te bekijken.
             </div>
          </div>
       </div>
       <div class="accordion-item">
          <h2 class="accordion-header" id="headingThree">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-               Vraag #3
+               Vraag #3: Wat is een scenario?
             </button>
          </h2>
          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
             <div class="accordion-body">
-               <strong>Dit is de antwoord voor vraag 3</strong><br>
-               Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias sed vel harum natus odit saepe fuga magni recusandae est placeat culpa fugit aperiam ut, aspernatur nemo nobis cupiditate! Veritatis sint non maiores quisquam? Ea hic ducimus voluptatem illo quam inventore mollitia veniam est esse id quisquam, alias laborum exercitationem ipsa eius quod eum aliquam magni. Saepe culpa, corporis porro minus hic ratione quaerat ab! Illum, consequatur. Minus doloribus dolorem fugit magni facere voluptatem porro ab ea beatae explicabo qui sint ratione quo excepturi, quasi sit est! Placeat culpa neque doloremque natus sequi distinctio cumque, tenetur delectus repudiandae tempore vel temporibus?
+               <strong>Dit is het antwoord voor vraag 3</strong><br>
+               Een scenario is het uitgewerkte plan van een film, waarbij alle dialogen en acties van de personages worden beschreven.
+               Het is een soort blauwdruk van de film, waarmee regisseurs en acteurs kunnen werken om de film tot leven te brengen.
+               Het scenario bevat vaak ook aanwijzingen voor de opnames, zoals locaties, camera-instellingen en muziekkeuze. 
+               Het is daarom een belangrijk document voor iedereen die betrokken is bij de productie van een film.
             </div>
          </div>
       </div>
-      <div class="accordion-item">
-         <h2 class="accordion-header" id="headingFour">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-               Vraag #4
-            </button>
-         </h2>
-         <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
-            <div class="accordion-body">
-               <strong>Dit is de antwoord voor vraag 4</strong><br>
-               Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias sed vel harum natus odit saepe fuga magni recusandae est placeat culpa fugit aperiam ut, aspernatur nemo nobis cupiditate! Veritatis sint non maiores quisquam? Ea hic ducimus voluptatem illo quam inventore mollitia veniam est esse id quisquam, alias laborum exercitationem ipsa eius quod eum aliquam magni. Saepe culpa, corporis porro minus hic ratione quaerat ab! Illum, consequatur. Minus doloribus dolorem fugit magni facere voluptatem porro ab ea beatae explicabo qui sint ratione quo excepturi, quasi sit est! Placeat culpa neque doloremque natus sequi distinctio cumque, tenetur delectus repudiandae tempore vel temporibus?
-            </div>
-         </div>
-      </div>
-      <div class="accordion-item">
-         <h2 class="accordion-header" id="headingFive">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-               Vraag #5
-            </button>
-         </h2>
-         <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
-            <div class="accordion-body">
-               <strong>Dit is de antwoord voor vraag 5</strong><br>
-               Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias sed vel harum natus odit saepe fuga magni recusandae est placeat culpa fugit aperiam ut, aspernatur nemo nobis cupiditate! Veritatis sint non maiores quisquam? Ea hic ducimus voluptatem illo quam inventore mollitia veniam est esse id quisquam, alias laborum exercitationem ipsa eius quod eum aliquam magni. Saepe culpa, corporis porro minus hic ratione quaerat ab! Illum, consequatur. Minus doloribus dolorem fugit magni facere voluptatem porro ab ea beatae explicabo qui sint ratione quo excepturi, quasi sit est! Placeat culpa neque doloremque natus sequi distinctio cumque, tenetur delectus repudiandae tempore vel temporibus?
-            </div>
-         </div>
-      </div>
-      <div class="accordion-item">
-         <h2 class="accordion-header" id="headingSix">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-               Vraag #6
-            </button>
-         </h2>
-         <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#accordionExample">
-            <div class="accordion-body">
-               <strong>Dit is de antwoord voor vraag 6</strong><br>
-               Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias sed vel harum natus odit saepe fuga magni recusandae est placeat culpa fugit aperiam ut, aspernatur nemo nobis cupiditate! Veritatis sint non maiores quisquam? Ea hic ducimus voluptatem illo quam inventore mollitia veniam est esse id quisquam, alias laborum exercitationem ipsa eius quod eum aliquam magni. Saepe culpa, corporis porro minus hic ratione quaerat ab! Illum, consequatur. Minus doloribus dolorem fugit magni facere voluptatem porro ab ea beatae explicabo qui sint ratione quo excepturi, quasi sit est! Placeat culpa neque doloremque natus sequi distinctio cumque, tenetur delectus repudiandae tempore vel temporibus?
-            </div>
-         </div>
-      </div>
-      <div class="accordion-item">
-         <h2 class="accordion-header" id="headingSeven">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
-               Vraag #7
-            </button>
-         </h2>
-         <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#accordionExample">
-            <div class="accordion-body">
-               <strong>Dit is de antwoord voor vraag 7</strong><br>
-               Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias sed vel harum natus odit saepe fuga magni recusandae est placeat culpa fugit aperiam ut, aspernatur nemo nobis cupiditate! Veritatis sint non maiores quisquam? Ea hic ducimus voluptatem illo quam inventore mollitia veniam est esse id quisquam, alias laborum exercitationem ipsa eius quod eum aliquam magni. Saepe culpa, corporis porro minus hic ratione quaerat ab! Illum, consequatur. Minus doloribus dolorem fugit magni facere voluptatem porro ab ea beatae explicabo qui sint ratione quo excepturi, quasi sit est! Placeat culpa neque doloremque natus sequi distinctio cumque, tenetur delectus repudiandae tempore vel temporibus?
-            </div>
-         </div>
-      </div>
-      <div class="accordion-item">
-         <h2 class="accordion-header" id="headingEight">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
-               Vraag #8
-            </button>
-         </h2>
-         <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight" data-bs-parent="#accordionExample">
-            <div class="accordion-body">
-               <strong>Dit is de antwoord voor vraag 8</strong><br>
-               Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias sed vel harum natus odit saepe fuga magni recusandae est placeat culpa fugit aperiam ut, aspernatur nemo nobis cupiditate! Veritatis sint non maiores quisquam? Ea hic ducimus voluptatem illo quam inventore mollitia veniam est esse id quisquam, alias laborum exercitationem ipsa eius quod eum aliquam magni. Saepe culpa, corporis porro minus hic ratione quaerat ab! Illum, consequatur. Minus doloribus dolorem fugit magni facere voluptatem porro ab ea beatae explicabo qui sint ratione quo excepturi, quasi sit est! Placeat culpa neque doloremque natus sequi distinctio cumque, tenetur delectus repudiandae tempore vel temporibus?
-            </div>
-         </div>
-      </div>
-      <div class="accordion-item">
-         <h2 class="accordion-header" id="headingNine">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
-               Vraag #9
-            </button>
-         </h2>
-         <div id="collapseNine" class="accordion-collapse collapse" aria-labelledby="headingNine" data-bs-parent="#accordionExample">
-            <div class="accordion-body">
-               <strong>Dit is de antwoord voor vraag 9</strong><br>
-               Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias sed vel harum natus odit saepe fuga magni recusandae est placeat culpa fugit aperiam ut, aspernatur nemo nobis cupiditate! Veritatis sint non maiores quisquam? Ea hic ducimus voluptatem illo quam inventore mollitia veniam est esse id quisquam, alias laborum exercitationem ipsa eius quod eum aliquam magni. Saepe culpa, corporis porro minus hic ratione quaerat ab! Illum, consequatur. Minus doloribus dolorem fugit magni facere voluptatem porro ab ea beatae explicabo qui sint ratione quo excepturi, quasi sit est! Placeat culpa neque doloremque natus sequi distinctio cumque, tenetur delectus repudiandae tempore vel temporibus?
-            </div>
-         </div>
-      </div>
+      
    </div><br>
 </div>
 

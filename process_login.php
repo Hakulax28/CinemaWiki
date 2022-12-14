@@ -29,6 +29,7 @@ if (isset($_POST["email"]) && isset($_POST["password"])) {
          $_SESSION["email"] = $user["email"];
          $_SESSION["is_logged_in"] = true;
          $_SESSION["role"] = $user["role"];
+         $_SESSION["profilePicture"] = $user["profilePicture"];
 
          //Hier bekijkt hij of degene die heeft ingelogd een klant of medewerker is.
          if ($_SESSION["role"] == "beheerder") {

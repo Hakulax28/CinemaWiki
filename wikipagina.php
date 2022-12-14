@@ -39,10 +39,7 @@ if (isset($_GET['page_id'])) {
 
 
   <body class="bg-secondary bg-gradient">
-    <div class="containerWikipage container text-start">
-      <div class="main">
-        <div class="mainTitle">
-          <?php if (!empty($_SESSION)) : ?>
+  <?php if (!empty($_SESSION)) : ?>
             <?php if ($_SESSION['role'] == "gebruiker") : ?>
               <a href="wikipagina_update.php?page_id=<?php echo $page["page_id"] ?>" class="shadow btn btn-warning shadow">Bewerken</a>
               <a href="wikipagina_delete.php?page_id=<?php echo $page["page_id"] ?>" class="shadow btn btn-danger shadow">Verwijder</a>
@@ -54,6 +51,9 @@ if (isset($_GET['page_id'])) {
             <?php endif ?>
           <?php endif ?>
           <a href="geschiedenis.php" class="shadow btn btn-primary shadow">Geschiedenis</a>
+    <div class="containerWikipage container text-start">
+      <div class="main">
+        <div class="mainTitle">
           <h1 class="display-3"><?php echo $film['filmTitle']; ?></h1>
         </div>
         <div class="mainText">
@@ -96,12 +96,12 @@ if (isset($_GET['page_id'])) {
               ?>
               <?php foreach($genres as $genre): ?>
                 <tr>
-                  <th><?php echo $genre["genreName"] ?></th>
+                  <th><a href="zoeken.php?query=<?php echo $genre["genreName"] ?>"><?php echo $genre["genreName"] ?></a></th>
                   
                   <?php if (!empty($_SESSION)) : ?>
             <?php if ($_SESSION['role'] == "gebruiker" || $_SESSION['role'] == "beheerder") : ?>
               <?php $genre_id = $genre['genre_id'];  ?>
-              <td><a href="delete_genre_van_film.php?film_id=<?php echo $film_id.'&genre_id='.$genre_id.'&page_id='.$page_id ?>" class="btn btn-danger">delete</a></td>
+              <td><a href="delete_genre_van_film.php?film_id=<?php echo $film_id.'&genre_id='.$genre_id.'&page_id='.$page_id ?>" class="btn btn-danger btn-sm">delete</a></td>
               <?php endif ?>
               <?php endif ?>
                 </tr>
@@ -124,8 +124,8 @@ if (isset($_GET['page_id'])) {
           mysqli_free_result($result);
 ?>
         </datalist></th></th>
-                  <td colspan="1"><button type="submit" name="submit" class="btn btn-primary mb-3">Add to page</button></td>
-                  <td><a href="genre_toevoegen.php">or add new genre</a></td>
+                  <td colspan="1"><button type="submit" name="submit" class="btn btn-primary mb-3 btn-sm">Add to page</button></td>
+                  <td colspan="2"><a href="genre_toevoegen.php">or add new genre</a></td>
                 </form>
               </tr>
               <?php endif ?>
@@ -198,6 +198,7 @@ if (isset($_GET['page_id'])) {
                           <p><?php echo $person["personDescription"] ?></p>
                         </div>
                         <div class="modal-footer">
+                          <a class="btn btn-primary" href="zoeken.php?query=<?php echo $person["personName"] ?>">Zoek persoon</a>
                           <a class="btn btn-warning" href="persoon_bewerken.php?person_id=<?php echo $person["person_id"] ?>">bewerk informatie</a>
                           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                         </div>
@@ -210,7 +211,7 @@ if (isset($_GET['page_id'])) {
                   <?php if (!empty($_SESSION)) : ?>
             <?php if ($_SESSION['role'] == "gebruiker" || $_SESSION['role'] == "beheerder") : ?>
               <?php $person_id = $person['person_id'];  ?>
-              <td><a href="delete_persoon_van_film.php?film_id=<?php echo $film_id.'&person_id='.$person_id.'&page_id='.$page_id ?>" class="btn btn-danger">delete</a></td>
+              <td><a href="delete_persoon_van_film.php?film_id=<?php echo $film_id.'&person_id='.$person_id.'&page_id='.$page_id ?>" class="btn btn-danger btn-sm">delete</a></td>
               <?php endif ?>
               <?php endif ?>
                 </tr>
@@ -221,7 +222,7 @@ if (isset($_GET['page_id'])) {
             <?php if ($_SESSION['role'] == "gebruiker" || $_SESSION['role'] == "beheerder") : ?>
               <tr>
                 <form action="process_persoonToevoegenAanPagina.php?id=<?php echo $film_id ?>&page_id=<?php echo $page_id ?>" method="POST">
-                  <th scope="row" colspan="2">
+                  <th scope="row" colspan="3">
                   <?php
                   $sql1 = "SELECT * FROM people";
           $result = mysqli_query($conn,$sql1);
@@ -235,7 +236,7 @@ if (isset($_GET['page_id'])) {
           mysqli_free_result($result);
 ?>
         </datalist></th></th>
-                  <td colspan="1"><button type="submit" name="submit" class="btn btn-primary mb-3">Add to page</button></td>
+                  <td colspan="2"><button type="submit" name="submit" class="btn btn-primary mb-3 btn-sm">Add to page</button></td>
                   <td><a href="persoon_toevoegen.php">or add new person</a></td>
                 </form>
               </tr>
