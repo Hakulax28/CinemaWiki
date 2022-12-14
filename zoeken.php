@@ -18,7 +18,15 @@
 <?php require 'connectie.php';
 $query = $_GET['query'];
 
-$sql = "SELECT *, genre.genreName, films.filmTitle FROM wikipages INNER JOIN films ON wikipages.film_id = films.film_id INNER JOIN film_genres ON films.film_id = film_genres.film_id INNER JOIN genre ON film_genres.genre_id = genre.genre_id AND (genre.genreName LIKE '%$query%' or films.filmTitle LIKE '%$query%')";
+$sql = "SELECT *, genre.genreName, films.filmTitle, people.personName FROM wikipages 
+INNER JOIN films ON wikipages.film_id = films.film_id 
+INNER JOIN people_in_film ON films.film_id = people_in_film.film_id
+INNER JOIN people ON people_in_film.person_id = people.person_id
+INNER JOIN film_genres ON films.film_id = film_genres.film_id 
+INNER JOIN genre ON film_genres.genre_id = genre.genre_id 
+AND (genre.genreName LIKE '%$query%' or films.filmTitle LIKE '%$query%' or people.personName LIKE '%$query%' ) 
+GROUP BY films.filmTitle";
+
 $result = mysqli_query($conn,$sql);
 
 $pages = mysqli_fetch_all($result, MYSQLI_ASSOC);
@@ -37,11 +45,14 @@ $pages = mysqli_fetch_all($result, MYSQLI_ASSOC);
                     <p class="p-2">Genre: 
                     <?php 
                     $film_id = $page["film_id"];
-                    $sql = "SELECT genre.genreName FROM film_genres INNER JOIN genre ON film_genres.genre_id = genre.genre_id WHERE film_id=$film_id LIMIT 1";
+                    $sql = "SELECT genre.genreName FROM film_genres INNER JOIN genre ON film_genres.genre_id = genre.genre_id WHERE film_id=$film_id";
                     $result = mysqli_query($conn,$sql);
-                    $genre = mysqli_fetch_assoc($result);
-                    mysqli_free_result($result);
+
+                    while ($genre = mysqli_fetch_assoc($result)) {
                     echo "<a class=\"badge bg-secondary\" href=\"zoeken.php?query=".$genre['genreName']."\">".$genre['genreName']."</a>";
+                    }
+
+                    mysqli_free_result($result);
 
                     ?>
                     </p>

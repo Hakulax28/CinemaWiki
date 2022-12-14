@@ -15,7 +15,7 @@ if ($result = mysqli_query($conn, $sql)) {
    }
 }
 if (isset($_POST["submit"]) && $_POST["filmTitle"] != "") {
-
+    echo $_POST["oldCoverImage"];
    $filmTitle = $_POST['filmTitle'];
    $filmReleaseDate = $_POST['filmReleaseDate'];
    $filmRuntime = $_POST['filmRuntime'];
@@ -26,10 +26,12 @@ if (isset($_POST["submit"]) && $_POST["filmTitle"] != "") {
    $filmCost = $_POST['filmCost'];
    $filmEarnings = $_POST['filmEarnings'];
 
-   if (isset($_FILES['imageToUpload'])) {
-      move_uploaded_file($_FILES['imageToUpload']['tmp_name'], "images/filmcovers/" . $_FILES['imageToUpload']['name']);
-      $filmCoverImage = "images/filmcovers/" . $_FILES['imageToUpload']['name'];
+   if (isset($_FILES['filmCoverUpload'])  && !empty($_FILES["filmCoverUpload"]["name"])) {
+      unlink($_POST["oldCoverImage"]);
+      move_uploaded_file($_FILES['filmCoverUpload']['tmp_name'], "images/filmcovers/" . $_FILES['filmCoverUpload']['name']);
+      $filmCoverImage = "images/filmcovers/" . $_FILES['filmCoverUpload']['name'];
    } else {
+      $filmCoverImage = $_POST["oldCoverImage"];
       echo "image not found!";
    }
 
@@ -80,8 +82,9 @@ if (isset($_POST["submit"]) && $_POST["filmTitle"] != "") {
       <h2>Film Updaten</h2>
       <form action="film_update.php?film_id=<?php echo $id; ?>" method="POST" enctype="multipart/form-data">
          <input type="text" class="form-control" id="filmTitle" name="filmTitle" placeholder="Film Title" value="<?php echo $film["filmTitle"] ?>">
-         <div class="sideImage"><img src="images/<?php echo $film["filmCoverImage"]; ?>" alt="" width="125px" height="200px">
-            <input class="form-control" type="file" name="imageToUpload" id="formFile">
+         <input type="hidden" name="oldCoverImage" value="<?php echo $film["filmCoverImage"]; ?>">
+         <div class="sideImage"><img src="<?php echo $film["filmCoverImage"]; ?>" alt="" width="125px" height="200px">
+            <input class="form-control" type="file" name="filmCoverUpload" id="formFile">
             <table class="table">
                <tbody class="table-group-divider">
                   <tr>
@@ -105,16 +108,16 @@ if (isset($_POST["submit"]) && $_POST["filmTitle"] != "") {
                   </tr>
                   <tr>
                      <th scope="row">Age Rating</th>
-                     <td>EU: <select class="form-select" name="filmAgeRatingEU" aria-label="Default select example" value="<?php echo $film["filmAgeRatingEU"] ?>">
-                           <option selected>Select EU age rating</option>
+                     <td>EU: <select class="form-select" name="filmAgeRatingEU" aria-label="Default select example" >
+                           <option value="<?php echo $film["filmAgeRatingEU"] ?>" selected><?php echo $film["filmAgeRatingEU"] ?></option>
                            <option value="3">3</option>
                            <option value="7">7</option>
                            <option value="12">12</option>
                            <option value="16">16</option>
                            <option value="18">18</option>
                         </select></td>
-                     <td>US: <select class="form-select" name="filmAgeRatingUS" aria-label="Default select example" value="<?php echo $film["filmAgeRatingUS"] ?>">
-                           <option selected>Select US age rating</option>
+                     <td>US: <select class="form-select" name="filmAgeRatingUS" aria-label="Default select example">
+                           <option value="<?php echo $film["filmAgeRatingUS"] ?>" selected><?php echo $film["filmAgeRatingUS"] ?></option>
                            <option value="ec">Early childhood</option>
                            <option value="E">Everyone</option>
                            <option value="E10+">Everyone 10+</option>
@@ -130,7 +133,7 @@ if (isset($_POST["submit"]) && $_POST["filmTitle"] != "") {
                         $result = mysqli_query($conn, $sql);
                         $talen = mysqli_fetch_all($result, MYSQLI_ASSOC);
                         ?>
-                        <input class="form-control" name="filmLanguage" list="datalistOptions" id="taalDataList" placeholder="Zoek een Taal...">
+                        <input class="form-control" name="filmLanguage" list="datalistOptions" id="taalDataList" value="<?php echo $film["filmLanguage"] ?>" placeholder="Zoek een Taal...">
                         <datalist id="datalistOptions">
                            <?php foreach ($talen as $taal) : ?>
                               <option value="<?php echo $taal["taal"] ?>">
@@ -145,8 +148,8 @@ if (isset($_POST["submit"]) && $_POST["filmTitle"] != "") {
 
                   <tr>
                      <th scope="row">Score</th>
-                     <td colspan="3"><select class="form-select" name="filmScore" aria-label="Default select example" value="<?php echo $film["filmScore"] ?>">
-                           <option selected>Open this select menu</option>
+                     <td colspan="3"><select class="form-select" name="filmScore" aria-label="Default select example">
+                           <option  value="<?php echo $film["filmScore"] ?>" selected><?php echo $film["filmScore"] ?></option>
                            <option value="1">1</option>
                            <option value="2">2</option>
                            <option value="3">3</option>
