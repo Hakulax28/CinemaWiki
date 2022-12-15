@@ -34,10 +34,18 @@ if ($result = mysqli_query($conn, $sql)) {
                   <input type="email" class="form-control" name="email" id="floatingInput" value="<?php echo $user["email"] ?>" placeholder="name@example.com">
                   <label for="floatingInput">E-mail</label>
                </div><br>
-               <div class="form-floating">
-                  <input type="password" class="form-control" name="password" id="floatingPassword" value="<?php echo $user["password"] ?>" placeholder="Password">
-                  <label for="floatingPassword">Wachtwoord</label>
-               </div><br>
+               <?php if ($_SESSION['role'] == "gebruiker") : ?>
+                  <div class="form-floating">
+                     <input type="password" class="form-control" name="password" id="floatingPassword" value="<?php echo $user["password"] ?>" placeholder="Password">
+                     <label for="floatingPassword">Wachtwoord</label>
+                  </div><br>
+               <?php endif ?>
+               <?php if ($_SESSION['role'] == "beheerder") : ?>
+                  <div class="form-floating">
+                     <input type="password" class="form-control" name="password" id="floatingPassword" value="<?php echo $user["password"] ?>" placeholder="Password" disabled>
+                     <label for="floatingPassword">Wachtwoord</label>
+                  </div><br>
+               <?php endif ?>
                <div class="form-floating">
                   <input type="date" name="date_of_birth" id="floatingInput" value="<?php echo $user["date_of_birth"] ?>" class="form-control">
                   <label for="floatingInput">Geboortedatum: </label>

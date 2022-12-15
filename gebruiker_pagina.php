@@ -21,7 +21,7 @@ if ($result = mysqli_query($conn, $sql)) {
             <th>Voornaam</th>
             <th>Achternaam</th>
             <th>Email</th>
-            <th>Wachtwoord</th>
+            <th hidden>Wachtwoord</th>
             <th>Geboortedatum</th>
             <th>Telefoonnummer</th>
             <th>Rol</th>
@@ -37,7 +37,7 @@ if ($result = mysqli_query($conn, $sql)) {
                <td><?php echo $user["firstname"] ?></td>
                <td><?php echo $user["lastname"] ?></td>
                <td><?php echo $user["email"] ?></td>
-               <td><?php echo $user["password"] ?></td>
+               <td hidden><?php echo $user["password"] ?></td>
                <td><?php echo $user["date_of_birth"] ?></td>
                <td><?php echo $user["phonenumber"] ?></td>
                <td><?php echo $user["role"] ?></td>
