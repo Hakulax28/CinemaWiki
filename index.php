@@ -17,18 +17,19 @@ if ($result = mysqli_query($conn, $sql)) {
 
 <div class="container bg-light border border-white rounded-1"><br>
    <h1>Welkom bij CinemaWiki</h1><br>
-   <h2>Featured Film: </h2><br>
    <div class="row g-5">
       <div class="col-md">
-         <img src="images/test-image.png" style="max-width: 100%; max-height: 225px" alt="">
+         <img src="images/filmscenes/Fight-Club.webp" class="img-fluid" alt="">
       </div>
       <div class="col-md">
-         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus, maxime. Ipsam, earum doloribus aperiam necessitatibus voluptates error quas aliquam labore? Aspernatur quis natus quasi repudiandae doloribus modi dignissimos qui praesentium nobis laboriosam officia veniam similique numquam esse vel dolores at veritatis totam, dolore saepe quia vero illum eius assumenda. Voluptatibus reprehenderit dicta necessitatibus, expedita quae eveniet doloribus blanditiis, quis veniam amet ut minima ipsam possimus?
-            <a href="wikipagina.php?page_id=1" class="w-100 btn btn-lg btn-success shadow" type="submit">Browse</a>
+         <p>Welkom op CinemaWiki! We zijn blij dat je ons hebt gevonden en we hopen dat je veel interessante en leuke dingen op onze site zult vinden.
+            Of je nu op zoek bent naar informatie over de laatste films, achtergrondinformatie over je favoriete acteurs of aanbevelingen voor nieuwe films om te bekijken, we hebben het allemaal. 
+            Blijf gewoon bladeren om onze collectie te ontdekken en geniet van alles wat we te bieden hebben. Veel plezier!
+            <a href="zoeken.php?query=" class="w-100 btn btn-lg btn-success shadow mt-4" type="submit">Zie alle films</a>
          </p>
       </div>
    </div><br>
-   <h2>Sorteer bij genre: </h2><br>
+   <h2>of sorteer op genre: </h2><br>
    <div class="row g-4 mx-auto">
       <?php foreach ($genres as $genre) : ?>
          <div class="card" style="width: 100%;">
