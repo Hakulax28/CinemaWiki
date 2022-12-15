@@ -26,7 +26,7 @@ if (isset($_POST["submit"]) && $_POST["taal"] != "" && $_POST["land_van_oorspron
 
     if ($conn->query($sql) === TRUE) {
         echo "New record created successfully";
-        header("location: genres.php");
+        header("location: taal.php");
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
@@ -38,11 +38,11 @@ if (isset($_POST["submit"]) && $_POST["taal"] != "" && $_POST["land_van_oorspron
 <?php include "header.php"; ?>
 
 <div class="container bg-light border border-white rounded-1"><br>
-    <h1>Taal toevoegen</h1>
+    <h1>Taal toevoegen</h1><br>
     <form action="" method="POST">
-        <input class="form-control" type="text" name="taal" placeholder="Taal" aria-label="name">
-        <input class="form-control" type="text" name="land_van_oorsprong" placeholder="Land van Oorsprong" aria-label="age">
-        <button class="btn btn-primary" name="submit" type="submit">Voeg toe</button>
+        <input class="form-control" type="text" name="taal" value="<?php echo $language["taal"] ?>" placeholder="taal" aria-label="name"><br>
+        <input class="form-control" type="text" name="land_van_oorsprong" value="<?php echo $language["land_van_oorsprong"] ?>" placeholder="land_van_oorsprong" aria-label="age"><br>
+        <button class="btn btn-primary" name="submit" type="submit">Update</button>
         <button class="btn btn-danger" onclick="history.back()">Ga terug</button>
     </form>
 </div>

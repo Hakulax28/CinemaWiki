@@ -42,8 +42,8 @@ if (isset($_POST["submit"]) && $_POST["genreName"] != "" && $_POST["genreDescrip
    <form action="update_genre.php?genre_id=<?php echo $id; ?>" method="POST">
       <input class="form-control" type="text" name="genreName" value="<?php echo $genre["genreName"] ?>" placeholder="Naam" aria-label="name"><br>
       <input class="form-control" type="text" name="genreDescription" value="<?php echo $genre["genreDescription"] ?>" placeholder="Descriptie" aria-label="age"><br>
-      <button class="w-100 btn btn-lg btn-primary shadow" name="submit" type="submit">Update de genre</button>
-      <button class="w-100 btn btn-lg btn-danger shadow" onclick="history.back()">Ga terug</button>
+      <button class="btn btn-primary" name="submit" type="submit">Voeg toe</button>
+      <button class="btn btn-danger" onclick="history.back()">Ga terug</button>
    </form><br>
 </div>
 
