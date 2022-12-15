@@ -25,8 +25,12 @@ if ($result = mysqli_query($conn, $sql)) {
             <th>Geboortedatum</th>
             <th>Telefoonnummer</th>
             <th>Rol</th>
-            <th>Verwijder</th>
-            <th>Update</th>
+            <?php if (!empty($_SESSION)) : ?>
+               <?php if ($_SESSION['role'] == "beheerder") : ?>
+                  <th>Verwijder</th>
+                  <th>Update</th>
+               <?php endif ?>
+            <?php endif ?>
          </tr>
       </thead>
       <tbody>
@@ -41,8 +45,12 @@ if ($result = mysqli_query($conn, $sql)) {
                <td><?php echo $user["date_of_birth"] ?></td>
                <td><?php echo $user["phonenumber"] ?></td>
                <td><?php echo $user["role"] ?></td>
-               <td><a href="gebruiker_delete.php?user_id=<?php echo $user["user_id"] ?>" class="shadow btn btn-danger shadow">Verwijder</a></td>
-               <td><a href="gebruiker_update.php?user_id=<?php echo $user["user_id"] ?>" class="shadow btn btn-warning shadow">Update</a></td>
+               <?php if (!empty($_SESSION)) : ?>
+                  <?php if ($_SESSION['role'] == "beheerder") : ?>
+                     <td><a href="gebruiker_delete.php?user_id=<?php echo $user["user_id"] ?>" class="shadow btn btn-danger shadow">Verwijder</a></td>
+                     <td><a href="gebruiker_update.php?user_id=<?php echo $user["user_id"] ?>" class="shadow btn btn-warning shadow">Update</a></td>
+                  <?php endif ?>
+               <?php endif ?>
             </tr>
          <?php endforeach; ?>
       </tbody>

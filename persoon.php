@@ -38,26 +38,26 @@ if ($result = mysqli_query($conn, $sql)) {
                <td><?php echo $person["personAge"] ?></td>
                <td><?php echo $person["personRole"] ?></td>
                <td><img src="<?php echo $person["personImage"] ?>" alt="" width="90px" height="100px"></td>
-               <td colspan="2"><a href="#" class="link-dark" role="button" data-bs-toggle="modal" data-bs-target="#Modal<?php echo $person["person_id"] ?>"><?php echo $person["personName"] ?></a></td>
-
-               <div class="modal fade" id="Modal<?php echo $person["person_id"] ?>" tabindex="-1" aria-labelledby="Modal<?php echo $person["person_id"] ?>Label" aria-hidden="true">
-                  <div class="modal-dialog">
-                     <div class="modal-content">
-                        <div class="modal-header">
-                           <h1 class="modal-title fs-5" id="Modal<?php echo $person["person_id"] ?>Label"><?php echo $person["personName"] ?></h1>
-                           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                           <img src="<?php echo $person["personImage"] ?>" class="rounded img-fluid float-start h-25 w-25 p-2" alt="<?php echo $person["personName"] ?>">
-                           <p><?php echo $person["personDescription"] ?></p>
-                        </div>
-                        <div class="modal-footer">
-                           <a class="btn btn-primary" href="zoeken.php?query=<?php echo $person["personName"] ?>">Zoek persoon</a>
-                           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+               <td><a href="#" class="btn btn-primary" role="button" data-bs-toggle="modal" data-bs-target="#Modal<?php echo $person["person_id"] ?>">Bekijk de descripties</a>
+                  <div class="modal fade" id="Modal<?php echo $person["person_id"] ?>" tabindex="-1" aria-labelledby="Modal<?php echo $person["person_id"] ?>Label" aria-hidden="true">
+                     <div class="modal-dialog">
+                        <div class="modal-content">
+                           <div class="modal-header">
+                              <h1 class="modal-title fs-5" id="Modal<?php echo $person["person_id"] ?>Label"><?php echo $person["personName"] ?></h1>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                           </div>
+                           <div class="modal-body">
+                              <img src="<?php echo $person["personImage"] ?>" class="rounded img-fluid float-start h-25 w-25 p-2" alt="<?php echo $person["personName"] ?>">
+                              <p><?php echo $person["personDescription"] ?></p>
+                           </div>
+                           <div class="modal-footer">
+                              <a class="btn btn-primary" href="zoeken.php?query=<?php echo $person["personName"] ?>">Zoek persoon</a>
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                           </div>
                         </div>
                      </div>
                   </div>
-               </div>
+               </td>
                <?php if (!empty($_SESSION)) : ?>
                   <?php if ($_SESSION['role'] == "beheerder") : ?>
                      <td><a href="persoon_delete.php?person_id=<?php echo $person["person_id"] ?>" class="shadow btn btn-danger shadow">Verwijder</a></td>
