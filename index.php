@@ -37,7 +37,7 @@ if ($result = mysqli_query($conn, $sql)) {
             <div class="card-body">
                <h5 class="card-title"><?php echo $genre["genreName"] ?></h5><br>
                <p class="card-text" style="height: 100px;"><?php echo $genre["genreDescription"] ?></p>
-               <a href="zoeken.php?query=<?php echo $genre["genreName"] ?>" class="btn btn-primary shadow" style="width: 100%;">Go to <?php echo $genre["genreName"] ?></a>
+               <a href="zoeken.php?query=<?php echo $genre["genreName"] ?>" class="btn btn-primary shadow" style="width: 100%;">Zoek naar <?php echo $genre["genreName"] ?></a>
             </div><br>
          </div>
       <?php endforeach; ?>
