@@ -97,7 +97,7 @@ if ($conn->query($sql) === TRUE) {
         </div>
             <div class="mainText"> 
             <div class="">
-            <textarea class="form-control" id="Textarea1" name="pageMainText" rows="5" maxlength="5000">Main Text</textarea>
+            <textarea class="form-control" id="Textarea1" name="pageMainText" rows="5" maxlength="5000">Hoofd tekst</textarea>
             </div>
             </div>
             <div class="mainImage">
@@ -118,17 +118,17 @@ if ($conn->query($sql) === TRUE) {
         <div class="sideList"><table class="table">
   <tbody class="table-group-divider">
     <tr>
-      <th scope="row">Runtime</th>
-      <td colspan="3"><?php echo $film['filmRuntime']; ?> <p> Minutes</p><div class="mb-3S">
+      <th scope="row">Speeltijd</th>
+      <td colspan="3"><?php echo $film['filmRuntime']; ?> <p> Minuten</p><div class="mb-3S">
       </div></td>
     </tr>
     <tr>
-      <th scope="row">Age Rating</th>
+      <th scope="row">Leeftijdsgroep</th>
       <td>EU: <?php echo $film['filmAgeRatingEU']; ?></td>
       <td>US: <?php echo $film['filmAgeRatingUS']; ?></td>
     </tr>
     <tr>
-      <th scope="row">language</th>
+      <th scope="row">Taal</th>
       <td colspan="3"><?php echo $film['filmLanguage']; ?><div class="mb-3S">
       </div></td>
     </tr>
@@ -137,12 +137,12 @@ if ($conn->query($sql) === TRUE) {
       <td colspan="3"><?php echo $film['filmScore']; ?></td>
     </tr>
     <tr>
-      <th scope="row">Cost</th>
+      <th scope="row">Kosten</th>
       <td colspan="3">US$ <?php echo $film['filmCost']; ?><div class="mb-3S">
       </div></td>
     </tr>
     <tr>
-      <th scope="row">Earnings</th>
+      <th scope="row">Opbrengsten</th>
       <td colspan="3">US$ <?php echo $film['filmEarnings']; ?><div class="mb-3S">
       </div></td>
     </tr>
@@ -151,7 +151,7 @@ if ($conn->query($sql) === TRUE) {
 <table class="table">
   <thead>
     <tr>
-      <th>People</th>
+      <th>Mensen</th>
     </tr>
   </thead>
   <tbody class="table-group-divider">
@@ -162,7 +162,7 @@ if ($conn->query($sql) === TRUE) {
   </tbody>
 </table></div>
         <div class="sideText"><div class="">
-            <textarea class="form-control" name="pageSidebarText" id="Textarea2" rows="5" maxlength="5000">Sidebar Text</textarea>
+            <textarea class="form-control" name="pageSidebarText" id="Textarea2" rows="5" maxlength="5000">Zijbalk Tekst</textarea>
             </div></div>
       </div>
       
@@ -172,7 +172,7 @@ if ($conn->query($sql) === TRUE) {
       </div></div>
 
         <div class="section1MainText"><div class="">
-            <textarea class="form-control" id="Textarea3" rows="5" name="pageSection1Text1" maxlength="5000">Section 1 Text</textarea>
+            <textarea class="form-control" id="Textarea3" rows="5" name="pageSection1Text1" maxlength="5000">Sectie 1 Tekst</textarea>
             </div></div>
 
         <div class="section1Image"><img src="images/test-image.png" alt="" class="img-fluid rounded">
@@ -183,7 +183,7 @@ if ($conn->query($sql) === TRUE) {
 
 
         <div class="section1ExtraText"><div class="">
-            <textarea class="form-control" id="Textarea4" name="pageSection1Text2" rows="5" maxlength="5000">Section 1 Extra Text</textarea>
+            <textarea class="form-control" id="Textarea4" name="pageSection1Text2" rows="5" maxlength="5000">Sectie 1 Extra Tekst</textarea>
             </div></div>
 
         <div class="section2Title"><div class="mb-3S">
@@ -191,7 +191,7 @@ if ($conn->query($sql) === TRUE) {
       </div></div>
         
         <div class="section2MainText"><div class="">
-            <textarea class="form-control" name="pageSection2Text" id="Textarea4" rows="5" maxlength="5000">Section 2 Text</textarea>
+            <textarea class="form-control" name="pageSection2Text" id="Textarea4" rows="5" maxlength="5000">Sectie 2 Tekst</textarea>
             </div></div>
       </div>
     <div class="sideimages">
@@ -206,10 +206,10 @@ if ($conn->query($sql) === TRUE) {
 
     <img src="images/test-image.png" alt="" class="img-fluid rounded"></div>
     <div class="sources"><div class="">
-            <textarea class="form-control" name="pageSources" id="Textarea5" rows="5" maxlength="5000">Sources Text</textarea>
+            <textarea class="form-control" name="pageSources" id="Textarea5" rows="5" maxlength="5000">bronnen</textarea>
             </div></div>
     </div>
-    <button type="submit" name="submit" class="btn btn-primary mb-3">Confirm</button>
+    <button type="submit" name="submit" class="btn btn-primary mb-3">Bevestig</button>
 
   </form>
 </body>
