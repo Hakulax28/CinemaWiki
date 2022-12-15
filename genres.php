@@ -19,6 +19,7 @@ if ($result = mysqli_query($conn, $sql)) {
             <!--<th>ID</th>-->
             <th>Genre naam</th>
             <th>Descriptie</th>
+            <th>Opzoeken</th>
             <?php if (!empty($_SESSION)) : ?>
                <?php if ($_SESSION['role'] == "beheerder") : ?>
                   <th>Verwijder</th>
@@ -33,6 +34,7 @@ if ($result = mysqli_query($conn, $sql)) {
                <!--<td><?php echo $genre["genre_id"] ?></td>-->
                <td><?php echo $genre["genreName"] ?></td>
                <td><?php echo $genre["genreDescription"] ?></td>
+               <th><a class="btn btn-primary shadow" href="zoeken.php?query=<?php echo $genre["genreName"] ?>">Zoek genre</a></th>
                <?php if (!empty($_SESSION)) : ?>
                   <?php if ($_SESSION['role'] == "beheerder") : ?>
                      <td><a href="genre_delete.php?genre_id=<?php echo $genre["genre_id"] ?>" class="shadow btn btn-danger shadow">Verwijder</a></td>

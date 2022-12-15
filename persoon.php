@@ -12,7 +12,7 @@ if ($result = mysqli_query($conn, $sql)) {
 <?php include "header.php"; ?>
 
 <div class="container bg-light border border-white rounded-1"><br>
-   <h1>Genres</h1><br>
+   <h1>Personen</h1><br>
    <table class="table table-striped table-dark rounded-1">
       <thead>
          <tr>
@@ -38,29 +38,37 @@ if ($result = mysqli_query($conn, $sql)) {
                <td><?php echo $person["personAge"] ?></td>
                <td><?php echo $person["personRole"] ?></td>
                <td><img src="<?php echo $person["personImage"] ?>" alt="" width="90px" height="100px"></td>
-               <td><button type="button" class="btn btn-primary" style="width: 150px;" data-bs-toggle="modal" data-bs-target="#ModalSection1Text1<?php echo $person["person_id"] ?>">Bekijk hun descriptie</button></td>
+               <td colspan="2"><a href="#" class="link-dark" role="button" data-bs-toggle="modal" data-bs-target="#Modal<?php echo $person["person_id"] ?>"><?php echo $person["personName"] ?></a></td>
 
-               <div class="modal fade" id="ModalSection1Text1<?php echo $person["person_id"] ?>" tabindex="-1" aria-labelledby="ModalSection1Text1<?php echo $person["person_id"] ?>Label" aria-hidden="true">
+               <div class="modal fade" id="Modal<?php echo $person["person_id"] ?>" tabindex="-1" aria-labelledby="Modal<?php echo $person["person_id"] ?>Label" aria-hidden="true">
                   <div class="modal-dialog">
                      <div class="modal-content">
                         <div class="modal-header">
-                           <h1 class="modal-title fs-5" id="ModalSection1Text1<?php echo $person["person_id"] ?>Label">Descriptie</h1>
+                           <h1 class="modal-title fs-5" id="Modal<?php echo $person["person_id"] ?>Label"><?php echo $person["personName"] ?></h1>
                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                           <?php echo $person["personDescription"] ?>
+                           <img src="<?php echo $person["personImage"] ?>" class="rounded img-fluid float-start h-25 w-25 p-2" alt="<?php echo $person["personName"] ?>">
+                           <p><?php echo $person["personDescription"] ?></p>
                         </div>
                         <div class="modal-footer">
+                           <a class="btn btn-primary" href="zoeken.php?query=<?php echo $person["personName"] ?>">Zoek persoon</a>
+                           <?php if (!empty($_SESSION)) : ?>
+                              <?php if ($_SESSION['role'] == "gebruiker" || $_SESSION['role'] == "beheerder") : ?>
+                                 <a class="btn btn-warning" href="persoon_bewerken.php?person_id=<?php echo $person["person_id"] ?>">bewerk informatie</a>
+                              <?php endif ?>
+                           <?php endif ?>
                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                         </div>
                      </div>
                   </div>
-                  <?php if (!empty($_SESSION)) : ?>
-                     <?php if ($_SESSION['role'] == "beheerder") : ?>
-                        <td><a href="persoon_delete.php?person_id=<?php echo $person["person_id"] ?>" class="shadow btn btn-danger shadow">Verwijder</a></td>
-                        <td><a href="persoon_bewerken.php?person_id=<?php echo $person["person_id"] ?>" class="shadow btn btn-warning shadow">Update</a></td>
-                     <?php endif ?>
+               </div>
+               <?php if (!empty($_SESSION)) : ?>
+                  <?php if ($_SESSION['role'] == "beheerder") : ?>
+                     <td><a href="persoon_delete.php?person_id=<?php echo $person["person_id"] ?>" class="shadow btn btn-danger shadow">Verwijder</a></td>
+                     <td><a href="persoon_bewerken.php?person_id=<?php echo $person["person_id"] ?>" class="shadow btn btn-warning shadow">Update</a></td>
                   <?php endif ?>
+               <?php endif ?>
             </tr>
          <?php endforeach; ?>
       </tbody>
