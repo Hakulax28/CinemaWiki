@@ -199,7 +199,11 @@ if (isset($_GET['page_id'])) {
                         </div>
                         <div class="modal-footer">
                           <a class="btn btn-primary" href="zoeken.php?query=<?php echo $person["personName"] ?>">Zoek persoon</a>
-                          <a class="btn btn-warning" href="persoon_bewerken.php?person_id=<?php echo $person["person_id"] ?>">bewerk informatie</a>
+                          <?php if (!empty($_SESSION)) : ?>
+                            <?php if ($_SESSION['role'] == "gebruiker" || $_SESSION['role'] == "beheerder") : ?>
+                              <a class="btn btn-warning" href="persoon_bewerken.php?person_id=<?php echo $person["person_id"] ?>">bewerk informatie</a>
+                            <?php endif ?>
+                          <?php endif ?>
                           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                         </div>
                       </div>
