@@ -101,7 +101,7 @@ if (isset($_GET['page_id'])) {
                   <?php if (!empty($_SESSION)) : ?>
             <?php if ($_SESSION['role'] == "gebruiker" || $_SESSION['role'] == "beheerder") : ?>
               <?php $genre_id = $genre['genre_id'];  ?>
-              <td><a href="delete_genre_van_film.php?film_id=<?php echo $film_id.'&genre_id='.$genre_id.'&page_id='.$page_id ?>" class="btn btn-danger btn-sm">delete</a></td>
+              <td><a href="delete_genre_van_film.php?film_id=<?php echo $film_id.'&genre_id='.$genre_id.'&page_id='.$page_id ?>" class="btn btn-danger btn-sm">verwijder</a></td>
               <?php endif ?>
               <?php endif ?>
                 </tr>
@@ -124,8 +124,8 @@ if (isset($_GET['page_id'])) {
           mysqli_free_result($result);
 ?>
         </datalist></th></th>
-                  <td colspan="1"><button type="submit" name="submit" class="btn btn-primary mb-3 btn-sm">Add to page</button></td>
-                  <td colspan="2"><a href="genre_toevoegen.php">or add new genre</a></td>
+                  <td colspan="1"><button type="submit" name="submit" class="btn btn-primary mb-3 btn-sm">Voeg toe</button></td>
+                  <td colspan="2"><a href="genre_toevoegen.php">of voeg een nieuwe genre toe</a></td>
                 </form>
               </tr>
               <?php endif ?>
@@ -136,17 +136,17 @@ if (isset($_GET['page_id'])) {
           <table class="table">
             <tbody class="table-group-divider">
               <tr>
-                <th scope="row">Runtime</th>
-                <td colspan="3"><?php echo $film['filmRuntime']; ?><p> Minutes</p>
+                <th scope="row">Speeltijd</th>
+                <td colspan="3"><?php echo $film['filmRuntime']; ?><p> Minuten</p>
                 </td>
               </tr>
               <tr>
-                <th scope="row">Age Rating</th>
+                <th scope="row">Leeftijds groep</th>
                 <td>EU: <?php echo $film['filmAgeRatingEU']; ?></td>
                 <td>US: <?php echo $film['filmAgeRatingUS']; ?></td>
               </tr>
               <tr>
-                <th scope="row">language</th>
+                <th scope="row">Taal</th>
                 <td colspan="3"><?php echo $film['filmLanguage']; ?></td>
               </tr>
               <tr>
@@ -154,11 +154,11 @@ if (isset($_GET['page_id'])) {
                 <td colspan="3"><?php echo $film['filmScore']; ?></td>
               </tr>
               <tr>
-                <th scope="row">Cost</th>
+                <th scope="row">Kosten</th>
                 <td colspan="3">US$ <?php echo $film['filmCost']; ?></td>
               </tr>
               <tr>
-                <th scope="row">Earnings</th>
+                <th scope="row">Opbrengsten</th>
                 <td colspan="3">US$ <?php echo $film['filmEarnings']; ?></td>
               </tr>
             </tbody>
@@ -166,10 +166,10 @@ if (isset($_GET['page_id'])) {
           <table class="table">
             <thead>
               <tr>
-                <th>image</th>
-                <th>Role</th>
-                <th colspan="2">Name</th>
-                <th>Age</th>
+                <th>plaatje</th>
+                <th>Rol</th>
+                <th colspan="2">Naam</th>
+                <th>Leeftijd</th>
               </tr>
             </thead>
             <tbody class="table-group-divider">
@@ -215,7 +215,7 @@ if (isset($_GET['page_id'])) {
                   <?php if (!empty($_SESSION)) : ?>
             <?php if ($_SESSION['role'] == "gebruiker" || $_SESSION['role'] == "beheerder") : ?>
               <?php $person_id = $person['person_id'];  ?>
-              <td><a href="delete_persoon_van_film.php?film_id=<?php echo $film_id.'&person_id='.$person_id.'&page_id='.$page_id ?>" class="btn btn-danger btn-sm">delete</a></td>
+              <td><a href="delete_persoon_van_film.php?film_id=<?php echo $film_id.'&person_id='.$person_id.'&page_id='.$page_id ?>" class="btn btn-danger btn-sm">verwijder</a></td>
               <?php endif ?>
               <?php endif ?>
                 </tr>
@@ -240,8 +240,8 @@ if (isset($_GET['page_id'])) {
           mysqli_free_result($result);
 ?>
         </datalist></th></th>
-                  <td colspan="2"><button type="submit" name="submit" class="btn btn-primary mb-3 btn-sm">Add to page</button></td>
-                  <td><a href="persoon_toevoegen.php">or add new person</a></td>
+                  <td colspan="2"><button type="submit" name="submit" class="btn btn-primary mb-3 btn-sm">Voeg toe</button></td>
+                  <td><a href="persoon_toevoegen.php">of voeg een nieuw persoon toe</a></td>
                 </form>
               </tr>
               <?php endif ?>
