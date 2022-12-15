@@ -91,19 +91,20 @@ if ($conn->query($sql) === TRUE) {
     <div class="containerWikipage container">
       <div class="main">
       <div class="mainTitle">
-            <h1 class="display-3"><div class="mb-3S">
+          <h1 class="display-3"><div class="mb-3S">
             <?php echo $film['filmTitle']; ?>
-      </div></h1>
+          </h1>
+      </div>
+      
         </div>
-            <div class="mainText"> 
+          <div class="mainText"> 
             <div class="">
-            <textarea class="form-control" id="Textarea1" name="pageMainText" rows="5" maxlength="5000">Hoofd tekst</textarea>
+              <textarea class="form-control" id="Textarea1" name="pageMainText" rows="5" maxlength="5000">Hoofd tekst</textarea>
             </div>
-            </div>
+          </div>
             <div class="mainImage">
-            <input type="text" class="form-control"  id="pageTrailer" name="pageTrailer" placeholder="Youtube link van Trailer">
+              <input type="text" class="form-control"  id="pageTrailer" name="pageTrailer" placeholder="Youtube link van Trailer">
             <div class="mb-3">
-
         </div>
 
         </div>
@@ -179,8 +180,6 @@ if ($conn->query($sql) === TRUE) {
         <div class="mb-3">
         <input class="form-control" type="file" name="pageSection1Image" id="formFile">
         </div></div>
-
-
 
         <div class="section1ExtraText"><div class="">
             <textarea class="form-control" id="Textarea4" name="pageSection1Text2" rows="5" maxlength="5000">Sectie 1 Extra Tekst</textarea>
