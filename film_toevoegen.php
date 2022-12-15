@@ -65,23 +65,23 @@ if ($conn->query($sql) === TRUE) {
     <table class="table">
   <tbody class="table-group-divider">
   <tr>
-      <th scope="row">Release date</th>
+      <th scope="row">Release datum</th>
       <td colspan="3"><div class="mb-3S">
       <input type="date" class="form-control" name="filmReleaseDate" id="filmRuntime" placeholder="Film Runtime">
       </div></td>
     </tr>
     <tr>
-      <th scope="row">Runtime</th>
+      <th scope="row">Speeltijd</th>
       <td colspan="2"><div class="mb-3S">
       <input type="number" class="form-control" name="filmRuntime" id="filmRuntime" placeholder="Film Runtime">
       
       </div></td>
-      <td><p>Minutes</p></td>
+      <td><p>Minuten</p></td>
     </tr>
     <tr>
-      <th scope="row">Age Rating</th>
+      <th scope="row">Leeftijdsgroep</th>
       <td>EU: <select class="form-select" name="filmAgeRatingEU" aria-label="Default select example">
-  <option selected>Select EU age rating</option>
+  <option selected>Selecteer EU Leeftijdsgroep</option>
   <option value="3">3</option>
   <option value="7">7</option>
   <option value="12">12</option>
@@ -89,7 +89,7 @@ if ($conn->query($sql) === TRUE) {
   <option value="18">18</option>
 </select></td>
       <td>US: <select class="form-select" name="filmAgeRatingUS" aria-label="Default select example">
-  <option selected>Select US age rating</option>
+  <option selected>Selecteer US Leeftijdsgroep</option>
   <option value="ec">Early childhood</option>
   <option value="E">Everyone</option>
   <option value="E10+">Everyone 10+</option>
@@ -120,7 +120,7 @@ if ($conn->query($sql) === TRUE) {
     <tr>
       <th scope="row">Score</th>
       <td colspan="3"><select class="form-select" name="filmScore" aria-label="Default select example">
-  <option selected>Open this select menu</option>
+  <option selected>Selecteer een score</option>
   <option value="1">1</option>
   <option value="2">2</option>
   <option value="3">3</option>
@@ -135,13 +135,13 @@ if ($conn->query($sql) === TRUE) {
 </select></td>
     </tr>
     <tr>
-      <th scope="row">Cost</th>
+      <th scope="row">Kosten</th>
       <td colspan="3"><div class="mb-3S">
       <input type="number" class="form-control" name="filmCost"  id="filmCost" placeholder="Film Cost">
       </div></td>
     </tr>
     <tr>
-      <th scope="row">Earnings</th>
+      <th scope="row">Opbrengsten</th>
       <td colspan="3"><div class="mb-3S">
       <input type="number" class="form-control" name="filmEarnings" id="filmEarnings" placeholder="Film Earnings">
       </div></td>

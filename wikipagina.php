@@ -138,7 +138,11 @@ if (isset($_GET['page_id'])) {
               <tr>
                 <th scope="row">Speeltijd</th>
                 <td colspan="3"><?php echo $film['filmRuntime']; ?><p> Minuten</p>
-                </td>
+              </td>
+            </tr>
+            <tr>
+                <th scope="row">Release Datum</th>
+                <td colspan="3"><?php echo $film['filmReleaseDate']; ?></td>
               </tr>
               <tr>
                 <th scope="row">Leeftijds groep</th>
@@ -166,7 +170,7 @@ if (isset($_GET['page_id'])) {
           <table class="table">
             <thead>
               <tr>
-                <th>plaatje</th>
+                <th></th>
                 <th>Rol</th>
                 <th colspan="2">Naam</th>
                 <th>Leeftijd</th>

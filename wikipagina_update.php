@@ -31,26 +31,29 @@ if (isset($_POST["submit"]) && $_POST["pageMainText"] != "") {
 
   $pageTrailer = "https://www.youtube.com/embed/" . substr($_POST['pageTrailer'], -11);
 
-  if (isset($_FILES['pageSection1Image'])) {
+  if (isset($_FILES['pageSection1Image'])  && !empty($_FILES["pageSection1Image"]["name"])) {
+    unlink($_POST["oudeSection1Image"]);
     move_uploaded_file($_FILES['pageSection1Image']['tmp_name'], "images/filmscenes/" . $_FILES['pageSection1Image']['name']);
     $pageSection1Image = "images/filmscenes/" . $_FILES['pageSection1Image']['name'];
   } else {
     echo "page section 1 image not found!";
-    $pageSection1Image = "";
+    $pageSection1Image = $_POST["oudeSection1Image"];
   }
-  if (isset($_FILES['pageExtraImage1'])) {
+  if (isset($_FILES['pageExtraImage1']) && !empty($_FILES["pageExtraImage1"]["name"])) {
+    unlink($_POST["oudeExtraImage1"]);
     move_uploaded_file($_FILES['pageExtraImage1']['tmp_name'], "images/filmscenes/" . $_FILES['pageExtraImage1']['name']);
     $pageExtraImage1 = "images/filmscenes/" . $_FILES['pageExtraImage1']['name'];
   } else {
     echo "page extra image 1 not found!";
-    $pageExtraImage1 = "";
+    $pageExtraImage1 = $_POST["oudeExtraImage1"];;
   }
-  if (isset($_FILES['pageExtraImage2'])) {
+  if (isset($_FILES['pageExtraImage2']) && !empty($_FILES["pageExtraImage2"]["name"])) {
+    unlink($_POST["oudeExtraImage2"]);
     move_uploaded_file($_FILES['pageExtraImage2']['tmp_name'], "images/filmscenes/" . $_FILES['pageExtraImage2']['name']);
     $pageExtraImage2 = "images/filmscenes/" . $_FILES['pageExtraImage2']['name'];
   } else {
     echo "page extra image 2 not found!";
-    $pageExtraImage2 = "";
+    $pageExtraImage2 = $_POST["oudeExtraImage2"];;
   }
 
   $sql = "UPDATE wikipages SET 
@@ -90,10 +93,7 @@ if (isset($_POST["submit"]) && $_POST["pageMainText"] != "") {
     <form action="wikipagina_update.php?page_id=<?php echo $id; ?>" method="POST" enctype="multipart/form-data">
       <input type="text" class="form-control" id="pageMainText" name="pageMainText" placeholder="Film Title" value="<?php echo $page["pageMainText"] ?>"><br>
       <div class="form-floating">
-        <input type="hidden" name="oudeProfielfoto" value="<?php echo $page["pageMainImage"]; ?>">
-        <input type="text" class="form-control"  id="pageTrailer" name="pageTrailer" placeholder="Youtube link van Trailer"><br>
-        <label for="floatingInput">Current image:</label>
-        <a href="profielfoto_delete.php?path=<?php echo $page["pageMainImage"]; ?>&id=<?php echo $id ?>" class="btn btn-danger">Verwijder Foto</a>
+        <input type="text" class="form-control"  id="pageTrailer" name="pageTrailer" placeholder="Youtube link van Trailer" value="<?php echo $page["pageTrailer"] ?>"><br>
       </div><br>
       <input type="text" class="form-control" id="pageSidebarText" name="pageSidebarText" placeholder="Film Title" value="<?php echo $page["pageSidebarText"] ?>"><br>
       <input type="text" class="form-control" id="pageSection1Title" name="pageSection1Title" placeholder="Film Title" value="<?php echo $page["pageSection1Title"] ?>"><br>
@@ -102,21 +102,21 @@ if (isset($_POST["submit"]) && $_POST["pageMainText"] != "") {
       <input type="text" class="form-control" id="pageSection2Title" name="pageSection2Title" placeholder="Film Title" value="<?php echo $page["pageSection2Title"] ?>"><br>
       <input type="text" class="form-control" id="pageSection2Text" name="pageSection2Text" placeholder="Film Title" value="<?php echo $page["pageSection2Text"] ?>"><br>
       <div class="form-floating">
-        <input type="hidden" name="oudeProfielfoto" value="<?php echo $page["pageSection1Image"]; ?>">
+        <input type="hidden" name="oudeSection1Image" value="<?php echo $page["pageSection1Image"]; ?>">
         <img src="<?php echo $page["pageSection1Image"]; ?>" alt="" width="100px" height="100px">
         <input type="file" id="floatingInput" name="pageSection1Image" class="form-control"><br>
         <label for="floatingInput">Current image:</label>
         <a href="profielfoto_delete.php?path=<?php echo $page["pageSection1Image"]; ?>&id=<?php echo $id ?>" class="btn btn-danger">Verwijder Foto</a>
       </div><br>
       <div class="form-floating">
-        <input type="hidden" name="oudeProfielfoto" value="<?php echo $page["pageExtraImage1"]; ?>">
+        <input type="hidden" name="oudeExtraImage1" value="<?php echo $page["pageExtraImage1"]; ?>">
         <img src="<?php echo $page["pageExtraImage1"]; ?>" alt="" width="100px" height="100px">
         <input type="file" id="floatingInput" name="pageExtraImage1" class="form-control"><br>
         <label for="floatingInput">Current image:</label>
         <a href="profielfoto_delete.php?path=<?php echo $page["pageExtraImage1"]; ?>&id=<?php echo $id ?>" class="btn btn-danger">Verwijder Foto</a>
       </div><br>
       <div class="form-floating">
-        <input type="hidden" name="oudeProfielfoto" value="<?php echo $page["pageExtraImage2"]; ?>">
+        <input type="hidden" name="oudeExtraImage2" value="<?php echo $page["pageExtraImage2"]; ?>">
         <img src="<?php echo $page["pageExtraImage2"]; ?>" alt="" width="100px" height="100px">
         <input type="file" id="floatingInput" name="pageExtraImage2" class="form-control"><br>
         <label for="floatingInput">Current image:</label>

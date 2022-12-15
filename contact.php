@@ -3,7 +3,7 @@
 <div class="container bg-light border border-white rounded-1"><br>
    <h1>Maak contact met ons</h1><br>
    <div>
-      <p>Wil je iets van ons weten? D.an kun je nu contact met ons maken zodat je jouw antwoord meteen krijg</p>
+      <p>Wil je iets van ons weten? Dan kun je nu contact met ons maken zodat je jouw antwoord meteen krijg</p>
       <div>
          <div class="row g-2">
             <div class="col-md">
