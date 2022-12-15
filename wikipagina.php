@@ -286,7 +286,7 @@ if (isset($_GET['page_id'])) {
       <div class="sideimages"><img src="<?php echo $page['pageExtraImage1']; ?>" alt="" class="img-fluid rounded">
         <img src="<?php echo $page['pageExtraImage2']; ?>" alt="" class="img-fluid rounded">
       </div>
-      <div class="sources"><?php echo $page['pageSources']; ?></div>
+      <div class="sources"><h2>Bronnen</h2><?php echo $page['pageSources']; ?></div>
 
     </div>
 
