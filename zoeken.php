@@ -34,7 +34,11 @@ $pages = mysqli_fetch_all($result, MYSQLI_ASSOC);
 ?>
 
 <div class="container bg-light border border-white rounded-1"><br>
+<?php if ($query != "") { ?>
     <h1>Pages featuring "<?php echo $query ?>"</h1><br>
+    <?php } else { ?>
+        <h1>All wiki pages</h1><br>
+        <?php } ?>
     <div class="d-flex flex-column mb-3 mt-3 bg-light rounded">
     <?php foreach($pages as $page): ?>
         <div class="p-2 col justify-content-start d-flex align-items-center">

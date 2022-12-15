@@ -96,7 +96,7 @@ if (isset($_GET['page_id'])) {
               ?>
               <?php foreach($genres as $genre): ?>
                 <tr>
-                  <th><a href="zoeken.php?query=<?php echo $genre["genreName"] ?>"><?php echo $genre["genreName"] ?></a></th>
+                  <th><a href="zoeken.php?query=<?php echo $genre["genreName"] ?>" class="link-dark"><?php echo $genre["genreName"] ?></a></th>
                   
                   <?php if (!empty($_SESSION)) : ?>
             <?php if ($_SESSION['role'] == "gebruiker" || $_SESSION['role'] == "beheerder") : ?>
@@ -184,7 +184,7 @@ if (isset($_GET['page_id'])) {
                 <tr>
                   <th><img src="<?php echo $person["personImage"] ?>" alt="" class="personImage rounded" style="object-fit: cover;" srcset=""></th>
                   <th><?php echo $person["personRole"] ?></th>
-                  <td colspan="2"><a href="#" role="button" data-bs-toggle="modal" data-bs-target="#Modal<?php echo $person["person_id"] ?>"><?php echo $person["personName"] ?></a></td>
+                  <td colspan="2"><a href="#" class="link-dark" role="button" data-bs-toggle="modal" data-bs-target="#Modal<?php echo $person["person_id"] ?>"><?php echo $person["personName"] ?></a></td>
 
                   <div class="modal fade" id="Modal<?php echo $person["person_id"] ?>" tabindex="-1" aria-labelledby="Modal<?php echo $person["person_id"] ?>Label" aria-hidden="true">
                     <div class="modal-dialog">
