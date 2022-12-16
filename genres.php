@@ -46,9 +46,7 @@ if ($result = mysqli_query($conn, $sql)) {
       </tbody>
    </table>
    <?php if (!empty($_SESSION)) : ?>
-      <?php if ($_SESSION['role'] == "beheerder") : ?>
-         <a href="genre_toevoegen.php" class="w-100 btn btn-lg btn-warning shadow">Voeg een genre toe</a>
-      <?php endif ?>
+      <a href="genre_toevoegen.php" class="w-100 btn btn-lg btn-warning shadow">Voeg een genre toe</a>
    <?php endif ?>
 </div>
 <?php include "footer.php"; ?>

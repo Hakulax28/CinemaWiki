@@ -173,6 +173,5 @@ if ($result = mysqli_query($conn, $sql)) {
          </tbody>
       </table>
    </div>
-   <button class="w-100 btn btn-lg btn-danger shadow" onclick="history.back()">Ga terug</button>
 </div>
 <?php include "footer.php" ?>
