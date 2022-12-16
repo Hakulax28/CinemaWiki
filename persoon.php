@@ -60,7 +60,7 @@ if ($result = mysqli_query($conn, $sql)) {
                </td>
                <?php if (!empty($_SESSION)) : ?>
                   <?php if ($_SESSION['role'] == "beheerder") : ?>
-                     <td><a href="persoon_delete.php?person_id=<?php echo $person["person_id"] ?>" class="shadow btn btn-danger shadow">Verwijder</a></td>
+                     <td><a href="person_delete.php?person_id=<?php echo $person["person_id"] ?>" class="shadow btn btn-danger shadow">Verwijder</a></td>
                      <td><a href="persoon_bewerken.php?person_id=<?php echo $person["person_id"] ?>" class="shadow btn btn-warning shadow">Update</a></td>
                   <?php endif ?>
                <?php endif ?>
