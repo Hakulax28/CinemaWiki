@@ -164,7 +164,6 @@ if ($result = mysqli_query($conn, $sql)) {
                         </div>
                      </div>
                   </div>
-
                   <td><a href="wikipagina.php?page_id=<?php echo $page["page_id"] ?>" class="shadow btn btn-success shadow">Bezoek</a></td>
                   <td><a href="wikipagina_delete.php?page_id=<?php echo $page["page_id"] ?>" class="shadow btn btn-danger shadow">Verwijder</a></td>
                   <td><a href="wikipagina_update.php?page_id=<?php echo $page["page_id"] ?>" class="shadow btn btn-warning shadow">Update</a></td>
