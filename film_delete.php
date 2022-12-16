@@ -11,5 +11,5 @@ $id = $_GET['film_id'];
 $sql = "DELETE FROM films WHERE film_id = $id";
 
 if (mysqli_query($conn, $sql)) {
-   header("location: film_overzicht.php");
+   header("location: index.php");
 }
