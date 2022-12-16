@@ -39,7 +39,7 @@ if ($result = mysqli_query($conn, $sql)) {
                <td><?php echo $person["personRole"] ?></td>
                <td><img src="<?php echo $person["personImage"] ?>" alt="" width="90px" height="100px"></td>
                <td><a href="#" class="btn btn-primary" role="button" data-bs-toggle="modal" data-bs-target="#Modal<?php echo $person["person_id"] ?>">Bekijk de descripties</a>
-                  <div class="modal fade" id="Modal<?php echo $person["person_id"] ?>" tabindex="-1" aria-labelledby="Modal<?php echo $person["person_id"] ?>Label" aria-hidden="true">
+                  <div class="modal fade text-dark" id="Modal<?php echo $person["person_id"] ?>" tabindex="-1" aria-labelledby="Modal<?php echo $person["person_id"] ?>Label" aria-hidden="true">
                      <div class="modal-dialog">
                         <div class="modal-content">
                            <div class="modal-header">
@@ -52,6 +52,11 @@ if ($result = mysqli_query($conn, $sql)) {
                            </div>
                            <div class="modal-footer">
                               <a class="btn btn-primary" href="zoeken.php?query=<?php echo $person["personName"] ?>">Zoek persoon</a>
+                              <?php if (!empty($_SESSION)) : ?>
+                                 <?php if ($_SESSION['role'] == "gebruiker" || $_SESSION['role'] == "beheerder") : ?>
+                                    <a class="btn btn-warning" href="persoon_bewerken.php?person_id=<?php echo $person["person_id"] ?>">bewerk informatie</a>
+                                 <?php endif ?>
+                              <?php endif ?>
                               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                            </div>
                         </div>
