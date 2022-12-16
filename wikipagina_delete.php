@@ -11,5 +11,5 @@ $id = $_GET['page_id'];
 $sql = "DELETE FROM wikipages WHERE page_id = $id";
 
 if (mysqli_query($conn, $sql)) {
-   header("location: wikipagina.php");
+   header("location: index.php");
 }

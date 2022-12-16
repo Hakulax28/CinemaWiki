@@ -46,8 +46,8 @@ if ($result = mysqli_query($conn, $sql)) {
                   <td><?php echo $film["filmCost"] ?></td>
                   <td><?php echo $film["filmEarnings"] ?></td>
                   <td><img src="<?php echo $film["filmCoverImage"] ?>" alt="" width="150px" height="250px"></td>
-                  <td><a href="film_delete.php?page_id=<?php echo $page["film_id"] ?>" class="shadow btn btn-danger shadow">Verwijder</a></td>
-                  <td><a href="film_update.php?page_id=<?php echo $page["film_id"] ?>" class="shadow btn btn-warning shadow">Update</a></td>
+                  <td><a href="film_delete.php?film_id=<?php echo $film["film_id"] ?>" class="shadow btn btn-danger shadow">Verwijder</a></td>
+                  <td><a href="film_update.php?film_id=<?php echo $film["film_id"] ?>" class="shadow btn btn-warning shadow">Update</a></td>
                </tr>
             <?php endforeach; ?>
          </tbody>
