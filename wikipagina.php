@@ -61,7 +61,7 @@ if (isset($_GET['page_id'])) {
         </div>
         <div class="mainImage">
           
-          <iframe width="100%" height="500" class="rounded" src="<?php echo $page['pageTrailer']; ?>" title="Dune | Official Main Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <iframe width="100%" height="500" class="rounded" src="<?php echo $page['pageTrailer']; ?>" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
         </div>
       </div>
